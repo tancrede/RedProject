@@ -1,0 +1,877 @@
+/*
+   ######   ######     ###    ##       ########
+  ##    ## ##    ##   ## ##   ##       ##
+  ##       ##        ##   ##  ##       ##
+   ######  ##       ##     ## ##       ######
+        ## ##       ######### ##       ##
+  ##    ## ##    ## ##     ## ##       ##
+   ######   ######  ##     ## ######## ########
+
+  http://viljamis.com/blog/2012/typography/
+--------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size:100%;
+  font: inherit;
+  vertical-align: baseline;
+  }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+  }
+
+strong, b {
+  font-weight: 400;
+  }
+
+i, em, blockquote {
+  font-style: italic;
+  }
+
+html, body {
+  min-height: 100%;
+  }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  background: rgb(255,255,255);
+  overflow-y: scroll;
+  }
+
+img {
+  -ms-interpolation-mode: bicubic;
+  background: transparent;
+  border: 0;
+  }
+
+img, embed, object, video { 
+  max-width: 100%;
+  height: inherit;
+  _width: 100%;
+  }
+
+/*
+  SELECTIONS
+--------------------------------------------- */
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+::-moz-selection {
+  background: rgb(100,100,100);
+  color: rgb(255,255,255);
+  text-shadow: none;
+  }
+
+::selection {
+  background: rgb(100,100,100);
+  color: rgb(255,255,255);
+  text-shadow: none;
+  }
+
+::selection:window-inactive {
+  background: rgb(220,220,220);
+  color: rgb(50,50,50);
+  }
+
+img::selection {
+  background: transparent;
+  }
+
+img::-moz-selection {
+  background: transparent;
+  }
+  
+/*
+  BASE TYPOGRAPHY
+--------------------------------------------- */
+
+body {
+  font: 75%/1.5em 'Open Sans', Georgia, serif; /* 75% de 16px par dÃƒÂ©faut de font-size donne un font-size de 12px */
+  /* max-width: 76.6666em; / 56.25em; 40.49984em;*/
+  color: rgb(0,0,0);
+  margin: 0 auto;
+  /* padding: 1em; */
+  font-weight: 300; /* valeur de graisse par dÃƒÂ©faut. exception gÃƒÂ©rÃƒÂ©e pour les titres en 400, sauf pour les petites titres <h6 */
+  }
+
+.ie body {
+  max-width: 32.90612em;
+  _width: 32.90612em;
+  font-size: 100%;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  -moz-font-feature-settings: "liga=1, kern=1";
+  -ms-font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 1.42382em;
+  font-weight: 400;
+  }
+
+p, ul, ol, dl, blockquote, .content img {
+  margin-bottom: 1.5em;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  }
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+  width: 100%;
+  color: rgb(85,85,85); /* #555 */
+  /* font-size:90%; */
+}
+
+tr { 
+  /* border-top: 1px dotted rgb(220,220,220); */
+  border-bottom: 1px dotted rgb(220,220,220);
+}
+
+td {
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	line-height: 1.9em;
+}
+
+th { text-align: left; line-height: 1.9em; color:rgb(220,220,220);}
+
+abbr {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  cursor: help;
+  }
+
+sub, sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 65%;
+  line-height: 0;
+  }
+
+sub {
+  bottom: -0.25em;
+  }
+
+sup {
+  top: -0.5em;
+  }
+
+blockquote {
+  margin: 1.5em 0 1.5em 1.80203em;
+  color: rgb(90,90,90);
+  position: relative;
+  }
+
+blockquote:before {
+  -webkit-font-smoothing: antialiased;
+  color: rgb(140,140,140);
+  font-size: 3.60406em;
+  position: absolute;
+  font-style: italic;
+  content: "\201C";
+  line-height: 1em;
+  left: -0.60180em;
+  top: 0;
+  }
+
+ul, ol {
+  margin-left: 1.5em;
+  }
+
+ul {
+  list-style-type: circle;
+  }
+
+ol {
+  list-style-type: lower-roman;
+  }
+
+h1 {
+  margin: .97em 0 .5em;
+  line-height: 1.125em;
+  font-size: 2em;
+  }
+
+.ie h1 {
+  font-size: 4em;
+  }
+
+h2 {
+  line-height: 1.77777em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  }
+
+h3 {
+  margin: 1.7em 0 .85em;
+  line-height: 1.5em;
+  font-size: 1.3em;
+  }
+
+h4 {
+  line-height: 1.12382em;
+  margin: 0 0 1.3em;
+  font-size: 1.2em;
+  }
+
+h5 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.5em;
+  margin: 0 0 1.5em;
+  font-size: 1em;
+  }
+
+h6 {
+  font-weight: 300;
+  margin: 0 0 1.5em;
+  }
+
+pre,code {
+  font: .9375em/1.26562em monospace, monospace;
+  -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+pre {
+  color: rgb(90,90,90);
+  padding: 1.5em 1em;
+  margin-bottom: 3em;
+  line-height: 1em;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  }
+
+img {
+  margin: .5em auto 1.5em auto;
+  display: block;
+  }
+
+.highlight {
+  border-color: rgb(0,0,0);
+  background: #fffccf;
+  color: rgb(0,0,0);
+  margin-top: 3em;
+  padding: 0 .2em;
+  }
+
+/*
+  LINKS
+--------------------------------------------- */
+
+a {
+  border-bottom: 1px solid rgb(200,200,200);
+  text-decoration: none;
+  color: rgb(80,80,80);
+  }
+
+a:hover {
+  border-bottom: 1px solid rgb(0,0,0);
+  background: rgba(0,0,0,.05);
+  color: rgb(0,0,0);
+  }
+
+a:active {
+  outline: none;
+  }
+
+sup a {
+  text-decoration: none;
+  }
+
+/*
+  layout
+--------------------------------------------- */
+
+#header-wrap-out {
+	position:fixed;
+	width: 100%;
+	top:0;
+	margin:0;
+	padding:0;
+	vertical-align:baseline;
+	z-index:2;
+	border: none;
+}
+
+#header-wrap-in {
+	position: relative;
+	z-index:2;
+	background: #FFF;
+	border-bottom: 1px solid #EEE;
+}
+
+.navbar-fixed #header-wrap-in { /* quand on commence à scroller la page, j'ajoute l'ombrage */
+	border:none;
+	box-shadow: 0 0 18ox rgb(200,200,200);
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+.navbar-fixed #header-wrap-in, #main-context { /* changement d'état pour les éléments contenus dans le header */
+	-moz-transition: height .25s ease;
+	-webkit-transition: height .25s ease;
+	-o-transition: height .25s ease;
+	-ms-transition: height .25s ease;
+	transition: height .25s ease;
+}
+
+#header {
+	height: 5em; /* 80px / 16px */
+	background: #FFF;
+	font-size: 100%;
+}
+
+.navbar-scroll #header { /* quand on à suffisament scroller la page, je réduis la taille de la barre ? à voir */
+height: 50px;
+}
+
+#role-indicator {
+	height:100%;
+	width: 2em;
+	background-color: red;
+	float: left;
+}
+
+#main-context {
+	position: relative;
+	float: left;
+	margin:0;
+	padding:0 0 0 1em;
+}
+
+#main-context h1 {
+	font-family: 'Oswald', sans;
+	font-weight:400;
+	font-size: 180%;
+	line-height: 2em;
+	margin:0;
+	padding:0;
+	line-height:65px;
+}
+
+#main-context p{
+	font-size: 70%;
+	margin:0;
+	padding:0;
+	line-height:8px;
+	font-weight: 400;
+}
+
+#main-nav {
+	float:left;
+	margin-left:3em;
+}
+
+#perm-project-link, #perm-user-link {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#perm-user-link {
+	position: absolute;
+	right: 3em;
+}
+
+.menu-item {
+	float:left;
+	margin:0;
+ }
+ 
+.current-menu-item .item-link {
+	border:none;
+	border-top: 0.1875em solid #219b75;
+	color: #219b75;
+}
+ 
+.item-link {
+	display: inline-block;
+	padding: 1.625em 1.125em 1.875em /* 26px 18px 30px /16px */;
+	margin: 0 0.75em /* 12 / 16 */;
+	border:none;
+	border-top: 0.1875em solid #fff; /* 3 / 16px */ 
+	color: #333;
+	font-size: 0.875em /* 14/16px */;
+	-moz-transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	-webkit-transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	-o-transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	-ms-transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	text-decoration: none;
+ }
+ 
+ .perm-link {
+ 	display: inline-block;
+	padding: 1.625em 1.125em 1.875em /* 26px 18px 30px /16px */;
+	margin: 0 0.75em /* 12 / 16 */;
+	border:none;
+	border-top: 0.1875em solid #fff; /* 3 / 16px */ 
+	color: #333;
+	font-size: 0.875em /* 14/16px */;
+	-moz-transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	-webkit-transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	-o-transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	-ms-transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	transition: border-color .25s ease,color .25s ease,padding .25s ease,line-height .25s ease;
+	text-decoration: none;
+}
+ 
+/*
+  specifique au projet redmine
+--------------------------------------------- */
+
+
+.select-col{ width:2em; vertical-align: center;}
+.fav-col{ width:2em; text-align: center;}
+.project-col { width:10em; }
+.priority-col { width: 4em;}
+.priority-bis-col { width: 2em; }
+.subject-col { width: auto; }
+.assigned-col { width: 8.5em; white-space: nowrap; }
+
+/* td:first-child { background-color: #CC3A21; } test pour mettre la prioriÃ¨te sur la checkbox */
+
+/* td:nth-child(3) { text-align: center; padding-right: 0.4em; } /* priority */
+td:nth-child(4) { text-align: right; padding-right: 0.5em; } /* priority bis */
+td:nth-child(5) { padding-right: 0.5em; } /* priority bis */
+td:last-child { padding-left: 0.4em; } /* assigned */
+
+/* .new-line td { background-color: rgb(250,250,250);}
+.new-line td:nth-child(3), .new-line a.issue-tab { font-weight: 600; } */
+
+.selected td { 
+  border-top: 1px solid rgb(220,220,220);
+  border-bottom: 1px solid rgb(220,220,220);
+}
+
+.selected td { background-color: #FFFFCC;}
+
+.check, .check-all {
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	background-color: rgba(255,255,255,.05);
+	border: 1px solid #c6c6c6;
+	border: 1px solid rgba(155,155,155,.57);
+	font-size: 1px;
+	height: 9em;
+	margin: 0 4px 0 8px;
+	outline: 0;
+	vertical-align: text-bottom;
+	width: 9em;
+}
+
+.check-all { border-color: rgb(220,220,220); }
+
+.check:hover, .check-all:hover {
+	-web-kit-box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+	border: 1px solid #b2b2b2;
+}
+
+.selected td .check div, .selected th .check-all div {
+	height: 15px;
+	outline: 0;
+	width: 15px;
+	left: 0;
+	position: relative;
+	top: -4px;
+	font-size:1px;
+	background: url('../img/checkmark.png') no-repeat -5px -3px;
+}
+
+.partial th .check-all  {
+	background-color: rgb(240,240,240);
+}
+
+.fav {
+	display: inline-block;
+    height: 19em; /*19px;*/
+    padding: 0;
+    text-align: center;
+    /* width: 19em; 19px; */
+	position: relative;
+    top: 1em;
+	border: none;
+	font-size: 1px;
+	vertical-align: top;
+	top: 2em;
+	cursor: pointer;
+}
+
+.fav:before {
+	content: url("../img/star4.png");
+}
+
+.fav:hover:before {
+	content: url("../img/star-hover4.png");
+}
+
+.fav.favored:before {
+	content: url("../img/star-lit4.png");
+}
+
+.focus {
+  font-weight: 600; color: #333;
+}
+
+.hide-it { display: none }
+
+/*.badge { 
+    padding: 0 5px;
+	display: inline-block;
+    text-align: center;
+	display: inline-block;
+	position: relative;
+	margin-right: 3px;
+	height: 1.9em;
+}*/
+
+.circle {
+   background-color: rgba(0, 0139, 0139, 0.5);
+   padding: 0.3em;
+   display: inline-block;
+   -moz-border-radius:50%;
+   -webkit-border-radius: 50%;
+   border-radius:50%; 
+   margin-right: 2px;
+}
+
+.high {
+	background-color: #CC3A21;
+	color: #CC3A21; /* #F6C5BE; */
+	border: 1px solid #CC3A21;
+}
+
+.prior { cursor: pointer; font-family: 'whhglyphs'; /* text-shadow: 0px 1px 1px #CCC; */}
+.priority-high { color: #CC3A21; /* #F6C5BE; */ }
+.priority-medium { color: #FFBE82; /* #ED9743; */ /* #F6C5BE; */ }
+.priority-normal { color: #EEE; /* #F6C5BE; */   }
+
+
+.medium {
+	background-color: #EC7000;
+	color: #EC7000; /* #FFF0E1; */
+	border: 1px solid #EC7000;
+	
+}
+
+.normal {
+	background-color: transparent;
+	color: #FFF0E1;
+	border: 1px solid #DDD;
+}
+
+/****/
+
+@font-face {
+	font-family: 'whhglyphs';
+	src: url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAP8AA0AAAAABaAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABoAAAAcZosFeEdERUYAAAFMAAAAHwAAACAAMgAGT1MvMgAAAWwAAABHAAAAVlAk3B9jbWFwAAABtAAAAEcAAAFSAH3z2Gdhc3AAAAH8AAAACAAAAAj//wADZ2x5ZgAAAgQAAABgAAAAYE9zk51oZWFkAAACZAAAAC4AAAA2/iDXA2hoZWEAAAKUAAAAHgAAACQEEP/maG10eAAAArQAAAAQAAAAFASqAABsb2NhAAACxAAAAAwAAAAMAA4AMG1heHAAAALQAAAAHQAAACAASAAXbmFtZQAAAvAAAADsAAABofpIFw9wb3N0AAAD3AAAAB4AAAA0Tq+e53icY2BgYGQAgpOd+YYg+lzDaWUYDQBD5QZsAAB4nGNgZGBg4ANiCQYQYGJgZGBmYAGSLGAeAwAEkAA5AHicY2BkYmCcwMDKwMHow5jGwMDgDqW/MkgytDAwMDGwMjPAAKMAAwIEpLmmMDgwZH5gYHzw/wGDHuMDBoUGoBqQHACNYgtmAHicY2BgYGaAYBkGRgYQ8AHyGMF8FgYDIM0BhExgmcwPDP//I7P+zxZghuoCA0Y2BjiXEaSHiQEVMDJQD7BQ0SwqAgBa4QlEAAAAAAH//wACAAEAAP/gAgAB4AACAAARASECAP4AAeD+AAAAAAABAAAAAAIAAcAAEwAAAScuASsBIgYVERQWOwEyNj8BNjQB5pQKMg68ICwsILwONAiUGgEPjAsaLB7+1B4sGQ2LFDYAeJxjYGRgYABipo3ty+P5bb4ycDMxgMC5htPKCPr/AyYGxgdALgcDWBoALEAK1AAAeJxjYGRgYHzw/wGDHhMDA8M/BiAJFEEBrABt6QP4AAB4nGNigIJVEIoJiAEHkgCvAAAAAAAAAAAADgAweJxjYGRgYGBlEGEA0QwMTEDMCGY7gPkMAATLAGAAAAB4nIWPsU7DMBCGv7RpUUTFgBAj8sSWyA4VQx+gExND9w5WUilKKrdV1b3PwEvwEMw8Bg/AO/AnWCxIYMt3n+9+352BGS8k9Csh4ybyiAuKyGPuOUdOpXmLPOGSj8hTsiSRMkkzRa6HVz2PuOIu8pgnHiOn0rxGnnDLe+Sp4p8cqbUrGk5sRTs41nXVnLa18Bmv3EHZNUFXXx2atWBJR8t+8EEKj6HUL6z8Qud31e+4Y04ua2VLWceDinXtftmFypuysGZhfvqL3Tx3Ni+tk+7vUVcaIii2GUbrW/XjsPJht+la4wr7T4UvwsdBNXicY2BiwA9YgZiRgYmRicGHvTQv083AwAAADjQCgwAA) format('woff'),
+		 url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAANAIAAAwBQRkZUTWaLBXgAAAWEAAAAHEdERUYAMgAGAAAFZAAAACBPUy8yUCTcHwAAAVgAAABWY21hcAB989gAAAHEAAABUmdhc3D//wADAAAFXAAAAAhnbHlmT3OTnQAAAyQAAABgaGVhZP4g1wMAAADcAAAANmhoZWEEEP/mAAABFAAAACRobXR4BKoAAAAAAbAAAAAUbG9jYQAOADAAAAMYAAAADG1heHAASAAXAAABOAAAACBuYW1l+kgXDwAAA4QAAAGhcG9zdE6vnucAAAUoAAAANAABAAAAAQAAArGHp18PPPUACwIAAAAAAM6AyyMAAAAAzoDLIwAA/+ACAAHgAAAACAACAAAAAAAAAAEAAAHg/+AALgIAAAD+AAIAAAEAAAAAAAAAAAAAAAAAAAAFAAEAAAAFABQAAQAAAAAAAgAAAAEAAQAAAEAAAAAAAAAAAQIAAZAABQAIAUwBZgAAAEcBTAFmAAAA9QAZAIQAAAIABQMAAAAAAAAAAAABEAAAAAAAAAAAAAAAUGZFZABAAGnwAAHg/+AALgHgACCAAAABAAAAAAAAAgAAAAAAAAAAqgAAAAAAAAIAAAAAAAADAAAAAwAAABwAAQAAAAAATAADAAEAAAAcAAQAMAAAAAgACAACAAAAAABp8AD//wAAAAAAafAA//8AAP+bEAMAAQAAAAAAAAAAAAABBgAAAQAAAAAAAAABAgAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAwAAEAAP/gAgAB4AACAAARASECAP4AAeD+AAAAAAABAAAAAAIAAcAAEwAAAScuASsBIgYVERQWOwEyNj8BNjQB5pQKMg68ICwsILwONAiUGgEPjAsaLB7+1B4sGQ2LFDYAAAAADACWAAEAAAAAAAEACQAUAAEAAAAAAAIABwAuAAEAAAAAAAMAJgCEAAEAAAAAAAQACQC/AAEAAAAAAAUACwDhAAEAAAAAAAYACQEBAAMAAQQJAAEAEgAAAAMAAQQJAAIADgAeAAMAAQQJAAMATAA2AAMAAQQJAAQAEgCrAAMAAQQJAAUAFgDJAAMAAQQJAAYAEgDtAHcAaABoAGcAbAB5AHAAaABzAAB3aGhnbHlwaHMAAFIAZQBnAHUAbABhAHIAAFJlZ3VsYXIAAEYAbwBuAHQARgBvAHIAZwBlACAAMgAuADAAIAA6ACAAdwBoAGgAZwBsAHkAcABoAHMAIAA6ACAAMQA0AC0AMQAwAC0AMgAwADEAMwAARm9udEZvcmdlIDIuMCA6IHdoaGdseXBocyA6IDE0LTEwLTIwMTMAAHcAaABoAGcAbAB5AHAAaABzAAB3aGhnbHlwaHMAAFYAZQByAHMAaQBvAG4AIAAxAC4AMAAAVmVyc2lvbiAxLjAAAHcAaABoAGcAbAB5AHAAaABzAAB3aGhnbHlwaHMAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAAEAAgECAEwHdW5pRjAwMAAAAAH//wACAAEAAAAOAAAAGAAAAAAAAgABAAMABAABAAQAAAACAAAAAAABAAAAAMmJbzEAAAAAzoDLIwAAAADOgMsj) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'whhglyphs';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-psleft {
+	font-family: 'whhglyphs';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-psleft:before {
+	content: "\69";
+}
+
+/****/
+
+a.issue-tab {
+color: rgb(85,85,85); /* #3C3C3C; */
+display: inline-block;
+width: 100%;
+padding: /* 0.2em */ 0;
+border: none;
+background-color: none;
+border-spacing:0;
+}
+
+.issue-tab {
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	/* overflow:hidden;
+	line-height: 1.9em;*/
+}
+
+a.issue-tab:hover {text-decoration:none; background-color: transparent; border: none;}
+
+.actions-menu { margin: -1.1em 0 1.7em 0; border:none; }
+.actions-left { float:left; }
+.actions-right { text-align: right; margin-left: 1em;}
+
+.action-perm  { display: inline-block; }
+.action-select { display : none; }
+.visible { display: inline-block; }
+
+.action { padding: 0.3em 0.8em;  }
+.action:first-child { margin-left: -0.8em }
+.action:hover { background-color: rgb(250,250,250); }
+
+
+/*
+
+  SEARCH
+  -------------------------------------------- */
+  
+input, textarea {
+	border: none;
+	margin: 0 0 0.5em;
+	font: 400 3.125em "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	letter-spacing: -0.05em;
+	outline: none;
+	width: 100%;
+	padding: 0;
+	padding-right: 0;
+	color: #333;
+  }
+
+::-webkit-input-placeholder { color:#eee; font-weight: 400;}
+::-moz-placeholder { color:#eee; font-weight: 400; } /* firefox 19+ */
+:-ms-input-placeholder { color:#eee; font-weight: 400; } /* ie */
+input:-moz-placeholder { color:#eee; font-weight: 400; }
+
+textarea { font-size: 1.5em !important; letter-spacing: normal; margin: 0.2em 0 0 0.15em; font-family: "Open Sans" !important;}
+
+label {
+	margin: 0 0 -1.6em 0;
+	padding: 0 0 0 0.252em;
+	font-size: 0.625em;
+	font-weight: bold;
+	color:#4481C4;
+	display: block;
+	line-height: 1em;
+	font-family: Arial
+}
+
+label {
+      -webkit-transition:all .2s ease-out;
+      -moz-transition:all .2s ease-out;
+      -ms-transition:all .2s ease-out;
+      -o-transition:all .2s ease-out; 
+      transition:all .2s ease-out;
+	  opacity:0;
+}
+
+.translator {
+      -webkit-transform:translate(0px,-1em);
+      -moz-transform:translate(0px,-1em);
+      -ms-transform:translate(0px,-1em);
+      -o-transform:translate(0px,1em);
+      transform:translate(0px,-1em);
+	  opacity: 1;
+}
+
+.passif {
+      color: #DDD;
+}
+
+/*
+  PRINT STYLES
+--------------------------------------------- */
+
+@media print {
+
+  html {
+    border: 0;
+    }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    }
+
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+    }
+
+  }
+
+/*
+  MIN-WIDTH: 15.652em - Ãƒ  partir de 220px
+--------------------------------------------- */
+
+@media screen and (min-width: 15.652em) {
+
+  body {
+    font-size: 87.5%; /* 14px */
+    }
+
+  h2 {
+    font-size: 1.26562em;
+    }
+
+  h3 {
+    font-size: 1.5em;
+    }
+
+  h4 {
+    font-size: 1.26562em;
+    }
+
+  td {
+	line-height: 1.8em;
+    }
+  }
+
+/*
+  MIN-WIDTH: 19.9375em - Ãƒ  partir de 319px : iPhone 3/4 portrait
+--------------------------------------------- */
+
+@media screen and (min-width: 19.9375em) {
+
+  body {
+    font-size: 100%;
+    }
+
+  #wraper { padding: 1.5em; }
+
+  /*h1 {
+    font-size: 3em;
+    }*/
+
+  .dropcap:first-letter {
+    font: 3.32956em/0.7em 'Open Sans', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    margin: .2em .15em .1em 0;
+    float: left;
+    }
+
+  .ie9 .dropcap:first-letter {
+    margin: .2em .45em 0 0;
+    line-height: .9em;
+    }
+	
+  table {
+    font-size: 0.875em; /* 14px */
+  }
+	
+  td {
+	line-height: 1.9em;
+    }
+  }
+
+/*
+  MIN-WIDTH: 29.9375em - Ãƒ  partir de 479px : iPhone 3/4 landscape
+--------------------------------------------- */
+
+@media screen and (min-width: 29.9375em) {
+
+  #wraper {
+    padding: 1.5em 3em;
+    /* max-width: 56.25em; /* 900px */
+    }
+
+  ul, ol {
+    margin-left: 0;
+    }
+
+  sup.indent {
+    margin-left: -1.5em;
+    }
+
+  }
+
+/*
+  MIN-WIDTH: 47.9375em - Ãƒ  partir de 767px : ipad portrait
+--------------------------------------------- */
+
+@media screen and (min-width: 47.9375em) {
+
+  html {
+    /* background: url('../img/grid.gif') repeat; */
+    }
+
+  #wraper {
+    padding: 4.5em 3em 7.59372em;
+    }
+
+  /*h1 {
+    margin: .97em 0 .8em;
+    font-size: 4em;
+    }*/
+	
+  }
+
+/*
+  MIN-WIDTH: 59.9375em - Ãƒ  partir de 959px : deskop & ipad landscape
+--------------------------------------------- */
+
+@media screen and (min-width: 59.9375em) {
+
+  wraper {
+    padding: 4.5em 3em 7.59372em;
+    }
+
+  }
+
+
+/*
+  MIN-WIDTH: 99.9375em - Ã  partir de 1798,875px
+--------------------------------------------- */
+
+@media screen and (min-width: 99.9375em) {
+
+  body {
+    max-width: 96.6666em;
+    line-height: 1.75em;
+    font-size: 112.5%; /* 18px */
+    }
+	
+  }

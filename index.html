@@ -1,0 +1,455 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 9]><html class="no-js ie" lang="en"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="fr"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Scale.css</title>
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/nav-bar.css">
+  <script src="js/jquery-latest.js" type="text/javascript"></script>
+  <script src="js/jquery.hoverintent.minified.js" type="text/javascript"></script> <!-- pour gérer le coté réactif des hover sur la sidebar -->
+</head>
+
+<body>
+	
+	<header class="hWrapper">
+		<!-- <div id="menu"><span id="menu-list">Menu</span></div> -->
+		<div class="rWrapper hSkin">
+			<div class="wLeft">
+				<h1 class="hTitle">Numéro Unique Infocentre</h1>
+			</div>
+			<div class="wRight">
+				<ul class="inlist mainFontSize">
+					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link" title="Aperçu"><span>Aperçu</span></a></li>
+					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link" title="Activité"><span>Activité</span></a></li>
+					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link active" title="Deamandes"><span>Demandes</span></a></li>
+					<li class="isInBloVisible dropdown option-selectable">
+						<div class="isInBloVisible action" title="Recherche">
+							<span>+Plus</span> 
+							<span class="arrow-down"></span>
+						</div>						
+						<div class="dropdown-menu">
+							<div class="menuitem"><div class="menuitem-content"><span>Aperçu</span></div></div>
+							<div class="menuitem"><div class="menuitem-content"><span>Activité</span></div></div>
+							<div class="menuitem selected-item"><div class="menuitem-content"><span>Demandes</span></div></div>
+							<div class="menuitem"><div class="menuitem-content"><span>Wiki</span></div></div>
+							<div class="menuitem"><div class="menuitem-content"><span>Fichiers</span></div></div>
+							<div class="menuitem"><div class="menuitem-content"><span>Roadmap</span></div></div>
+							<div class="menuitem"><div class="menuitem-content"><span>Planning</span></div></div>
+							<div class="submenu-link separator-horizontal"></div>
+							<div class="menuitem"><div class="menuitem-content"><span>Administration</span></div></div>
+						</div>	
+					</li>
+				</ul>
+				<ul class="inlist perm-link-menu">
+					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="t" title="Administration"><span>Admin</span></a></li>
+					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="U" title="Actions utilisateur"><span>User</span></a></li>
+					<!-- <li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="q" title="Aide"><span>Help</span></a></li> -->
+					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="?" title="Recherche"><span>Search</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	
+	<section class="bWrapper">
+		<div class="actions-menu unselectable rWrapper">
+			<div class="wLeft medFontSize">
+				<div class="action-perm dropdown option-selectable">
+					<div class="action">
+						<div class="check-all"><div></div></div> 
+						<span class="arrow-down"></span>
+					</div>
+					<div class="dropdown-menu">
+						<div class="menuitem" id="select-all"><div class="menuitem-content"><span>Tout</span></div></div>
+						<div class="menuitem" id="select-none"><div class="menuitem-content"><span>Rien</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem" id="select-isHigh">
+							<div class="menuitem-icon"><span class="prior isHigh">i</span></div>
+							<div class="menuitem-content"><span>Priorité Haute</span></div>
+						</div>
+						<div class="menuitem" id="select-isMedium">
+							<div class="menuitem-icon"><span class="prior isMedium">i</span></div>
+							<div class="menuitem-content"><span>Priorité Moyenne</span></div>
+						</div>
+						<div class="menuitem" id="select-isLow">
+							<div class="menuitem-icon"><span class="prior isLow">i</span></div>
+							<div class="menuitem-content"><span>Priorité Basse</span></div>
+						</div>
+						<div class="menuitem" id="select-fav">
+							<div class="menuitem-icon"><span class="fav icon isActive" data-icon="S"></span></div>
+							<div class="menuitem-content"><span>Mes favoris</span></div>
+						</div>
+						<div class="menuitem" id="select-myIssues"><div class="menuitem-content"><span>Mes demandes</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Demandes non assignées</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Demandes urgentes</span></div></div>
+					</div>
+				</div><!--
+				--><div class="action-perm main-action">+ Nouvelle Demande</div><!--
+				--><div class="action action-perm">Raffraichir</div><!--
+				--><div class="action action-select">Dupliquer</div><!--
+				--><div class="action-select dropdown">
+					<div class="action">Exporter 
+						<span class="arrow-down"></span>
+					</div>
+					<div class="dropdown-menu">
+						<div class="menuitem"><div class="menuitem-content"><span>Atom</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>CSV</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Pdf</span></div></div>
+					</div>
+				</div><!--
+				--><div class="action-select dropdown">
+					<div class="action">Générer 
+						<span class="arrow-down"></span>
+					</div>
+					<div class="dropdown-menu">
+						<div class="menuitem"><div class="menuitem-content"><span>Un ticket lié</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Une liste de diffusion</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Une alerte</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Une vue spécifique</span></div></div>
+					</div>
+				</div><!--
+				--><div class="action-select dropdown option-selectable">
+					<div class="action">Modifier 
+						<span class="arrow-down"></span>
+					</div>
+					<div class="dropdown-menu">
+						<div class="menuitem"><div class="menuitem-content"><span>Statut</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Tracker</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Priorité</span></div></div>
+						<div class="menuitem selected-item"><div class="menuitem-content"><span>Assigné à</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>% réalisé</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Remarquable</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Pôle</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Instance</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Ecran général de modification</span></div></div>
+					</div>
+				</div><!--
+				--><div class="action action-perm">Statistiques</div><!--
+				--><div class="action action-select">Supprimer</div>
+			</div>
+			<div class="wRight medFontSize">
+				<div class="action-perm dropdown option-selectable">
+					<div class="action">Affichage 
+						<span class="arrow-down"></span>
+					</div>
+					<div class="dropdown-menu">
+						<div class="menuitem selectable-item" id="view-compact" data-group="view-density"><div class="menuitem-content"><span>Vue compacte</span></div></div>
+						<div class="menuitem selectable-item selected-item" id="view-normal" data-group="view-density"><div class="menuitem-content"><span>Vue normale</span></div></div>
+						<div class="menuitem selectable-item" id="view-comfortable" data-group="view-density"><div class="menuitem-content"><span>Vue confortable</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Afficher les intitulés de colonnes</span></div></div>
+						<!-- <div class="menuitem action-select" id="hide-unselected"><div class="menuitem-content"><span>Masquer les objects non sélectionnés</span></div></div>
+						<div class="menuitem" id="display-unselected"><div class="menuitem-content"><span>Afficher les éléments masqués</span></div></div>-->
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Gérer les données affichées</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Afficher la sidebare</span></div></div>
+					</div>
+				</div><!--
+				--><div class="action-perm dropdown option-selectable">
+					<div class="action">Filtre 
+						<span class="arrow-down"></span>
+					</div>
+					<div class="dropdown-menu">
+						<div class="menuitem"><div class="menuitem-content"><span>Filtrer les données</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Enregister la vue</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Appliquer un filtre existant</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Gérer les filtres existants</span></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="rWrapper hasActions" id="test">
+			<div class="smallFontSize">
+				<h3 class="table-title">Premier regroupement</h3>
+				<table class="table-issues">
+					<colgroup>
+						<col class="select-col">
+						<col class="fav-col">
+						<!-- <col class="priority-col"> -->
+						<col class="project-col">
+						<col class="priority-bis-col">
+						<col class="subject-col">
+						<col class="assigned-col">
+					</colgroup>
+					<!-- <thead>
+						<tr><th></th><th></th><th>Projet</th><th></th><th>Sujet</th><th>Assigné à</th></tr>
+					</thead> -->
+					<tbody>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>ACAI</td>					    <td class="unselectable"><span class="prior isHigh">i</span></td><td><a href="issue.html" class="issue-tab"><span class="focus">Nouveau</span> <span class="issue-subject">Autoriser x-spdocs-02 a aller sur https://portail.centre-serveur.i2</span><span class="count">12</span><span class="last-talk">Création du paquet apache22-rp-scn_1.0.0-206 pour wheezy. Faire attention aux composants puppétisés touchés par la kerbérisation sur le site de Paris.</span></a></td><td>S. Becard</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Cerbere</td>				   	<td class="unselectable"><span class="prior isHigh">i</span></td><td><span class="hide-it">En cours</span><a href="issue.html" class="issue-tab"><span class="issue-subject">URL inaccessible</span><span class="count">50+</span><span class="last-talk">Il faut que amedee.ecole corresponde à un environnement de formation. Pour cela, plusieurs points:</span></a></td><td>S. Becard</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Cottage</td>				   	<td class="unselectable"><span class="prior isMedium">i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Lenteur excessive lors de l'usage de l'application</span><span class="count">2</span><span class="last-talk">Pour réaliser le jeu de test de l'annuaire école, il faudrait créer un annuaire LDAP dédié</span></a></td><td>S. Douihech</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>ACAI</td>					    <td class="unselectable"><span class="prior isMedium">i</span></td><td><a href="issue.html" class="issue-tab"><span class="issue-subject">Réinstallation de tout le cluster CERBERE</span><span class="count">5</span><span class="last-talk">Hervé Fauvin a omis d'ouvrir un ticket mais à ma demande deux tickets ont été ouvert hier chez Dell pour ces machines. Il reste à puppétiser le krb5.conf sur Paris et stocker dans puppet les keytab de Paris (non urgent).</span></a></td><td>A. Boutalbi</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isActive" data-icon="S"></span></td><td>DNS Interministériel</td>	    <td class="unselectable"><span class="prior isLow">i</span></td><td><a href="issue.html" class="issue-tab"><span class="focus">Nouveau</span> <span class="issue-subject">Tests nouvelle plate-forme sur l'url de recette</span><span class="count">50+</span><span class="last-talk">Il faut que amedee.ecole corresponde à un environnement de formation. Pour cela, plusieurs points:</span></a></td><td>J-B. Barth</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isActive" data-icon="S"></span></td><td>ACAI</td>					    <td class="unselectable"><span class="prior isLow">i</span></td><td><a href="issue.html" class="issue-tab"><span class="focus">Nouveau</span> <span class="issue-subject">Création du paquet apache22-rp-scn_1.0.0-206 pour wheezy</span><span class="count">5</span><span class="last-talk">Problématique de l'authentification à étudier (à priori, après discussion avec Erwan, comme les utilisateurs sont peu nombreux, on utiliserait Cerbere avec création des comptes => à confirmer)</span></a></td><td>J-B. Barth</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Cerbere</td>				  	<td class="unselectable"><span class="prior isMedium">i</span></td><td><a href="issue.html" class="issue-tab"><span class="issue-subject">URL inaccessible</span><span class="count">100+</span><span class="last-talk">Pas besoin ; les RP-ADER existant feront l'affaire, pourquoi des RP spécifiques ? Oui les nouveaux RP serait pour la publication RIE (redmine, Giseh, Alfresco...)</span></a></td><td>J-M. Verwaerde</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Cottage</td>				   	<td class="unselectable"><span class="prior isLow">i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab"><span class="focus">Nouveau</span> <span class="issue-subject">Lenteur excessive lors de l'usage de l'application</span></a></td><td>V. Avez</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>ACAI</td>					   	<td class="unselectable"><span class="prior isLow">i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Réinstallation de tout le cluster CERBERE</span></a></td><td>T. Soulabail</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>DNS National</td>			   	<td class="unselectable"><span class="prior isMedium">i</span></td><td><span class="hide-it">En attente</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Alerte : tnas-01 : DISK_USAGE =&gt; DISK WARNING - free space: /export/depots-02 23016 MB (4% inode=98%):</span><span class="count">12</span><span class="last-talk">Le fait que SAN21 revienne tout seul en normal après correction de FC05 semble confirmer que le pb sur FC05 provoque celui de SATA21 ?</span></a></td><td>M-L. Caron</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Palome</td>					<td class="unselectable"><span class="prior isLow">i</span></td><td><a href="issue.html" class="issue-tab"><span class="issue-subject">NAS n-fas2240-06b : Bagot sur l'interface nas-b (lacp)</span><span class="count">12</span><span class="last-talk">Organisation des projets (un projet général gestiondnsRie et un sous projet par Ministère (gestiondnsInterieur, gestiondnsAgriculture, ...) ?)</span></a></td><td>M. Goepp</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>ReHucit</td>				   	<td class="unselectable"><span class="prior isLow">i</span></td><td><span class="hide-it">En cours</span><a href="issue.html" class="issue-tab"><span class="issue-subject">URL inaccessible</span><span class="count">1</span><span class="last-talk">Problématique de l'authentification à étudier (à priori, après discussion avec Erwan, comme les utilisateurs sont peu nombreux, on utiliserait Cerbere avec création des comptes => à confirmer)</span></a></td><td>M. Goepp</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Numéro Unique</td>				<td class="unselectable"><span class="prior isHigh">i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Lenteur excessive lors de l'usage de l'application</span><span class="count">50+</span><span class="last-talk">C'est quand même nuu data qui charge le plus FC05 (constaté lors du suspend miroir et temps de re-synchro)</span></a></td><td>H. Pirrat</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isActive" data-icon="S"></span></td><td>ACAI</td>					    <td class="unselectable"><span class="prior isLow">i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Réinstallation de tout le cluster CERBERE</span></a></td><td>M. Goepp</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Comdalo</td>				   	<td class="unselectable"><span class="prior isLow">i</span></td><td><a href="issue.html" class="issue-tab"><span class="focus">Nouveau</span> <span class="issue-subject">Tests nouvelle plate-forme sur l'url de recette</span></a></td><td>P. Bessonie</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Redmine mutualisé</td>			<td class="unselectable"><span class="prior isLow">i</span></td><td><a href="issue.html" class="issue-tab"><span class="focus">Nouveau</span> <span class="issue-subject">Les serveurs Géoref sont inacessibles ou les temps d'accès sont excessivement longs</span></a></td><td>M-L. Caron</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isActive" data-icon="S"></span></td><td>Sigale</td>						<td class="unselectable"><span class="prior isLow">i</span></td><td><a href="issue.html" class="issue-tab"><span class="issue-subject">Alerte : VIP_amelie-06 : NSCAMAILPERUSER => ATTENTION: Pas de stats mail par utilisateur depuis plus de 48 heures. Merci de contacter le PNE ou le silo Messagerie</span></a></td><td>A. Boutalbi</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Cottage</td>				   	<td class="unselectable"><span class="prior isMedium">i</span></td><td><a href="issue.html" class="issue-tab"><span class="issue-subject">Perte de bandes suite au reset du bus lors du montage des Timeview sur tina-05</span></a></td><td>V. Avez</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>ACAI</td>					    <td class="unselectable"><span class="prior isLow">i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Supervision des bascules cluster cyrus</span></a></td><td>J-B. Barth</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Sigale</td>					<td class="unselectable"><span class="prior isLow">i</span></td><td><span class="hide-it">En attente</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Tests nouvelle plate-forme sur l'url de recette</span></a></td><td>A. Boutalbi</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>DNS National</td>			   	<td class="unselectable"><span class="prior isMedium">i</span></td><td><span class="hide-it">En attente</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Alerte : tnas-01 : DISK_USAGE =&gt; DISK WARNING - free space: /export/depots-02 23016 MB (4% inode=98%):</span></a></td><td>M-L. Caron</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Palome</td>					<td class="unselectable"><span class="prior isLow">i</span></td><td><a href="issue.html" class="issue-tab"><span class="issue-subject">NAS n-fas2240-06b : Bagot sur l'interface nas-b (lacp)</span></a></td><td>M. Goepp</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>ReHucit</td>				   	<td class="unselectable"><span class="prior isLow">i</span></td><td><span class="hide-it">En cours</span><a href="issue.html" class="issue-tab"><span class="issue-subject">URL inaccessible</span></a></td><td>M. Goepp</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td><td>Numéro Unique</td>				<td class="unselectable"><span class="prior isHigh">i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Lenteur excessive lors de l'usage de l'application</span><span class="count">23</span><span class="last-talk">A 18h, heure de pic pour les consultations de bisonfuté, le nombre d'inodes sur les serveurs x-herge-01/02/03/04 a dépassé les 80% !! Je l'ai donc paramétré à 300Mo sur les serveurs x-herge-01/02/03/04.</span></a></td><td>H. Pirrat</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isActive" data-icon="S"></span></td><td>ACAI</td>					    <td class="unselectable"><span class="prior isLow">i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab"><span class="issue-subject">Réinstallation de tout le cluster CERBERE</span><span class="count">3</span><span class="last-talk">Pourrait-on mettre un mot de passe sur les comptes fred et pascal ?</span></a></td><td>M. Goepp</td></tr>
+					</tbody>
+				</table>
+
+				<h3 class="table-title">Autre valeur de regroupement</h3>
+				<table class="table-issues">
+					<colgroup>
+						<col class="select-col">
+						<col class="fav-col">
+						<!-- <col class="priority-col"> -->
+						<col class="project-col">
+						<col class="priority-bis-col">
+						<col class="subject-col">
+						<col class="assigned-col">
+					</colgroup>
+					<!-- <thead>
+						<tr><th></th><th></th><th>Projet</th><th></th><th>Sujet</th><th>Assigné à</th></tr>
+					</thead> -->
+					<tbody>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td>	<!--<td><div class="circle normal"></div><div class="circle medium"></div>​<div class="circle medium"></div></td>	--><td>ACAI</td>					    <td class="unselectable"><span class="prior isMedium" >i</span></td><td><a href="issue.html" class="issue-tab">Réinstallation de tout le cluster CERBERE</a></td><td>A. Boutalbi</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isActive" data-icon="S"></span></td>	<!--<td><div class="circle high"></div><div class="circle high"></div><div class="circle high"></div></td>			--><td>DNS Interministériel</td>	    <td class="unselectable"><span class="prior isLow" >i</span></td><td><a href="issue.html" class="issue-tab"><span class="focus">Nouveau</span> Tests nouvelle plate-forme sur l'url de recette</a></td><td>J-B. Barth</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isActive" data-icon="S"></span></td>	<!--<td><div class="circle normal"></div><div class="circle normal"></div><div class="circle normal"></div></td>	--><td>ACAI</td>					    <td class="unselectable"><span class="prior isLow" >i</span></td><td><a href="issue.html" class="issue-tab"><span class="focus">Nouveau</span> Création du paquet apache22-rp-scn_1.0.0-206 pour wheezy</a></td><td>J-B. Barth</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td>	<!--<td><div class="circle high"></div><div class="circle high"></div><div class="circle high"></div></td>			--><td>Cerbere</td>				  		<td class="unselectable"><span class="prior isMedium" >i</span></td><td><a href="issue.html" class="issue-tab">URL inaccessible</a></td><td>J-M. Verwaerde</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td>	<!--<td><div class="circle high"></div><div class="circle high"></div><div class="circle high"></div></td>			--><td>Cottage</td>				   		<td class="unselectable"><span class="prior isLow" >i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab"><span class="focus">Nouveau</span> Lenteur excessive lors de l'usage de l'application</a></td><td>V. Avez</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td>	<!--<td><div class="circle normal"></div><div class="circle normal"></div><div class="circle normal"></div></td>	--><td>ACAI</td>					   	<td class="unselectable"><span class="prior isLow" >i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab">Réinstallation de tout le cluster CERBERE</a></td><td>T. Soulabail</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td>	<!--<td><div class="circle normal"></div><div class="circle normal"></div><div class="circle normal"></div></td>	--><td>DNS National</td>			   	<td class="unselectable"><span class="prior isMedium" >i</span></td><td><span class="hide-it">En attente</span><a href="issue.html" class="issue-tab">Alerte : tnas-01 : DISK_USAGE =&gt; DISK WARNING - free space: /export/depots-02 23016 MB (4% inode=98%):</a></td><td>M-L. Caron</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td>	<!--<td><div class="circle normal"></div><div class="circle normal"></div><div class="circle normal"></div></td>	--><td>Palome</td>					   	<td class="unselectable"><span class="prior isLow" >i</span></td><td><a href="issue.html" class="issue-tab">NAS n-fas2240-06b : Bagot sur l'interface nas-b (lacp)</a></td><td>M. Goepp</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td>	<!--<td><div class="circle normal"></div><div class="circle normal"></div><div class="circle normal"></div></td>	--><td>ReHucit</td>				   		<td class="unselectable"><span class="prior isLow" >i</span></td><td><span class="hide-it">En cours</span><a href="issue.html" class="issue-tab">URL inaccessible</a></td><td>M. Goepp</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="s"></span></td>	<!--<td><div class="circle normal"></div><div class="circle normal"></div><div class="circle normal"></div></td>	--><td>Numéro Unique</td>			    <td class="unselectable"><span class="prior isHigh" >i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab">Lenteur excessive lors de l'usage de l'application</a></td><td>H. Pirrat</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon isInactive" data-icon="S"></span></td>	<!--<td><div class="circle normal"></div><div class="circle normal"></div><div class="circle normal"></div></td>	--><td>ACAI</td>					    <td class="unselectable"><span class="prior isLow" >i</span></td><td><span class="hide-it">Traité</span><a href="issue.html" class="issue-tab">Réinstallation de tout le cluster CERBERE</a></td><td>M. Goepp</td></tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</section>
+
+	
+	<script type="text/javascript">
+	
+	/* controle l'affichage des actions de la barre de menu */
+	function actionMenu() {
+		// si au moins une sélection
+	   if ($("tr.selected").length > 0) {
+
+			$("div.action-select").addClass("isInBloVisible");
+			
+			// si pas tous sélectionnés
+			if ($("tr.selected").length < $(".table-issues tbody tr").length) /* le .selected compte aussi le check-all*/
+				{
+					$("div.check-all").addClass("partial").removeClass("selected");
+				}
+		}
+		else { 
+
+			$("div.action-select").removeClass("isInBloVisible"); $("div.check-all").removeClass("partial");
+			/*closeAllSubMenus();*/
+		};
+		
+		if ($("tr.hide-it").length > 0) {
+			$("#display-unselected").show(); /* ne pas afficher les éléments qui nécessitent des éléments cachés */
+			}
+			else {
+			$("#display-unselected").hide(); /* ne pas afficher les éléments qui nécessitent des éléments cachés */
+		};
+	 }
+	
+	$( document ).ready(function() {
+		actionMenu();
+	});
+	
+	/* selection d'une ligne d'un tableau */
+	$("div.check").click(function(){
+	  $(this).closest("tr").toggleClass("selected");
+	  actionMenu();
+	});
+	
+	$("div.check-all").click(function(e){
+	  e.stopPropagation();											/* sinon je choppe aussi le click sur l'action */
+	  if ($("div.check-all").hasClass("selected")) { 				/* si le check-all est coché, */
+		$("div.check-all").removeClass("selected");					/* je le reinitialise, */
+		$("div.check").closest("tr").removeClass("selected");		/* je décoche toutes les lignes */
+		closeAllSubMenus();											/* et je ferme tous les menus éventuellement dépliés */
+	  } 
+	  else if ($("div.check-all").hasClass("partial")) {			/* idem */
+		$("div.check-all").removeClass("partial");
+		$("div.check").closest("tr").removeClass("selected");
+		closeAllSubMenus();
+	  }
+	  else 															/* s'il n'est ni .selected ni .partial, c'est qu'il n'est pas coché */
+	  {
+		$("div.check-all").addClass("selected");					/* je le passe donc en selected */
+		$("div.check").closest("tr").addClass("selected");			/* et je selectionne toutes les lignes */
+	  }
+	
+	  actionMenu();
+	  /*closeAllSubMenus();*/
+	});
+	
+	$("#select-all").click(function(){
+		$("div.check-all").removeClass("partial").addClass("selected");
+		$("div.check").closest("tr").addClass("selected");
+		actionMenu();
+	});
+	
+	$("#select-none").click(function(){
+		$("div.check-all").removeClass("selected").removeClass("partial");
+		$("div.check").closest("tr").removeClass("selected");
+		actionMenu();
+	});
+	
+	$("#select-isHigh").click(function(){
+		$("div.check").closest("tr").removeClass("selected");
+		$(".isHigh").closest("tr").addClass("selected");
+		actionMenu();
+	});
+	
+	$("#select-isMedium").click(function(){
+		$("div.check").closest("tr").removeClass("selected");
+		$(".isMedium").closest("tr").addClass("selected");
+		actionMenu();
+	});
+	
+	$("#select-isLow").click(function(){
+		$("div.check").closest("tr").removeClass("selected");
+		$(".isLow").closest("tr").addClass("selected");
+		actionMenu();
+	});
+	
+	$("#select-fav").click(function(){
+		$("div.check").closest("tr").removeClass("selected");
+		$(".fav.isActive").closest("tr").addClass("selected");
+		actionMenu();
+	});
+	
+	$("#select-myIssues").click(function(){
+		$("div.check").closest("tr").removeClass("selected");
+		$(".table-issues tr td:last-child:contains('M. Goepp')").closest("tr").addClass("selected");
+		actionMenu();
+	});	
+	
+	
+	/*$("#hide-unselected").click(function(){
+		$("tr:not(.selected)").addClass("hide-it");
+		actionMenu();
+	});
+	
+	$("#display-unselected").click(function(){
+		$("tr.hide-it").removeClass("hide-it");
+		actionMenu();
+	});	*/
+	
+	
+	/* dropdown menu */
+	
+	$('.dropdown>.action').on('click', openSubMenu);
+	
+	function openSubMenu(event) {
+		console.log("openSubmenu");
+		if ($(this).closest('.dropdown').hasClass("open") == true) {
+			$(this).closest('.dropdown').removeClass('open');	
+			console.log("openSubmenu - close");	
+			return false;
+		}
+		else {
+			closeAllSubMenus();
+			$(this).parent().addClass('open');
+			$(this).children('div').click(function(e) { e.stopPropagation(); })
+			$(".menuitem.selectable-item").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas les menus sur click sur les items qui sont selectable-item*/
+			$(document).one('click', {button: $(this).parent()}, closeAllSubMenus);
+			console.log("openSubmenu - open");
+			return false;
+		}
+	}
+    
+	function closeAllSubMenus(event) {
+		console.log("closeAllSubMenus");
+		$(".dropdown").removeClass('open');
+	}
+	
+	/* toggle bouton favori */
+	$("span.fav").click(function(){
+	  $(this).attr("data-icon", $(this).attr("data-icon") == "s" ? "S" : "s");
+	  $(this).toggleClass("isActive");
+	  $(this).toggleClass("isInactive");
+	});
+
+	/* toggle triple priorité */
+	$("span.prior").click(function () {
+	  if ($(this).hasClass('isLow')) {
+		$(this).removeClass("isLow").addClass('isMedium');   /* click 1: works*/
+	  } else if ( $(this).hasClass('isMedium')) {
+		$(this).removeClass('isMedium'  ).addClass('isHigh'); /* click 2: doesn't*/
+	  } else {
+		$(this).removeClass('isHigh'  ).addClass('isLow'); /* click 2: doesn't*/
+	  }
+	});
+
+	/* ombrage sous le bandeau d'action lors d'un scroll down */
+	$(window).scroll(function() {    
+		var scroll = $(window).scrollTop();
+		if (scroll > 0) {
+			$(".actions-menu").addClass("sticky");
+			}
+		else { $(".actions-menu").removeClass("sticky"); }
+	});
+	
+	$(".actions-menu").width($("#test").width());
+
+    $(window).resize(function() {
+	  $(".actions-menu").width($("#test").width());
+    });
+
+	
+	/* changement de compacité pour la vue : gestion du menu */
+	
+	$("#view-normal").click(function() {
+		$(".table-issues").addClass("normal-table").removeClass("compact-table comfortable-table");
+		if (!$(this).hasClass("selected-item")) {
+			$("div[data-group='view-density']").removeClass("selected-item");
+			$(this).addClass("selected-item");
+		}
+	});
+	
+	$("#view-compact").click(function() {
+		$(".table-issues").addClass("compact-table").removeClass("normal-table comfortable-table");
+		if (!$(this).hasClass("selected-item")) {
+			$("div[data-group='view-density']").removeClass("selected-item");
+			$(this).addClass("selected-item");
+		}
+	});
+	
+	$("#view-comfortable").click(function() {
+		$(".table-issues").addClass("comfortable-table").removeClass("normal-table compact-table");
+		if (!$(this).hasClass("selected-item")) {
+			$("div[data-group='view-density']").removeClass("selected-item");
+			$(this).addClass("selected-item");
+		}
+	});
+	
+  </script>
+	
+</body>
+</html>
