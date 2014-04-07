@@ -56,8 +56,8 @@
 		</div>
 	</header>
 	
-	<section class="bWrapper">
-		<div class="actions-menu unselectable rWrapper">
+	<div class="actions-menu unselectable hWrapper">
+		<div class="rWrapper">
 			<div class="wLeft medFontSize">
 				<div class="action-perm dropdown option-selectable">
 					<div class="action">
@@ -167,6 +167,11 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	
+	
+	<section class="bWrapper">
+		
 		
 		<div class="rWrapper hasActions" id="test">
 			<div class="smallFontSize">
@@ -413,13 +418,6 @@
 			}
 		else { $(".actions-menu").removeClass("sticky"); }
 	});
-	
-	$(".actions-menu").width($("#test").width());
-
-    $(window).resize(function() {
-	  $(".actions-menu").width($("#test").width());
-    });
-
 	
 	/* changement de compacité pour la vue : gestion du menu */
 	
