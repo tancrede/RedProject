@@ -456,6 +456,18 @@ td .prior {
     -webkit-animation-duration: 0.3s;
 }
 
+.count, .last-talk {
+	-moz-animation-name: newIssueQ;
+    -moz-animation-iteration-count: once;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-duration: 0.4s;
+
+    -webkit-animation-name: newIssueQ;
+    -webkit-animation-iteration-count: once;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-duration: 0.4s;
+}
+
 
 @-moz-keyframes dropHeader {
     0% {
@@ -477,6 +489,24 @@ td .prior {
 		margin-left: 0;
     }
 }
+
+@-moz-keyframes newIssueQ {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes newIssueQ {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 a.issue-tab {
 	/*color: #000; *//* #3C3C3C; */
