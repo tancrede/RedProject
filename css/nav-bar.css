@@ -437,7 +437,8 @@ td:last-child { padding-left: 1em; } /* assigned */
     display: none;
 }
 .issue-subject { font-size: 1.083em; position: relative; }
-.count { color: #6ABA45; font-weight: 300; padding: 0 1.1em; }
+.count { color: #6ABA45; font-weight: 300; padding: 0 1em; margin: 0 .5em }
+.count.zero { background-color: rgba(106, 186, 69, 0.2);}
 .last-talk { font-weight: 300; } /*  #777 */
 
 .hide-it { display: none }
