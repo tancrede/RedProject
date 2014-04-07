@@ -436,6 +436,7 @@ td:last-child { padding-left: 1em; } /* assigned */
 	top:1px; micro reglage pourri */
 }
 
+.fav { color: rgb(230, 230, 230); }
 .fav:hover {color: #b2b2b2;}
 .fav[data-icon="S"] {color: rgba(155,155,155,.97);}
 
@@ -989,6 +990,5 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 --------------------------------------------- */
 .isHigh { color: #CC3A21; text-shadow: -1px 2px 1px #BBB;/* #F6C5BE; */ }
 .isMedium { color: #FFCC66; text-shadow: -1px 1px 1px #BBB;/* #FFBE82; */ /* #ED9743; */ /* #F6C5BE; */ }
-.isLow, .isInactive { color: rgb(230, 230, 230); }
-.isActive { color: red /* rgba(155,155,155,.97); */ }
+.isLow { color: rgb(230, 230, 230); }
 .isInBloVisible { display: inline-block; }
