@@ -79,7 +79,7 @@
 							<div class="menuitem-icon"><span class="prior isLow">i</span></div>
 							<div class="menuitem-content"><span>Priorité Basse</span></div>
 						</div>
-						<div class="menuitem" id="select-isNew"><div class="menuitem-content"><span>Nouveautés</span></div></div>
+						<div class="menuitem" id="select-isNew"><div class="menuitem-content"><span>Nouveaux</span></div></div>
 						<div class="menuitem" id="select-fav">
 							<div class="menuitem-icon"><span class="fav icon isActive" data-icon="S"></span></div>
 							<div class="menuitem-content"><span>Mes favoris</span></div>
@@ -136,7 +136,21 @@
 				--><div class="action action-select">Supprimer</div>
 			</div>
 			<div class="wRight medFontSize">
+				
 				<div class="action-perm dropdown option-selectable">
+					<div class="action">Filtre 
+						<span class="arrow-down"></span>
+					</div>
+					<div class="dropdown-menu">
+						<div class="menuitem"><div class="menuitem-content"><span>Filtrer les données</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Enregister la vue</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Appliquer un filtre existant</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Gérer les filtres existants</span></div></div>
+					</div>
+				</div><!--
+				--><div class="action-perm dropdown option-selectable">
 					<div class="action">Affichage 
 						<span class="arrow-down"></span>
 					</div>
@@ -151,18 +165,6 @@
 						<div class="submenu-link separator-horizontal"></div>
 						<div class="menuitem"><div class="menuitem-content"><span>Gérer les données affichées</span></div></div>
 						<div class="menuitem"><div class="menuitem-content"><span>Afficher la sidebare</span></div></div>
-					</div>
-				</div><!--
-				--><div class="action-perm dropdown option-selectable">
-					<div class="action">Filtre 
-						<span class="arrow-down"></span>
-					</div>
-					<div class="dropdown-menu">
-						<div class="menuitem"><div class="menuitem-content"><span>Filtrer les données</span></div></div>
-						<div class="menuitem"><div class="menuitem-content"><span>Enregister la vue</span></div></div>
-						<div class="menuitem"><div class="menuitem-content"><span>Appliquer un filtre existant</span></div></div>
-						<div class="submenu-link separator-horizontal"></div>
-						<div class="menuitem"><div class="menuitem-content"><span>Gérer les filtres existants</span></div></div>
 					</div>
 				</div>
 			</div>
@@ -201,11 +203,11 @@
 						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>Numéro Unique</td>			<td class="unselectable"><span class="prior isHigh">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Lenteur excessive lors de l'usage de l'application</span><span class="count">50+</span><span class="last-talk">C'est quand même nuu data qui charge le plus FC05 (constaté lors du suspend miroir et temps de re-synchro)</span></a></td><td>H. Pirrat</td></tr>
 						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="S"></span></td><td>ACAI</td>					    <td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Réinstallation de tout le cluster CERBERE</span><span class="count zero">New</span></a></td><td>M. Goepp</td></tr>
 						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>Comdalo</td>				   	<td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Tests nouvelle plate-forme sur l'url de recette</span><span class="count zero">New</span></a></td><td>P. Bessonie</td></tr>
-						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>Redmine mutualisé</td>		<td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Les serveurs Géoref sont inacessibles ou les temps d'accès sont excessivement longs</span></a></td><td>M-L. Caron</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>Redmine mutualisé</td>		<td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Les serveurs Géoref sont inacessibles ou les temps d'accès sont excessivement longs</span><span class="count">3</span><span class="last-talk">Merci de mettre à jour et compléter pour chacun de ces 2 projets les informations comprises dans l'onglet "Aperçu" : nombre de serveurs, volumétrie, site web, DICT et astreinte.</span></a></td><td>M-L. Caron</td></tr>
 						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="S"></span></td><td>Sigale</td>					<td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Alerte : VIP_amelie-06 : NSCAMAILPERUSER => ATTENTION: Pas de stats mail par utilisateur depuis plus de 48 heures. Merci de contacter le PNE ou le silo Messagerie</span><span class="count zero">New</span></a></td><td>A. Boutalbi</td></tr>
-						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>Cottage</td>				   	<td class="unselectable"><span class="prior isMedium">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Perte de bandes suite au reset du bus lors du montage des Timeview sur tina-05</span></a></td><td>V. Avez</td></tr>
-						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>ACAI</td>					    <td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Supervision des bascules cluster cyrus</span></a></td><td>J-B. Barth</td></tr>
-						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>Sigale</td>					<td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Tests nouvelle plate-forme sur l'url de recette</span></a></td><td>A. Boutalbi</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>Cottage</td>				   	<td class="unselectable"><span class="prior isMedium">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Perte de bandes suite au reset du bus lors du montage des Timeview sur tina-05</span><span class="count">2</span><span class="last-talk">Merci de reporter dans PGP les pages et articles de Wiki qui sont dans SNE et qui ne concernerait plus SNE.</span></a></td><td>V. Avez</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>ACAI</td>					    <td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Supervision des bascules cluster cyrus</span><span class="count">50+</span><span class="last-talk">Avez vous effectué des actions ce matin sur le server, nous l'avons vu passer en loadaverage... Puis la charge est redescendu?</span></a></td><td>J-B. Barth</td></tr>
+						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>Sigale</td>					<td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Tests nouvelle plate-forme sur l'url de recette</span><span class="count">5</span><span class="last-talk">Check de supervision : peut être une correction du script de check serait possible...</span></a></td><td>A. Boutalbi</td></tr>
 						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>DNS National</td>			   	<td class="unselectable"><span class="prior isMedium">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">Alerte : tnas-01 : DISK_USAGE =&gt; DISK WARNING - free space: /export/depots-02 23016 MB (4% inode=98%):</span><span class="count zero">New</span></a></td><td>M-L. Caron</td></tr>
 						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>Palome</td>					<td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">NAS n-fas2240-06b : Bagot sur l'interface nas-b (lacp)</span><span class="count">50+</span><span class="last-talk">Le paramétrage du contexte lui était bon, ha1-cerberepg étant un CNAME DNS de vm-cerbere-pg-01.ac.cs. Il nous permet d'avoir une configuration similaire entre Paris et bordeaux à ce niveau.</span></a></td><td>M. Goepp</td></tr>
 						<tr><td><div class="check"><div></div></div></td><td><span class="fav icon" data-icon="s"></span></td><td>ReHucit</td>				   	<td class="unselectable"><span class="prior isLow">i</span></td><td>	<a href="issue.html" class="issue-tab"><span class="issue-subject">URL inaccessible</span><span class="count">3</span><span class="last-talk">Ajout de la jndi "OutilsIGC" dans le minequip-pool.conf, car la partie OutilsIGC du svc utilise le minequip-pool, contrairement au reste de l'application qui est configuré dans le contexte.</span></a></td><td>M. Goepp</td></tr>
