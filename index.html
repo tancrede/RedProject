@@ -345,7 +345,7 @@
 	
 	$("#select-fav").click(function(){
 		$("div.check").closest("tr").removeClass("selected");
-		$(".fav.isActive").closest("tr").addClass("selected");
+		$(".fav[data-icon='S']").closest("tr").addClass("selected");
 		actionMenu();
 	});
 	
