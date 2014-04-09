@@ -302,10 +302,14 @@ ul { list-style: none;}
 	padding-left: 1.5em;
 	padding-right: 1.5em; /* 2em */
 	position: relative;
+	display: flex;
 }
 
-.wLeft { float:left; display: block; white-space: nowrap; clear: left;}
-.wRight { float: right; display: block; text-align: right; clear: right; }
+/*.wLeft { float:left; display: block; white-space: nowrap; clear: left;}
+.wRight { float: right; display: block; text-align: right; clear: right; }*/
+
+.wLeft {white-space: nowrap; flex: 1;}
+.wRight {white-space: nowrap; flex: 1; text-align: right;}
 
 .bigFontSize { font-size: 0.938em }
 .mainFontSize { font-size: 0.875em }
