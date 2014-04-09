@@ -21,14 +21,13 @@
 		<div class="rWrapper hSkin">
 			<div class="wLeft">
 				<div class="isInBloVisible dropdown medFontSize">
-					<div class="action unselectable" id="select-projects">Projets 
+					<div class="action unselectable">Projets 
 						<span class="arrow-down"></span>
 					</div>
 					<div class="dropdown-menu">
 						<div class="menuitem"><div class="menuitem-content"><span>Tous les projets</span></div></div>
 						<div class="menuitem"><div class="menuitem-content"><span>Liste des plus fréquentés</span></div></div>
 						<div class="menuitem"><div class="menuitem-content"><span>Liste des derniers visités</span></div></div>
-						<div class="menuitem"><div class="menuitem-content"><span>Liste des préférés</span></div></div>
 						<div class="submenu-link separator-horizontal"></div>
 						<div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div>
 						<div class="submenu-link separator-horizontal"></div>
@@ -368,11 +367,7 @@
 		$("div.check").closest("tr").removeClass("selected");
 		$(".table-issues tr td:last-child:contains('M. Goepp')").closest("tr").addClass("selected");
 		actionMenu();
-	});
-	
-	$("#select-projects").click(function(){
-		$("section").toggleClass("isFaded");
-	});
+	});	
 	
 	
 	/*$("#hide-unselected").click(function(){
