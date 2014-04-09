@@ -313,9 +313,9 @@ ul { list-style: none;}
 .wRight {white-space: nowrap; flex: 1; text-align: right;}
 
 .hFlex1 { height: 3em }
-.f0 { flex: 0 0 auto }
-.f1 { flex: 1 1 auto; text-align: right; margin-right: 0.3em}
-.f2 { flex: 0 2 auto }
+.f0 { -webkit-flex: 0 0 auto; flex: 0 0 auto }
+.f1 { -webkit-flex: 1 1 auto; flex: 1 1 auto; text-align: right; margin-right: 0.3em}
+.f2 { -webkit-flex: 0 2 auto; flex: 0 2 auto }
 
 .bigFontSize { font-size: 0.938em }
 .mainFontSize { font-size: 0.875em }
