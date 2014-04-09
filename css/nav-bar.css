@@ -181,12 +181,6 @@ ul { list-style: none;}
 	border: none;
 }*/
 
-.hSkin {
-	height: 4em;
-	/* border-bottom: 1px solid #EEE; */
-	background: rgb(256,256,256);
-}
-
 /*#main-context {
 	position: absolute;
 	left:0;
@@ -551,9 +545,9 @@ a.issue-tab:hover .issue-subject:after {
 
 .actions-menu { 
 	position: fixed;
-	top: 4em;
+	top: 0;
 	z-index: 1;
-	/*padding-top: 0.5em;*/
+	padding-top: 4em;
 	padding-bottom: 0.5em;
 	border:none;
 	background: #FFF;
