@@ -295,7 +295,7 @@ ul { list-style: none;}
 
 .bWrapper {
 	padding: 0 0 3em 0;
-	margin-top: 4em;
+	margin-top: 3em;
 }
 
 .rWrapper {
@@ -304,8 +304,8 @@ ul { list-style: none;}
 	position: relative;
 }
 
-.wLeft { float:left; display: block; white-space: nowrap; }
-.wRight { float: right; display: block; text-align: right; }
+.wLeft { float:left; display: block; white-space: nowrap; clear: left;}
+.wRight { float: right; display: block; text-align: right; clear: right; }
 
 .bigFontSize { font-size: 0.938em }
 .mainFontSize { font-size: 0.875em }
@@ -544,14 +544,9 @@ a.issue-tab:hover .issue-subject:after {
 --------------------------------------------- */
 
 .actions-menu { 
-	position: fixed;
-	top: 0;
-	z-index: 1;
-	padding-top: 4em;
+	padding-top: 0em;
 	padding-bottom: 0.5em;
-	border:none;
 	background: #FFF;
-	/*border-bottom: 1px solid #EEE;*/
 }
 
 .sticky {
