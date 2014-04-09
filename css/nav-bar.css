@@ -195,7 +195,7 @@ ul { list-style: none;}
 	font-weight:700;
 	font-size: 150%;
 	/*line-height: 1px;*/
-	padding: 0.8em 0.3em 0;
+	padding: 0 0.4em 0;
 	color: #000;
 }
 
@@ -240,8 +240,8 @@ ul { list-style: none;}
 	color: #BBB;
 }
 
-.perm-link.active {color: #333; }
-.perm-link.active::after {
+.perm-link.active { color: #333; font-weight: 400}
+/*.perm-link.active::after {
 	position: absolute;
 	content: '';
 	width: 100%;
@@ -249,7 +249,7 @@ ul { list-style: none;}
 	background: #333;
 	top: -1.25em;
 	left: 0;
-}
+}*/
 
 .short { 
 	color: white;
@@ -303,6 +303,7 @@ ul { list-style: none;}
 	padding-right: 1.5em; /* 2em */
 	position: relative;
 	display: flex;
+	align-items: center;
 }
 
 /*.wLeft { float:left; display: block; white-space: nowrap; clear: left;}
@@ -310,6 +311,11 @@ ul { list-style: none;}
 
 .wLeft {white-space: nowrap; flex: 1;}
 .wRight {white-space: nowrap; flex: 1; text-align: right;}
+
+.hFlex1 { height: 3em }
+.f0 { flex: 0 0 auto }
+.f1 { flex: 1 1 auto; text-align: right; margin-right: 0.3em}
+.f2 { flex: 0 2 auto }
 
 .bigFontSize { font-size: 0.938em }
 .mainFontSize { font-size: 0.875em }
@@ -559,12 +565,11 @@ a.issue-tab:hover .issue-subject:after {
 	box-shadow:         0px 8px 9px -9px rgba(100, 100, 100, 0.7);
 }
 
-.action-perm, .inlist  { display: inline-block; }
+.action-perm, .inlist  { display: inline-block; margin:0}
 .action-select { display : none; }
 
 .action {
 	padding: 0.3em 0.7em;
-	/* font-size: 0.8125em; */
 	cursor: default;
 	border: 1px solid transparent;
 }
@@ -720,7 +725,7 @@ a.issue-tab:hover .issue-subject:after {
   display: block;
 }
 
-.wRight .dropdown-menu {
+.wRight .dropdown-menu, .inlist .dropdown-menu {
 	right: 0;
 	left: auto;
 }
@@ -1018,4 +1023,13 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .blink {
   -webkit-animation: blink 0.6s infinite linear alternate;
   -webkit-font-smoothing: antialiased;
+}
+
+/*
+  SEARCH
+--------------------------------------------- */
+
+.search-wrapper {
+	min-width: 200px;
+	background-color: whitesmoke;
 }
