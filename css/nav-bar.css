@@ -302,7 +302,7 @@ ul { list-style: none;}
 	padding-left: 1.5em;
 	padding-right: 1.5em; /* 2em */
 	position: relative;
-	display: -webkit-flex:;
+	display: -webkit-flex;
 	display: flex;
 	align-items: center;
 }
