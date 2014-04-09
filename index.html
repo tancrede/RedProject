@@ -294,7 +294,17 @@
 	
 	/* selection d'une ligne d'un tableau */
 	$("div.check").click(function(){
-	  $(this).closest("tr").toggleClass("selected");
+		
+	  var row = $(this).closest("tr");
+		
+	  if (row.hasClass("selected"))
+		{
+			row.removeClass("selected");
+			if ( $("tr.isFaded").length > 0) { row.addClass("isFaded"); }
+		}
+		else {
+			row.removeClass("isFaded").addClass("selected");
+		}
 	  actionMenu();
 	});
 	
@@ -302,12 +312,12 @@
 	  e.stopPropagation();											/* sinon je choppe aussi le click sur l'action */
 	  if ($("div.check-all").hasClass("selected")) { 				/* si le check-all est coché, */
 		$("div.check-all").removeClass("selected");					/* je le reinitialise, */
-		$("div.check").closest("tr").removeClass("selected");		/* je décoche toutes les lignes */
+		$("div.check").closest("tr").removeClass("selected isFaded");		/* je décoche toutes les lignes */
 		closeAllSubMenus();											/* et je ferme tous les menus éventuellement dépliés */
 	  } 
 	  else if ($("div.check-all").hasClass("partial")) {			/* idem */
 		$("div.check-all").removeClass("partial");
-		$("div.check").closest("tr").removeClass("selected");
+		$("div.check").closest("tr").removeClass("selected isFaded");
 		closeAllSubMenus();
 	  }
 	  else 															/* s'il n'est ni .selected ni .partial, c'est qu'il n'est pas coché */
@@ -328,43 +338,49 @@
 	
 	$("#select-none").click(function(){
 		$("div.check-all").removeClass("selected").removeClass("partial");
-		$("div.check").closest("tr").removeClass("selected");
+		$("div.check").closest("tr").removeClass("selected isFaded");
 		actionMenu();
 	});
 	
 	$("#select-isHigh").click(function(){
-		$("div.check").closest("tr").removeClass("selected");
+		$("div.check").closest("tr").removeClass("selected isFaded");
 		$(".isHigh").closest("tr").addClass("selected");
+		$("tr:not(.selected)").addClass("isFaded");
 		actionMenu();
 	});
 	
 	$("#select-isMedium").click(function(){
-		$("div.check").closest("tr").removeClass("selected");
+		$("div.check").closest("tr").removeClass("selected isFaded");
 		$(".isMedium").closest("tr").addClass("selected");
+		$("tr:not(.selected)").addClass("isFaded");
 		actionMenu();
 	});
 	
 	$("#select-isLow").click(function(){
-		$("div.check").closest("tr").removeClass("selected");
+		$("div.check").closest("tr").removeClass("selected isFaded");
 		$(".isLow").closest("tr").addClass("selected");
+		$("tr:not(.selected)").addClass("isFaded");
 		actionMenu();
 	});
 	
 	$("#select-isNew").click(function(){
-		$("div.check").closest("tr").removeClass("selected");
+		$("div.check").closest("tr").removeClass("selected isFaded");
 		$(".zero").closest("tr").addClass("selected");
+		$("tr:not(.selected)").addClass("isFaded");
 		actionMenu();
 	});
 	
 	$("#select-fav").click(function(){
-		$("div.check").closest("tr").removeClass("selected");
+		$("div.check").closest("tr").removeClass("selected isFaded");
 		$(".fav[data-icon='S']").closest("tr").addClass("selected");
+		$("tr:not(.selected)").addClass("isFaded");
 		actionMenu();
 	});
 	
 	$("#select-myIssues").click(function(){
-		$("div.check").closest("tr").removeClass("selected");
+		$("div.check").closest("tr").removeClass("selected isFaded");
 		$(".table-issues tr td:last-child:contains('M. Goepp')").closest("tr").addClass("selected");
+		$("tr:not(.selected)").addClass("isFaded");
 		actionMenu();
 	});	
 	
