@@ -12,53 +12,64 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/nav-bar.css">
   <script src="js/jquery-latest.js" type="text/javascript"></script>
-  <script src="js/jquery.hoverintent.minified.js" type="text/javascript"></script> <!-- pour gérer le coté réactif des hover sur la sidebar -->
 </head>
 
 <body>
 	
-	<header class="hWrapper">
-		<!-- <div id="menu"><span id="menu-list">Menu</span></div> -->
-		<div class="rWrapper hSkin">
-			<div class="wLeft">
-				<h1 class="hTitle">Numéro Unique Infocentre</h1>
+	<header class="hWrapper actions-menu unselectable ">
+		<div class="rWrapper hFlex1">
+			<div class="f0 isInBloVisible dropdown option-selectable medFontSize">
+				<div class="isInBloVisible action" title="Recherche">
+					<span class="current-stage">Demandes</span> 
+					<span class="arrow-down"></span>
+				</div>						
+				<div class="dropdown-menu">
+					<div class="menuitem"><div class="menuitem-content"><span>Aperçu</span></div></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Activité</span></div></div>
+					<div class="menuitem selected-item"><div class="menuitem-content"><span>Demandes</span></div></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Wiki</span></div></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Fichiers</span></div></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Roadmap</span></div></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Planning</span></div></div>
+					<div class="submenu-link separator-horizontal"></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Administration</span></div></div>
+				</div>	
 			</div>
-			<div class="wRight">
-				<ul class="inlist mainFontSize">
-					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link" title="Aperçu"><span>Aperçu</span></a></li>
-					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link" title="Activité"><span>Activité</span></a></li>
-					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link active" title="Deamandes"><span>Demandes</span></a></li>
-					<li class="isInBloVisible dropdown option-selectable">
-						<div class="isInBloVisible action" title="Recherche">
-							<span>+Plus</span> 
-							<span class="arrow-down"></span>
-						</div>						
-						<div class="dropdown-menu">
-							<div class="menuitem"><div class="menuitem-content"><span>Aperçu</span></div></div>
-							<div class="menuitem"><div class="menuitem-content"><span>Activité</span></div></div>
-							<div class="menuitem selected-item"><div class="menuitem-content"><span>Demandes</span></div></div>
-							<div class="menuitem"><div class="menuitem-content"><span>Wiki</span></div></div>
-							<div class="menuitem"><div class="menuitem-content"><span>Fichiers</span></div></div>
-							<div class="menuitem"><div class="menuitem-content"><span>Roadmap</span></div></div>
-							<div class="menuitem"><div class="menuitem-content"><span>Planning</span></div></div>
-							<div class="submenu-link separator-horizontal"></div>
-							<div class="menuitem"><div class="menuitem-content"><span>Administration</span></div></div>
-						</div>	
-					</li>
-				</ul>
-				<ul class="inlist perm-link-menu">
-					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="t" title="Administration"><span>Admin</span></a></li>
-					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="U" title="Actions utilisateur"><span>User</span></a></li>
-					<!-- <li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="q" title="Aide"><span>Help</span></a></li> -->
-					<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="?" title="Recherche"><span>Search</span></a></li>
-				</ul>
+			<h1 class="f1 isInBloVisible hTitle">Numéro Unique Infocentre</h1>
+			<div class="f2 search-wrapper medFontSize">
+				<form class="search-form">
+					<fieldset class="f11 search-fieldset">
+						<div class="sfield-1"><input type="text" class="search-input"></div>
+						<div class="sfield-2"><span class="arrow-down"></span></div>
+					</fieldset>
+					<button class="f0 search-button icon" data-icon="?"></button>
+				</form>
 			</div>
+			<div class="f0 dropdown medFontSize wRight">
+				<div class="action unselectable">Projets 
+					<span class="arrow-down"></span>
+				</div>
+				<div class="dropdown-menu">
+					<div class="menuitem"><div class="menuitem-content"><span>Tous les projets</span></div></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Liste des plus fréquentés</span></div></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Liste des derniers visités</span></div></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Liste des préférés</span></div></div>
+					<div class="submenu-link separator-horizontal"></div>
+					<div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div>
+					<div class="submenu-link separator-horizontal"></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Liste de tous les projets</span></div></div>
+				</div>
+			</div>
+			<ul class="f0 inlist perm-link-menu">
+				<!-- <li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="t" title="Administration"><span>Admin</span></a></li> -->
+				<li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="U" title="Actions utilisateur"><span>User</span></a></li>
+				<!-- <li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="q" title="Aide"><span>Help</span></a></li> -->
+				<!-- <li class="isInBloVisible"><a href="" class="isInBloVisible perm-link short icon" data-icon="?" title="Recherche"><span>Search</span></a></li> -->
+			</ul>
 		</div>
-	</header>
-	
-	<section class="bWrapper">
-		<div class="actions-menu unselectable rWrapper">
-			<div class="wLeft medFontSize">
+		
+		<div class="rWrapper">
+			<div class="f0 medFontSize">
 				<div class="action-perm main-action">+ Nouvelle Demande</div><!--
 				--><div class="action action-perm">Raffraichir</div><!--
 				--><div class="action action-perm">Copier</div><!--
@@ -94,8 +105,22 @@
 				</div><!--
 				--><div class="action action-perm">Supprimer</div>
 			</div>
-			<div class="wRight medFontSize">
+			
+			<div class="f1 wRight medFontSize">
 				<div class="action-perm dropdown option-selectable">
+					<div class="action">Filtre 
+						<span class="arrow-down"></span>
+					</div>
+					<div class="dropdown-menu">
+						<div class="menuitem"><div class="menuitem-content"><span>Filtrer les données</span></div></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Enregister la vue</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Appliquer un filtre existant</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem"><div class="menuitem-content"><span>Gérer les filtres existants</span></div></div>
+					</div>
+				</div><!--
+				--><div class="action-perm dropdown option-selectable">
 					<div class="action">Affichage 
 						<span class="arrow-down"></span>
 					</div>
@@ -111,22 +136,12 @@
 						<div class="menuitem"><div class="menuitem-content"><span>Gérer les données affichées</span></div></div>
 						<div class="menuitem"><div class="menuitem-content"><span>Afficher la sidebare</span></div></div>
 					</div>
-				</div><!--
-				--><div class="action-perm dropdown option-selectable">
-					<div class="action">Filtre 
-						<span class="arrow-down"></span>
-					</div>
-					<div class="dropdown-menu">
-						<div class="menuitem"><div class="menuitem-content"><span>Filtrer les données</span></div></div>
-						<div class="menuitem"><div class="menuitem-content"><span>Enregister la vue</span></div></div>
-						<div class="menuitem"><div class="menuitem-content"><span>Appliquer un filtre existant</span></div></div>
-						<div class="submenu-link separator-horizontal"></div>
-						<div class="menuitem"><div class="menuitem-content"><span>Gérer les filtres existants</span></div></div>
-					</div>
 				</div>
 			</div>
 		</div>
-		
+	</header>
+	
+	<section class="bWrapper">
 		<div class="rWrapper hasActions" id="test">
 			<div class="sideWrapper">
 				<p>Changement</p>
@@ -188,9 +203,7 @@
 	function actionMenu() {
 		// si au moins une sélection
 	   if ($("tr.selected").length > 0) {
-
 			$("div.action-select").addClass("isInBloVisible");
-			
 			// si pas tous sélectionnés
 			if ($("tr.selected").length < $(".table-issues tbody tr").length) /* le .selected compte aussi le check-all*/
 				{
@@ -198,7 +211,6 @@
 				}
 		}
 		else { 
-
 			$("div.action-select").removeClass("isInBloVisible"); $("div.check-all").removeClass("partial");
 			/*closeAllSubMenus();*/
 		};
@@ -273,9 +285,15 @@
 		actionMenu();
 	});
 	
+	$("#select-isNew").click(function(){
+		$("div.check").closest("tr").removeClass("selected");
+		$(".zero").closest("tr").addClass("selected");
+		actionMenu();
+	});
+	
 	$("#select-fav").click(function(){
 		$("div.check").closest("tr").removeClass("selected");
-		$(".fav.isActive").closest("tr").addClass("selected");
+		$(".fav[data-icon='S']").closest("tr").addClass("selected");
 		actionMenu();
 	});
 	
@@ -327,8 +345,6 @@
 	/* toggle bouton favori */
 	$("span.fav").click(function(){
 	  $(this).attr("data-icon", $(this).attr("data-icon") == "s" ? "S" : "s");
-	  $(this).toggleClass("isActive");
-	  $(this).toggleClass("isInactive");
 	});
 
 	/* toggle triple priorité */
@@ -342,23 +358,14 @@
 	  }
 	});
 
-	/* ombrage sous le bandeau d'action lors d'un scroll down  
+	/* ombrage sous le bandeau d'action lors d'un scroll down */
 	$(window).scroll(function() {    
 		var scroll = $(window).scrollTop();
 		if (scroll > 0) {
 			$(".actions-menu").addClass("sticky");
 			}
 		else { $(".actions-menu").removeClass("sticky"); }
-	});*/
-	
-	
-	/* redimensionnement de la barre d'action  */
-	$(".actions-menu").width($("#test").width());
-
-    $(window).resize(function() {
-	  $(".actions-menu").width($("#test").width());
-    });
-
+	});
 	
 	/* changement de compacité pour la vue : gestion du menu */
 	
@@ -384,6 +391,14 @@
 			$("div[data-group='view-density']").removeClass("selected-item");
 			$(this).addClass("selected-item");
 		}
+	});
+	
+	$('input').on('focus', function () {
+    $(this).parent().parent().addClass('isFocused');
+	});
+	
+	$('input').on('focusout', function () {
+    $(this).parent().parent().removeClass('isFocused');
 	});
 	
   </script>
