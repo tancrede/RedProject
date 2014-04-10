@@ -34,12 +34,12 @@
 				</div>
 			</div>
 			<h1 class="f1 isInBloVisible hTitle">Numéro Unique Infocentre</h1>
-			<div class="f2 search-wrapper">
+			<div class="f2 search-wrapper medFontSize">
 				<form class="search-form">
-					<fieldset class="f11">
+					<fieldset class="f11 search-fieldset">
 						<input type="text" class="search-input">
 					</fieldset>
-					<button class="f0">recherche</button>
+					<button class="f0 search-button icon" data-icon="?"></button>
 				</form>
 			</div>
 			<div class="f0 isInBloVisible dropdown option-selectable medFontSize inlist">
@@ -454,6 +454,14 @@
 			$("div[data-group='view-density']").removeClass("selected-item");
 			$(this).addClass("selected-item");
 		}
+	});
+	
+	$('input').on('focus', function () {
+    $(this).parent().parent().addClass('isFocused');
+	});
+	
+	$('input').on('focusout', function () {
+    $(this).parent().parent().removeClass('isFocused');
 	});
 	
   </script>
