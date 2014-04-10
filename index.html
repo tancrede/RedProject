@@ -40,7 +40,7 @@
 				<form class="search-form">
 					<fieldset class="f11 wRight search-fieldset dropdown">
 						<div class="sfield-1"><input type="text" class="search-input"></div>
-						<div class="sfield-2"><span class="arrow-down"></span></div>
+						<div class="sfield-2 action-option"><span class="arrow-down"></span></div>
 						<div class="dropdown-menu filter-fieldset">
 							<div class="menuitem"><div class="menuitem-content"><span>Liste des options de recherche</span></div></div>
 							<div class="submenu-link separator-horizontal"></div>
@@ -387,7 +387,7 @@
 	
 	/* dropdown menu */
 	
-	$('.dropdown>.action').on('click', openSubMenu);
+	$('.dropdown>.action, .dropdown>.action-option').on('click', openSubMenu);
 	
 	function openSubMenu(event) {
 		console.log("openSubmenu");
@@ -411,6 +411,10 @@
 		console.log("closeAllSubMenus");
 		$(".dropdown").removeClass('open');
 	}
+	
+	//$(".sfield-2").click(function() {
+	//	$(".search-fieldset").toggleClass("open");
+	//});
 	
 	/* toggle bouton favori */
 	$("span.fav").click(function(){
@@ -469,10 +473,6 @@
 	
 	$('input').on('focusout', function () {
 		$(this).parent().parent().removeClass('isFocused');
-	});
-	
-	$(".sfield-2").click(function() {
-		$(".search-fieldset").toggleClass("open");
 	});
 	
   </script>
