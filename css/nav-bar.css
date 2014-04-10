@@ -303,6 +303,7 @@ ul { list-style: none;}
 	padding-right: 1.5em; /* 2em */
 	position: relative;
 	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	align-items: center;
 }
@@ -310,13 +311,13 @@ ul { list-style: none;}
 /*.wLeft { float:left; display: block; white-space: nowrap; clear: left;}
 .wRight { float: right; display: block; text-align: right; clear: right; }*/
 
-.wLeft {white-space: nowrap; -webkit-flex: 1; flex: 1;}
-.wRight {white-space: nowrap; -webkit-flex: 1; flex: 1; text-align: right;}
+.wLeft {white-space: nowrap; -webkit-flex: 1; -ms-flex: 1; flex: 1;}
+.wRight {white-space: nowrap; -webkit-flex: 1; -ms-flex: 1; flex: 1; text-align: right;}
 
 .hFlex1 { height: 3em }
-.f0 { -webkit-flex: 0 0 auto; flex: 0 0 auto }
-.f1 { -webkit-flex: 1 0 auto; flex: 1 0 auto; margin-right: 0.3em}
-.f2 { -webkit-flex: 0 2 auto; flex: 0 2 auto }
+.f0 { -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto }
+.f1 { -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto; margin-right: 0.3em}
+.f2 { -webkit-flex: 0 2 auto; -ms-flex: 0 2 auto; flex: 0 2 auto }
 
 .bigFontSize { font-size: 0.938em }
 .mainFontSize { font-size: 0.875em }
