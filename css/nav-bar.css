@@ -315,7 +315,7 @@ ul { list-style: none;}
 
 .hFlex1 { height: 3em }
 .f0 { -webkit-flex: 0 0 auto; flex: 0 0 auto }
-.f1 { -webkit-flex: 1 1 auto; flex: 1 1 auto; text-align: right; margin-right: 0.3em}
+.f1 { -webkit-flex: 1 0 auto; flex: 1 0 auto; margin-right: 0.3em}
 .f2 { -webkit-flex: 0 2 auto; flex: 0 2 auto }
 
 .bigFontSize { font-size: 0.938em }
@@ -1031,6 +1031,8 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 --------------------------------------------- */
 
 .search-wrapper {
-	min-width: 200px;
+	width: 25em;
+	min-width: 10em;
 	background-color: whitesmoke;
+	margin-right: 0.3em;
 }
