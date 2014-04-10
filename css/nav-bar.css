@@ -1021,7 +1021,7 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .isInBloVisible { display: inline-block; }
 .isFocused { border-color: #4285f4!important; }
 
-.current-stage {color: #CC3A21; font-weight: 600; }
+.current-stage { /*color: #CC3A21;*/ font-weight: 600; }
 
 @-webkit-keyframes blink {
   0%    { opacity: 0; }
