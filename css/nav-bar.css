@@ -1022,12 +1022,22 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .isFocused { border-color: #4285f4!important; }
 
 @-webkit-keyframes blink {
-  0%     { opacity: 0 } 50% { opacity: 0 }
-  50.01% { opacity: 1 } 100% { opacity: 1 }
+  0%    { opacity: 0; }
+  50%	 { opacity: 0; }
+  50.01% { opacity: 1; }
+  100% { opacity: 1; }
 }
- 
+
+@keyframes blink {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	50.01% { opacity: 1; }
+	100% { opacity: 1; }
+}
+
 .blink {
   -webkit-animation: blink 0.6s infinite linear alternate;
+  animation: blink 0.6s infinite linear alternate;
   -webkit-font-smoothing: antialiased;
 }
 
