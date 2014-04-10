@@ -354,6 +354,8 @@ table {
 tr { 
   border-top: 1px dotted rgb(220,220,220);
   cursor: pointer;
+	-webkit-transition: opacity 0.15s; /* For Safari 3.1 to 6.0 */
+	transition: opacity 0.15s;
 }
 
 tr:last-child  { border-bottom: 1px dotted transparent; }
@@ -1015,6 +1017,7 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .isMedium { color: #FFCC66; text-shadow: -1px 1px 1px #BBB;/* #FFBE82; */ /* #ED9743; */ /* #F6C5BE; */ }
 .isLow { color: rgb(230, 230, 230); }
 .isInBloVisible { display: inline-block; }
+.isFaded { opacity: 0.3 }
 
 @-webkit-keyframes blink {
   0%     { opacity: 0 } 50% { opacity: 0 }
