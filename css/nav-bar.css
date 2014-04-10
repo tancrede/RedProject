@@ -1045,6 +1045,9 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .search-form { display: -webkit-flex; display: flex; width: 100%; height: 2.1em}
 .search-fieldset { padding: 0;  border: 1px solid #CCC; border-right-width:0; position: relative;}
 
+.search-fieldset:hover { border-color: #999; }
+.search-fieldset:hover .arrow-down { border-top-color: #999; }
+
 .sfield-1 {position: absolute; left:0; right: 1.5em; height: 100%; padding: 0 0 0 0.3em }
 .sfield-2 {position: absolute; right:0; height: 100%; padding: 0 0.5em 0 0.5em}
 
