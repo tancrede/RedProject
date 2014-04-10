@@ -1042,8 +1042,12 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 	margin-right: 0.4em;
 }
 
-.search-form { display: -webkit-flex; display: flex; width: 100%; }
-.search-fieldset { padding: 0 0.3em;  border: 1px solid #CCC; border-right-width:0;}
+.search-form { display: -webkit-flex; display: flex; width: 100%; height: 2.1em}
+.search-fieldset { padding: 0;  border: 1px solid #CCC; border-right-width:0; position: relative;}
+
+.sfield-1 {position: absolute; left:0; right: 1.5em; height: 100%; padding: 0 0 0 0.3em }
+.sfield-2 {position: absolute; right:0; height: 100%; padding: 0 0.5em 0 0.5em}
+
 .search-input { width:100%; padding: 0; margin: 0; border: none; font-size: 1em; }
 .search-input:focus { outline: none }
 .search-button {
