@@ -291,11 +291,12 @@ ul { list-style: none;}
 	vertical-align: baseline;
 	z-index: 15;
 	/* border: none; */
+	border-bottom: 1px solid whitesmoke;
 }
 
 .bWrapper {
 	padding: 0 0 3em 0;
-	margin-top: 3em;
+	margin-top: 6em;
 }
 
 .rWrapper {
@@ -329,7 +330,7 @@ ul { list-style: none;}
   HIGH DENSITY TABLE
 --------------------------------------------- */
 
-.hasActions { padding-top: 4em; }
+/* .hasActions { padding-top: 4em; } */
 .highDensityContent { font-size: 0.750em; }
 
 table {
