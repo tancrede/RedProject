@@ -1062,7 +1062,7 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .search-fieldset:hover { border-color: #999; }
 .search-fieldset:hover .arrow-down { border-top-color: #999; }
 
-.sfield-1 {position: absolute; left:0; right: 1.5em; height: 100%; padding: 0 0 0 0.3em; background-color: inherit; }
+.sfield-1 {position: absolute; left:0; right: 1.5em; height: 100%; padding: 0 0 0 0.4em; background-color: inherit; }
 .sfield-2 {position: absolute; right:0; height: 100%; padding: 0 0.5em 0 0.5em;  background-color: inherit;}
 
 .search-input { width:100%; padding: 0; margin: 0; border: none; font-size: 1em;  background-color: inherit; }
