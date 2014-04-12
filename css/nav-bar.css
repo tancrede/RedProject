@@ -1064,7 +1064,9 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .search-wrapper {
 	width: 100%;
 	margin: 0 0.4em;
+	display: -webkit-flex;
 	display: flex;
+	-webkit-justify-content: flex-end;
 	justify-content: flex-end;
 	min-width: 15em;
 }
