@@ -190,13 +190,8 @@ ul { list-style: none;}
 	color: #000;
 }*/
 
-.hTitle {
-	font-family: 'Open Sans Condensed', 'Open Sans';
-	font-weight:700;
-	font-size: 150%;
-	/*line-height: 1px;*/
-	padding: 0 0.4em 0;
-	color: #000;
+.action.hTitle {
+	padding: 0.5em 0.7em;
 }
 
 .current-project {
@@ -325,7 +320,7 @@ ul { list-style: none;}
 /*.wLeft {white-space: nowrap; -webkit-flex: 1; -ms-flex: 1; flex: 1;}*/
 .wRight {white-space: nowrap; text-align: right;}
 
-.hFlex1 { height: 3em; margin-bottom: -0.3em; }
+.hFlex1 { height: 3.5em; margin-bottom: -0.6em; }
 
 .f0 { -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
 .f1 { -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto;}
