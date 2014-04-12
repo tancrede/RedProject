@@ -306,6 +306,7 @@ ul { list-style: none;}
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-align-items: center;
 	align-items: center;
 }
 
