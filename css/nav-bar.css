@@ -598,6 +598,8 @@ a.issue-tab:hover .issue-subject:after {
 
 .main-action:hover { background-color: rgba(93,144,83,.05); }
 
+.main-action:active { box-shadow: inset 0px 0px 20px 0px rgba(100,100,100,0.1); }
+
 /*
   DROPDOWN
 --------------------------------------------- */
