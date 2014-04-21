@@ -1119,6 +1119,9 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#3c7ae4,endColorstr=#3f76d3,GradientType=1);
 }
 
+:focus::-webkit-input-placeholder { color: #EEE; }
+:focus:-moz-placeholder { color: #EEE; }​
+
 .isFocused .search-fieldset, .isFocused .search-button { border-color: #4285f4; }
 
 .filter-fieldset {
