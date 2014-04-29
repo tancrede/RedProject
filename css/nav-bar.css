@@ -1126,6 +1126,8 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 
 .isFocused .search-fieldset, .isFocused .search-button { border-color: #4285f4; }
 
+.isFocused  .action-option .arrow-down { border-top-color: rgba(0,0,0,0.5); }
+
 .filter-fieldset {
 	min-width: 100%;
 }
