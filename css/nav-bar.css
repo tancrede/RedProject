@@ -670,6 +670,8 @@ fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: tran
 	white-space: nowrap;
 	/*width: 17em;*/
 	min-width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
