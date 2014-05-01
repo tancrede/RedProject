@@ -1141,6 +1141,17 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 	padding-bottom: 10px;
 }
 
+.vFader {position: relative}
+/*.vFader::before {
+	position: absolute;
+	content:"";
+	left:0;
+	right:10px;
+	height: 28px;
+	background-image: -webkit-linear-gradient(white, rgba(255, 255, 255, 0.1));
+	z-index: 100;
+}*/
+
 /* Scrollbar ----------------------------- */
 
 ::-webkit-scrollbar{
@@ -1161,3 +1172,5 @@ height:10px;
 	width:50px;
 	background-color:#999;
 }
+
+.title {z-index: 10} /* bug d'affichage : si on déplie l'explorateur de projet, le survol d'une action en dessous sur-affiche les bords de l'action */
