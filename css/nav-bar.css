@@ -1135,6 +1135,10 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .vSlider {
 	max-height: 25em;
 	overflow-y:auto;
+	margin-top: -10px;
+	padding-top: 10px;
+	margin-bottom: -10px;
+	padding-bottom: 10px;
 }
 
 /* Scrollbar ----------------------------- */
