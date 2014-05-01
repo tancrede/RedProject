@@ -1131,3 +1131,29 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .filter-fieldset {
 	min-width: 100%;
 }
+
+.vSlider {
+	max-height: 25em;
+	overflow-y:auto;
+}
+
+/* Scrollbar ----------------------------- */
+
+::-webkit-scrollbar{
+width:9px;
+height:10px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color:#EEE;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	height:50px;
+	background-color:#999;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+	width:50px;
+	background-color:#999;
+}
