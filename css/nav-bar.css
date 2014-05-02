@@ -1147,7 +1147,8 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 /* project browser list */
 
 .vSlider {
-	max-height: 25em;
+	max-height: calc(100vh - 28em);
+	min-height: 5em;
 	overflow-y:auto;
 	margin-top: -10px;
 	padding-top: 10px;
