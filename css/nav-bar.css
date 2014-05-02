@@ -38,6 +38,8 @@ i, em, blockquote {
 }
 
 html, body {
+  overflow: hidden !important;
+  height: 100%;
   min-height: 100%;
 }
 
@@ -67,6 +69,8 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
+
+section { overflow-y: auto; height: calc(100vh - 8.3em); }
 
 /*
   SELECTIONS
@@ -287,7 +291,7 @@ ul { list-style: none;}
 --------------------------------------------- */
 
 .hWrapper {
-	position: fixed;
+	position: relative;
 	width: 100%;
 	top: 0;
 	margin: 0;
@@ -296,11 +300,12 @@ ul { list-style: none;}
 	z-index: 15;
 	/* border: none; */
 	border-bottom: 1px solid whitesmoke;
+	height: 5.3em;
 }
 
 .bWrapper {
 	padding: 0 0 3em 0;
-	margin-top: 6em;
+	/* margin-top: 6em; */
 }
 
 .rWrapper {
@@ -320,7 +325,8 @@ ul { list-style: none;}
 /*.wLeft {white-space: nowrap; -webkit-flex: 1; -ms-flex: 1; flex: 1;}*/
 .wRight {white-space: nowrap; text-align: right;}
 
-.hFlex1 { height: 3.5em; margin-bottom: -0.6em; }
+.hFlex1 { height: 3.5em; margin-bottom: -0.6em }
+.hFlex2 {  }
 
 .f0 { -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
 .f1 { -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto;}
@@ -565,7 +571,7 @@ a.issue-tab:hover .issue-subject:after {
 
 .actions-menu { 
 	padding-top: 0em;
-	padding-bottom: 0.3em;
+	/*padding-bottom: 0.3em;*/
 	background: #FFF;
 }
 
@@ -573,6 +579,12 @@ a.issue-tab:hover .issue-subject:after {
 	-webkit-box-shadow: 0px 8px 9px -9px rgba(100, 100, 100, 0.7);
 	-moz-box-shadow:    0px 8px 9px -9px rgba(100, 100, 100, 0.7);
 	box-shadow:         0px 8px 9px -9px rgba(100, 100, 100, 0.7);
+}
+
+.top-sticky {
+   -moz-box-shadow:    inset 0 7px 9px -7px rgba(100, 100, 100, 0.6);
+   -webkit-box-shadow: inset 0 7px 9px -7px rgba(100, 100, 100, 0.6);
+   box-shadow:         inset 0 7px 9px -7px rgba(100, 100, 100, 0.6);
 }
 
 .action-perm, .inlist  { display: inline-block; margin:0}
@@ -1176,3 +1188,7 @@ height:10px;
 }
 
 .title {z-index: 10} /* bug d'affichage : si on déplie l'explorateur de projet, le survol d'une action en dessous sur-affiche les bords de l'action */
+
+.genFlow {min-height:100%;}
+
+.wHeader {position: absolute; top:0; right:0; left: 0;}
