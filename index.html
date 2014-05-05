@@ -91,15 +91,17 @@
 							<div class="menuitem-icon"><span class="prior isLow">i</span></div>
 							<div class="menuitem-content"><span>Priorité Basse</span></div>
 						</div>
-						<div class="menuitem" id="select-isNew"><div class="menuitem-content"><span>Nouveaux</span></div></div>
+						<div class="submenu-link separator-horizontal"></div>
+						<div class="menuitem" id="select-isIncident"><div class="menuitem-content"><span>incidents</span></div></div>
+						<div class="menuitem" id="select-isNew"><div class="menuitem-content"><span>Demandes nouvelles</span></div></div>
+						<!--<div class="menuitem"><div class="menuitem-content"><span>Demandes non assignées</span></div></div> -->
+						<!-- <div class="menuitem"><div class="menuitem-content"><span>Demandes urgentes</span></div></div> -->
+						<div class="submenu-link separator-horizontal"></div>
 						<div class="menuitem" id="select-fav">
 							<div class="menuitem-icon"><span class="fav icon isActive" data-icon="S"></span></div>
 							<div class="menuitem-content"><span>Mes favoris</span></div>
 						</div>
 						<div class="menuitem" id="select-myIssues"><div class="menuitem-content"><span>Mes demandes</span></div></div>
-						<div class="submenu-link separator-horizontal"></div>
-						<div class="menuitem"><div class="menuitem-content"><span>Demandes non assignées</span></div></div>
-						<div class="menuitem"><div class="menuitem-content"><span>Demandes urgentes</span></div></div>
 					</div>
 				</div><!--
 				--><div class="action-perm main-action">+ Nouvelle Demande</div><!--
@@ -359,6 +361,13 @@
 	$("#select-isLow").click(function(){
 		$("div.check").closest("tr").removeClass("selected isFaded");
 		$(".isLow").closest("tr").addClass("selected");
+		$("tr:not(.selected)").addClass("isFaded");
+		actionMenu();
+	});
+
+	$("#select-isIncident").click(function(){
+		$("div.check").closest("tr").removeClass("selected isFaded");
+		$("td:nth-child(3):contains('Incident')").closest("tr").addClass("selected");
 		$("tr:not(.selected)").addClass("isFaded");
 		actionMenu();
 	});
