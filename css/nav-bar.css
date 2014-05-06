@@ -226,7 +226,7 @@ ul { list-style: none;}
 	color: #999;
 }*/
 
-.wLeft > ul, .wRight > ul { margin-bottom: 0; margin-top: 1em; }
+
 .perm-link-menu { margin-left: 2em;}
  
 /*.item-link,*/
@@ -291,22 +291,26 @@ ul { list-style: none;}
 	position: fixed;
 	width: 100%;
 	top: 0;
+	left:0;
+	right:0;
 	margin: 0;
-	padding: 0;
+	padding: 0 1.5em;
 	vertical-align: baseline;
 	z-index: 15;
 	/* border: none; */
 	border-bottom: 1px solid whitesmoke;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .bWrapper {
-	padding: 0 0 3em 0;
+	padding: 0 1.5em 3em;
 	margin-top: 6em;
 }
 
 .rWrapper {
-	padding-left: 1.5em;
-	padding-right: 1.5em; /* 2em */
+	padding: 0;
 	position: relative;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -315,13 +319,9 @@ ul { list-style: none;}
 	align-items: center;
 }
 
-/*.wLeft { float:left; display: block; white-space: nowrap; clear: left;}
-.wRight { float: right; display: block; text-align: right; clear: right; }*/
 
-/*.wLeft {white-space: nowrap; -webkit-flex: 1; -ms-flex: 1; flex: 1;}*/
-.wRight {white-space: nowrap; text-align: right;}
 
-.hFlex1 { height: 3.5em; margin-bottom: -0.6em; }
+.sTopTitle { height: 3.5em; margin-bottom: -0.6em; }
 
 .f0 { -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
 .f1 { -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto;}
@@ -735,13 +735,9 @@ fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: tran
 .menuitem:hover { background: rgb(250,250,250); /* #EEE */}
 .formarea { padding:0 1.5em 0; margin: 0; line-height: 2.5em; cursor: normal; position: relative; min-width: 10em}
 
-.wLeft .menuitem { padding:0 8em 0 1.5em; }
-.wRight .menuitem { padding:0 1.5em 0 4em; }
+
 
 .option-selectable > .dropdown-menu > .menuitem { padding-left: 2.8em } /* ajoute la gouttière pour mettre la checkbox */
-
-.wLeft .option-selectable > .dropdown-menu > .menuitem { padding-left: 2.8em }
-/* .wRight .option-selectable > .dropdown-menu > .menuitem { padding-right: 2.8em } */
 
 .selected-item, .selected-item:hover  { background: transparent url('../img/checkmark.png') no-repeat 0.5em center; cursor: default; }
 
@@ -787,7 +783,10 @@ fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: tran
   display: block;
 }
 
-.wRight .dropdown-menu, .inlist .dropdown-menu {
+.rightContent { white-space: nowrap; text-align: right; }
+/*.rightContent > ul { margin-bottom: 0; margin-top: 1em; }*/
+.rightContent .menuitem { padding:0 1.5em 0 4em; }
+.rightContent .dropdown-menu, .inlist .dropdown-menu {
 	right: 0;
 	left: auto;
 }
