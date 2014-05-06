@@ -794,6 +794,8 @@ fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: tran
 	left: auto;
 }
 
+.inlist { position: relative; }
+
 .action-select-value {
 	background-image: url('../img/checkmark.png');
 	background-repeat: no-repeat;
@@ -1183,6 +1185,8 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 	border: 1px solid rgba(0,0,0,0.1);
 	line-height: 1.5em;
 	margin: 0 0.2em;
+	padding: 0.3em 0.7em;
+	cursor: default;
 }
 
 .search-list:hover {

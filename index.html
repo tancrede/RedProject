@@ -84,23 +84,39 @@
 						<div class="dropdown-menu filter-fieldset">
 							<div class="formarea">
 								<div class="rWrapper">
-									<div class="f1"><span class="unselectable">Rechercher</span> <div class="action inlist search-list">Demandes <span class="arrow-up-and-down"></span></div></div>
-									<div class="f1 rightContent"><span>dans</span> <div class="action inlist search-list">Tous les projets <span class="arrow-up-and-down"></span></div></div>
+									<div class="f1">
+										<span class="unselectable">Rechercher</span>
+										<div class="inlist option-selectable">
+											<div class="search-list">Demandes <span class="arrow-up-and-down"></span></div>
+											<div class="dropdown-menu">
+												<div class="menuitem data-test"><div class="menuitem-content"><span>Aperçu</span></div></div>
+												<div class="menuitem data-test"><div class="menuitem-content"><span>Activité</span></div></div>
+												<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Demandes</span></div></div>
+												<div class="menuitem data-test"><div class="menuitem-content"><span>Wiki</span></div></div>
+												<div class="menuitem data-test"><div class="menuitem-content"><span>Fichiers</span></div></div>
+												<div class="menuitem data-test"><div class="menuitem-content"><span>Roadmap</span></div></div>
+												<div class="menuitem data-test"><div class="menuitem-content"><span>Planning</span></div></div>
+												<div class="submenu-link separator-horizontal"></div>
+												<div class="menuitem data-test"><div class="menuitem-content"><span>Administration</span></div></div>
+											</div>
+										</div>
+									</div>
+									<div class="f1 rightContent"><span>dans</span> <div class="inlist search-list">Tous les projets <span class="arrow-up-and-down"></span></div></div>
 								</div>
 							</div>
 							<div class="submenu-link separator-horizontal"></div>
 							<div class="formarea">
 								<div class="rWrapper searchOption">
-									<div class="f1"><span class="inlist searchLabel unselectable">Status</span> <div class="action inlist search-list">Égal <span class="arrow-up-and-down"></span></div></div>
-									<div class="f1 rightContent"><div class="action inlist search-list">Ouvert <span class="arrow-up-and-down"></span></div></div>
+									<div class="f1"><span class="inlist searchLabel unselectable">Status</span> <div class="inlist search-list">Égal <span class="arrow-up-and-down"></span></div></div>
+									<div class="f1 rightContent"><div class="inlist search-list">Ouvert <span class="arrow-up-and-down"></span></div></div>
 								</div>
 								<div class="rWrapper searchOption">
-									<div class="f1"><span class="inlist searchLabel unselectable">Priorité</span> <div class="action inlist search-list">Différent <span class="arrow-up-and-down"></span></div></div>
-									<div class="f1 rightContent"><div class="action inlist search-list">Non prioritaire <span class="arrow-up-and-down"></span></div></div>
+									<div class="f1"><span class="inlist searchLabel unselectable">Priorité</span> <div class="inlist search-list">Différent <span class="arrow-up-and-down"></span></div></div>
+									<div class="f1 rightContent"><div class="inlist search-list">Non prioritaire <span class="arrow-up-and-down"></span></div></div>
 								</div>
 								<div class="rWrapper searchOption">
-									<div class="f1"><span class="inlist searchLabel unselectable">Tracker</span> <div class="action inlist search-list">Égal <span class="arrow-up-and-down"></span></div></div>
-									<div class="f1 rightContent"><div class="action inlist search-list">Changement <span class="arrow-up-and-down"></span></div></div>
+									<div class="f1"><span class="inlist searchLabel unselectable">Tracker</span> <div class="inlist search-list">Égal <span class="arrow-up-and-down"></span></div></div>
+									<div class="f1 rightContent"><div class="inlist search-list">Changement <span class="arrow-up-and-down"></span></div></div>
 								</div>
 							</div>
 							<div class="submenu-link separator-horizontal"></div>
@@ -335,7 +351,6 @@
 		}
 		else { 
 			$("div.action-select").removeClass("isInBloVisible"); $("div.check-all").removeClass("partial");
-			/*closeAllSubMenus();*/
 		};
 		
 		if ($("tr.hide-it").length > 0) {
@@ -373,9 +388,7 @@
 		$("div.check-all").addClass("selected");					/* je le passe donc en selected */
 		$("div.check").closest("tr").addClass("selected");			/* et je selectionne toutes les lignes */
 	  }
-	
 	  actionMenu();
-	  /*closeAllSubMenus();*/
 	});
 	
 	$("#select-all").click(function(){
@@ -432,18 +445,6 @@
 		actionMenu();
 	});	
 	
-	
-	/*$("#hide-unselected").click(function(){
-		$("tr:not(.selected)").addClass("hide-it");
-		actionMenu();
-	});
-	
-	$("#display-unselected").click(function(){
-		$("tr.hide-it").removeClass("hide-it");
-		actionMenu();
-	});	*/
-	
-	
 	/* dropdown menu */
 	
 	$('.dropdown>.action, .dropdown>.action-option').on('click', openSubMenu);
@@ -460,7 +461,7 @@
 			$(this).parent().addClass('open');
 			$(this).children('div').click(function(e) { e.stopPropagation(); })
 			$(".menuitem.selectable-item, .formarea").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas les menus sur click sur les items qui sont selectable-item ou les formarea*/
-			$(document).one('click', {button: $(this).parent()}, closeAllSubMenus);
+			$(document).one('click', {button: $(this).parent()}, function() { closeAllSubMenus(); });
 			console.log("openSubmenu - open");
 			return false;
 		}
@@ -468,8 +469,40 @@
     
 	function closeAllSubMenus(event) {
 		console.log("closeAllSubMenus");
+		closeAllOptionLists();
 		$(".dropdown").removeClass('open');
 	}
+	
+	
+	/* dropdown options */
+	
+	$('.search-list').on('click', openOptionList);
+	
+	function openOptionList(event) {
+		console.log("openOptionList");
+		if ($(this).parent().hasClass("open") == true) {
+			$(this).parent().removeClass('open');	
+			console.log("openOptionList - close");	
+			return false;
+		}
+		else {
+			closeAllOptionLists();
+			$(this).parent().addClass('open');
+			$(this).children('div').click(function(e) { e.stopPropagation(); })
+			/* $(".menuitem.selectable-item, .formarea").click(function(e) { e.stopPropagation(); })  je ne ferme pas les menus sur click sur les items qui sont selectable-item ou les formarea*/
+			/*$(document).one('click', {button: $(this).parent()}, closeAllOptionLists);*/
+			console.log("openOptionList - open");
+			return false;
+		}
+	}
+    
+	function closeAllOptionLists(event) {
+		console.log("closeAllOptionLists");
+		$(".search-list").parent().removeClass('open');
+	}
+	
+	$('.data-test').on('click', closeAllOptionLists);
+	
 	
 	//$(".sfield-2").click(function() {
 	//	$(".search-fieldset").toggleClass("open");
@@ -526,6 +559,7 @@
 		}
 	});
 	
+	/* outline sur le champe de recherche */
 	$('input').on('focus', function () {
 		$(this).parent().parent().addClass('isFocused');
 	});
