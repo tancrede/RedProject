@@ -835,9 +835,9 @@ fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: tran
 	background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
 }
 
-.select-list:focus, .select-list:active, .open > .select-list {
+.select-list:focus, .open > .select-list {
 	border: 1px solid #4d90fe;
-	outline: none;
+	outline: 1px solid #4d90fe; /* pas forcément nécessaire. juste en attendant de régler le problème d'alignement à droite */
 }
 
 /*
