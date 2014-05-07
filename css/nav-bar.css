@@ -667,6 +667,56 @@ a.issue-tab:hover .issue-subject:after {
   position: relative;
 }
 
+.listWrapper {
+	display: none;
+	position: relative;
+}
+
+.open > .listWrapper  /* , .open > .action > .drop-down-menu-shield */ {
+  display: block;
+}
+
+.listWrapperSkin {
+	list-style: none;
+	background: white;
+	border: 1px solid #CCC;
+	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+	-moz-box-shadow: -1px 1px 1px rgba(0,0,0,.2);
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	float: left;
+	/*width: 17em;*/
+	min-width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin:0;
+	padding: 10px 0;
+	white-space: nowrap;
+}
+
+.dropdown-list {
+	position: absolute;
+	top: 100%;
+	left: 0.2em;
+	z-index: 1000;
+	min-width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin:0;
+	padding: 10px 0;
+	white-space: nowrap;
+	-webkit-transform: translateY(-3.3em);
+	transform: translateY(-3.3em);
+}
+
 /* ::after et :: before pour masquer le chevauchement des bords du sous menu avec celui de l'élément de menu */
 
 .dropdown.open::after {
@@ -693,54 +743,11 @@ a.issue-tab:hover .issue-subject:after {
 
 fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: transparent }
 
-.dropdown-menu {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	z-index: 1000;
-	display: none;
-	float: left;
-	list-style: none;
-	background: white;
-	border: 1px solid #CCC;
-	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,.2);
-	-moz-box-shadow: -1px 1px 1px rgba(0,0,0,.2);
-	box-shadow: 0 2px 4px rgba(0,0,0,.2);
-	margin:0;
-	padding: 10px 0;
-	white-space: nowrap;
-	/*width: 17em;*/
-	min-width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/*.drop-down-menu-shield {
-	position: absolute;
-	bottom: -1px;
-	border: 1px solid transparent;
-	background: white;
-	width: 100%;
-	display: none;
-	z-index: 20000;
-}
-
-.shield-left {
-	left:1px; width:50%;
-}
-
-.shield-right {
-	right:1px; width:50%;
-}*/
-
 .menuitem { padding:0 5em 0 1.5em; margin: 0; line-height: 2.5em; cursor: pointer; position: relative; min-width: 10em}
 .menuitem:hover { background: rgb(250,250,250); /* #EEE */}
 .formarea { padding:0 1.5em 0; margin: 0; cursor: normal; position: relative; min-width: 10em}
 
-
-
-.option-selectable > .dropdown-menu > .menuitem { padding-left: 2.8em } /* ajoute la gouttière pour mettre la checkbox */
+.option-selectable > .dropdown-menu > .menuitem, .option-selectable > .dropdown-list > .menuitem { padding-left: 2.8em } /* ajoute la gouttière pour mettre la checkbox */
 
 .selected-item, .selected-item:hover  { background: transparent url('../img/checkmark.png') no-repeat 0.5em center; cursor: default; }
 
@@ -782,10 +789,6 @@ fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: tran
 	border-top-color: #333;
 }
 
-.open > .dropdown-menu /* , .open > .action > .drop-down-menu-shield */ {
-  display: block;
-}
-
 .rightContent { white-space: nowrap; text-align: right; }
 /*.rightContent > ul { margin-bottom: 0; margin-top: 1em; }*/
 .rightContent .menuitem { padding:0 1.5em 0 4em; }
@@ -800,6 +803,31 @@ fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: tran
 	background-image: url('../img/checkmark.png');
 	background-repeat: no-repeat;
 	background-position: 0.5em center;
+}
+
+.select-list {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: #f5f5f5;
+	background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+	background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
+	color: #444;
+	border: 1px solid #dcdcdc;
+	border: 1px solid rgba(0,0,0,0.1);
+	line-height: 1.5em;
+	margin: 0 0.2em;
+	padding: 0.3em 0.7em;
+	cursor: default;
+}
+
+.select-list:hover {
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	border: 1px solid #c6c6c6;
+	color: #333;
+	background-color: #f8f8f8;
+	background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+	background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
 }
 
 /*
@@ -1172,31 +1200,6 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .search-button-inline {
 	line-height: inherit;
 	border-radius: 2px;
-}
-
-.search-list {
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	background-color: #f5f5f5;
-	background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
-	background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
-	color: #444;
-	border: 1px solid #dcdcdc;
-	border: 1px solid rgba(0,0,0,0.1);
-	line-height: 1.5em;
-	margin: 0 0.2em;
-	padding: 0.3em 0.7em;
-	cursor: default;
-}
-
-.search-list:hover {
-	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-	border: 1px solid #c6c6c6;
-	color: #333;
-	background-color: #f8f8f8;
-	background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
-	background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
 }
 
 .searchOption { line-height: 2.8em}
