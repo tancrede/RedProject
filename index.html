@@ -97,7 +97,7 @@
 												<div class="menuitem data-test"><div class="menuitem-content"><span>Roadmap</span></div></div>
 												<div class="menuitem data-test"><div class="menuitem-content"><span>Planning</span></div></div>
 												<div class="submenu-link separator-horizontal"></div>
-												<div class="menuitem"><div class="menuitem-content"><span>Tous les objets</span></div></div>
+												<div class="menuitem data-test"><div class="menuitem-content"><span>Tous les objets</span></div></div>
 											</div>
 										</div>
 									</div>
@@ -567,6 +567,11 @@
 	}
 	
 	$('.data-test, .formarea').on('click', closeAllOptionLists);
+	
+	$('.data-test.menuitem').on('click', function() {
+		$(this).parent().siblings('div.select-list')[0].firstChild.data = $(this).children('.menuitem-content').children('span').text() + " ";
+		console.log($(this).children('.menuitem-content').children('span').text());
+	} );
 	
 	
 	//$(".sfield-2").click(function() {
