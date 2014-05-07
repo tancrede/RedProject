@@ -343,8 +343,8 @@ ul { list-style: none;}
 	color: inherit;
 }
 
-.form-label { min-width: 5em; width: 5em;}
-.form-condition { min-width: 10em; width: 10em; text-align: left; }
+.form-label { width: 5em;}
+.form-condition { width: 9em; text-align: left; }
 .form-value { text-align: left; }
 
 /*
@@ -627,7 +627,6 @@ a.issue-tab:hover .issue-subject:after {
 	border-style: solid dashed dashed;
 	border-color: transparent;
 	border-top-color: silver;
-	display: -moz-inline-box;
 	display: inline-block;
 	font-size: 0;
 	height: 0;
@@ -639,13 +638,13 @@ a.issue-tab:hover .issue-subject:after {
 	left: 1px;
 }
 
-.arrow-up-and-down {
+.arrow-up-and-down::before {
+	content:" ";
 	position: relative;
-	top: 5px;
+	top: 1px;
 	border-style: solid dashed dashed;
 	border-color: transparent;
 	border-top-color: silver;
-	display: -moz-inline-box;
 	display: inline-block;
 	font-size: 0;
 	height: 0;
@@ -654,13 +653,13 @@ a.issue-tab:hover .issue-subject:after {
 	border-width: 3px 3px 0;
 	padding-top: 1px;
 	padding-left: 1em;
-	left: 1px;
+	left: 3px;
 }
 
 .arrow-up-and-down::after {
 	content:" ";
 	position: relative;
-	top: -10px;
+	top: -5px;
 	border-style: dashed dashed solid;
 	border-color: transparent;
 	border-bottom-color: silver;
