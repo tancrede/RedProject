@@ -566,13 +566,13 @@
 		$(".select-list").parent().removeClass('open');
 	}
 	
-	$('.data-test, .formarea').on('click', closeAllOptionLists);
-	
 	$('.data-test.menuitem').on('click', function() {
+		$(this).closest(".listWrapper").find(".data-test").removeClass("selected-item");
+		$(this).addClass("selected-item");
 		$(this).parent().siblings('div.select-list')[0].firstChild.data = $(this).children('.menuitem-content').children('span').text() + " ";
-		console.log($(this).children('.menuitem-content').children('span').text());
 	} );
 	
+	$('.data-test, .formarea').on('click', closeAllOptionLists);
 	
 	//$(".sfield-2").click(function() {
 	//	$(".search-fieldset").toggleClass("open");
