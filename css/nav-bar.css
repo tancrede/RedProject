@@ -823,7 +823,7 @@ fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: tran
 	margin: 0 0.2em;
 	padding: 0.3em 0.7em;
 	cursor: default;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .select-list:hover {
