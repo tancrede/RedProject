@@ -653,7 +653,7 @@ a.issue-tab:hover .issue-subject:after {
 	border-width: 3px 3px 0;
 	padding-top: 1px;
 	padding-left: 1em;
-	left: 3px;
+	left: 6px;
 }
 
 .arrow-up-and-down::after {
@@ -672,7 +672,7 @@ a.issue-tab:hover .issue-subject:after {
 	border-width: 0 3px 3px;
 	padding-bottom: 1px;
 	padding-left: 1em;
-	left: -3px;
+	left: 0px;
 }
 
 .dropdown {
