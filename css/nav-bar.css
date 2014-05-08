@@ -1248,6 +1248,7 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .action-option:active  { background-color: rgba(0,0,0,0.05); }
 
 .filter-fieldset {
+	width: 100%;
 	min-width: 34em /*100%*/;
 }
 
