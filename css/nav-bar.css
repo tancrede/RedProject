@@ -684,7 +684,7 @@ a.issue-tab:hover .issue-subject:after {
 	position: relative;
 }
 
-.search-fieldset .listWrapper { right: 0; left: auto;}
+.search-fieldset .filter-fieldset { right: 0; left: auto;}
 
 .open > .listWrapper  /* , .open > .action > .drop-down-menu-shield */ {
   display: block;
