@@ -621,7 +621,8 @@ a.issue-tab:hover .issue-subject:after {
   DROPDOWN
 --------------------------------------------- */
 
-.arrow-down {
+.arrow-down::after {
+	content:" ";
 	position: relative;
 	top: -1px;
 	border-style: solid dashed dashed;
