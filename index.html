@@ -194,6 +194,48 @@
 											</div>
 										</td>
 									</tr>
+									<tr class="selected">
+										<td><div class="check"><div></div></div></td>
+										<td><span class="inlist searchLabel unselectable">Auteur</span></td>
+										<td>
+											<div class="inlist option-selectable">
+												<div class="select-list">Égal <span class="arrow-up-and-down"></span>
+											</div>
+											<div class="listWrapper listWrapperSkin dropdown-list">
+												<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Égal</span></div></div>
+												<div class="menuitem data-test"><div class="menuitem-content"><span>Différent</span></div></div>
+											</div>
+											</div>
+										</td>
+										<td>
+											<div class="inlist option-selectable">
+												<div class="inlist select-list">Choisir un nom <span class="arrow-up-and-down"></span></div>
+												<div class="listWrapper listWrapperSkin dropdown-list">
+													<div class="vFader">
+														<div class="vSlider">
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
+															<div class="menuitem data-test selectable-item"><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
+														</div>
+													</div>
+													<div class="submenu-link separator-horizontal"></div>
+													<div class="menuitem"><div class="menuitem-content"><span>Appliquer</span></div></div>
+												</div>
+											</div>
+										</td>
+									</tr>
 								</table>
 							</div>
 							<div class="submenu-link separator-horizontal"></div>
@@ -544,7 +586,7 @@
 			closeAllSubMenus();
 			$(this).parent().addClass('open');
 			$(this).children('div').click(function(e) { e.stopPropagation(); })
-			$(".menuitem.selectable-item, .formarea").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas les menus sur click sur les items qui sont selectable-item ou les formarea*/
+			$(".selectable-item, .formarea").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas les menus sur click sur les items qui sont selectable-item ou les formarea*/
 			$(document).one('click', {button: $(this).parent()}, function() { closeAllSubMenus(); });
 			console.log("openSubmenu - open");
 			return false;
@@ -573,22 +615,28 @@
 			closeAllOptionLists();
 			$(this).parent().addClass('open');
 			$(this).children('div').click(function(e) { e.stopPropagation(); })
-			/* $(".menuitem.selectable-item, .formarea").click(function(e) { e.stopPropagation(); })  je ne ferme pas les menus sur click sur les items qui sont selectable-item ou les formarea*/
-			/*$(document).one('click', {button: $(this).parent()}, closeAllOptionLists);*/
+			$(".selectable-item, .formarea").click(function(e) { e.stopPropagation(); })  /*je ne ferme pas les menus sur click sur les items qui sont selectable-item ou les formarea*/
 			console.log("openOptionList - open");
 			return false;
 		}
 	}
     
 	function closeAllOptionLists(event) {
-		console.log("closeAllOptionLists");
-		$(".select-list").parent().removeClass('open');
+		
+			console.log("closeAllOptionLists");
+			$(".select-list").parent().removeClass('open');
+
 	}
 	
 	$('.data-test.menuitem').on('click', function() {
 		$(this).closest(".listWrapper").find(".data-test").removeClass("selected-item");
 		$(this).addClass("selected-item");
-		$(this).parent().siblings('div.select-list')[0].firstChild.data = $(this).children('.menuitem-content').children('span').text() + " ";
+		
+		var cible = $(this).parent();
+		
+		if (cible.attr("class") == "vSlider") { cible = cible.parent().parent(); }
+		
+		cible.siblings('div.select-list')[0].firstChild.data = $(this).children('.menuitem-content').children('span').text() + " ";
 	} );
 	
 	$('.data-test, .formarea').on('click', closeAllOptionLists);

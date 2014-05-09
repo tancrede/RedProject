@@ -764,7 +764,9 @@ fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: tran
 .menuitem:hover { background: rgb(250,250,250); /* #EEE */}
 .formarea { padding:0 1.5em 0; margin: 0; cursor: normal; position: relative; min-width: 10em}
 
-.option-selectable > .dropdown-menu > .menuitem, .option-selectable > .dropdown-list > .menuitem { padding-left: 2.8em } /* ajoute la gouttière pour mettre la checkbox */
+.option-selectable > .dropdown-menu > .menuitem,
+.option-selectable > .dropdown-list > .menuitem,
+.option-selectable > .dropdown-list > .vFader > .vSlider > .menuitem { padding-left: 2.8em } /* ajoute la gouttière pour mettre la checkbox */
 
 .selected-item, .selected-item:hover  { background: transparent url('../img/checkmark.png') no-repeat 0.5em center; cursor: default; }
 
@@ -1257,6 +1259,7 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .vSlider {
 	max-height: 25em;
 	overflow-y:auto;
+	overflow-x:hidden;
 	margin-top: -10px;
 	padding-top: 10px;
 	margin-bottom: -10px;
