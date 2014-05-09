@@ -734,6 +734,8 @@ a.issue-tab:hover .issue-subject:after {
 	transform: translateY(-3.3em);
 }
 
+.dropdown-list.multiselect { top: -1.5em }
+
 /* ::after et :: before pour masquer le chevauchement des bords du sous menu avec celui de l'élément de menu */
 
 .dropdown.open::after {
