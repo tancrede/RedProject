@@ -760,7 +760,7 @@ a.issue-tab:hover .issue-subject:after {
 	z-index:1000000;
 }
 
-fieldset.dropdown.open::after, fieldset.dropdown.open::before { background: transparent }
+fieldset .dropdown.open::after, fieldset .dropdown.open::before { background: transparent }
 
 .menuitem { padding:0 5em 0 1.5em; margin: 0; line-height: 2.5em; cursor: pointer; position: relative; min-width: 10em}
 .menuitem:hover { background: rgb(250,250,250); /* #EEE */}
@@ -1190,10 +1190,9 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 .search-fieldset { padding: 0;  border: 1px solid #CCC; border-right-width:0; position: relative; background-color: white;}
 
 .search-fieldset:hover { border-color: #999; }
-.search-fieldset:hover .arrow-down { border-top-color: #999; }
 
-.sfield-1 {position: absolute; left:0; right: 1.5em; height: 100%; padding: 0 0 0 0.4em; background-color: inherit; }
-.sfield-2 {position: absolute; right:0; height: 100%; padding: 0 0.5em 0 0.5em;  background-color: inherit;}
+.sfield-1 {position: absolute; left:0; right: 1.5em; height: 100%; padding: 0 0 0 0.4em; background-color: inherit; z-index: 10;}
+.sfield-2 {position: absolute; right:0; left:0; text-align: right; height: 100%; padding: 0;  background-color: inherit;}
 
 .search-input { width:100%; padding: 0; margin: 0; border: none; font-size: 1em;  background-color: inherit; }
 .search-input:focus { outline: none }
@@ -1243,17 +1242,19 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 :focus:-moz-placeholder { color: #EEE; }​
 
 .isFocused .search-fieldset, .isFocused .search-button { border-color: #4285f4; }
-
 .isFocused  .action-option .arrow-down { border-top-color: rgba(0,0,0,0.6); }
 
-.action-option:hover .arrow-down { border-top-color: rgba(0,0,0,1); }
+.arrow-wrapper {  display: inline-block; padding : 0 0.5em; height: 100%}
+.arrow-wrapper:hover {background-color: rgb(250,250,250); }
+.arrow-wrapper:active  { background-color: rgba(0,0,0,0.05); }
 
-.action-option:hover {background-color: rgb(250,250,250); }
-.action-option:active  { background-color: rgba(0,0,0,0.05); }
+.search-fieldset:hover .arrow-down:after { border-top-color: #999; }
+.arrow-wrapper:hover .arrow-down::after { border-top-color: rgba(0,0,0,1); }
 
 .filter-fieldset {
 	width: 100%;
 	min-width: 34em /*100%*/;
+	text-align: left;
 }
 
 /* project browser list */
