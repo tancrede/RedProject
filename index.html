@@ -20,7 +20,7 @@
 		<div class="rWrapper sTopTitle">
 		
 			<div class="f0 has-dropdown medFontSize">
-				<div class="action hTitle">
+				<div class="dropdown-trigger menu-trigger action hTitle">
 					<span class="current-project">Numéro Unique Infocentre</span>
 					<span class="arrow-down"></span>
 				</div>
@@ -60,11 +60,11 @@
 			</div>
 		
 			<div class="f0 has-dropdown medFontSize">
-				<div class="action" title="Recherche">
+				<div class="dropdown-trigger menu-trigger action" title="Recherche">
 					<span class="current-stage">Demandes</span> 
 					<span class="arrow-down"></span>
 				</div>						
-				<div class="listWrapper listWrapperSkin dropdown-menu selectable">
+				<div class="listWrapper listWrapperSkin dropdown-menu has-selectable-items">
 					<div class="menuitem"><div class="menuitem-content"><span>Aperçu</span></div></div>
 					<div class="menuitem"><div class="menuitem-content"><span>Activité</span></div></div>
 					<div class="menuitem selected-item"><div class="menuitem-content"><span>Demandes</span></div></div>
@@ -81,13 +81,13 @@
 					<fieldset class="f11 search-fieldset">
 						<div class="sfield-1"><input type="text" class="search-input" placeholder="Rechercher, Filtrer…"></div>
 						<div class="sfield-2 has-dropdown">
-							<div class="arrow-wrapper"><span class="arrow-down"></span></div>
-							<div class="listWrapper listWrapperSkin dropdown-menu filter-fieldset">
+							<div class="dropdown-trigger  menu-trigger arrow-wrapper"><span class="arrow-down"></span></div>
+							<div class="listWrapper listWrapperSkin filter-fieldset">
 								<div class="formarea">
 									<div class="rWrapper">
-											<div class="inlist">
-												<div class="select-list">Demandes <span class="arrow-up-and-down"></span></div>
-												<div class="listWrapper listWrapperSkin dropdown-list selectable">
+											<div class="has-dropdown inlist">
+												<div class="dropdown-trigger list-trigger select-list">Demandes <span class="arrow-up-and-down"></span></div>
+												<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
 													<div class="menuitem data-test"><div class="menuitem-content"><span>Aperçu</span></div></div>
 													<div class="menuitem data-test"><div class="menuitem-content"><span>Activité</span></div></div>
 													<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Demandes</span></div></div>
@@ -100,9 +100,9 @@
 												</div>
 											</div>
 											<span class="unselectable">&nbsp;dans&nbsp;</span> 
-											<div class="inlist">
-												<div class="inlist select-list">Numéro Unique Infocentre <span class="arrow-up-and-down"></span></div>
-												<div class="listWrapper listWrapperSkin dropdown-list selectable">
+											<div class="has-dropdown inlist">
+												<div class="dropdown-trigger list-trigger inlist select-list">Numéro Unique Infocentre <span class="arrow-up-and-down"></span></div>
+												<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
 													<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Numéro Unique Infocentre</span></div></div>
 													<div class="menuitem data-test"><div class="menuitem-content"><span>Tous les projets</span></div></div>
 												</div>
@@ -122,20 +122,19 @@
 											<td><div class="check"><div></div></div></td>
 											<td><span class="inlist searchLabel unselectable">Status</span></td>
 											<td>
-												<div class="inlist">
-													<div class="select-list">Égal <span class="arrow-up-and-down"></span>
-												</div>
-												<div class="listWrapper listWrapperSkin dropdown-list selectable">
-													<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Égal</span></div></div>
-													<div class="menuitem data-test"><div class="menuitem-content"><span>Différent</span></div></div>
-													<div class="menuitem data-test"><div class="menuitem-content"><span>Tous</span></div></div>
-												</div>
+												<div class="has-dropdown inlist">
+													<div class="dropdown-trigger list-trigger inlist select-list">Différent <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
+														<div class="menuitem data-test"><div class="menuitem-content"><span>Égal</span></div></div>
+														<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Différent</span></div></div>
+														<div class="menuitem data-test"><div class="menuitem-content"><span>Tous</span></div></div>
+													</div>
 												</div>
 											</td>
 											<td>
-												<div class="inlist">
-													<div class="inlist select-list">Nouveau <span class="arrow-up-and-down"></span></div>
-													<div class="listWrapper listWrapperSkin dropdown-list selectable">
+												<div class="has-dropdown inlist">
+													<div class="dropdown-trigger list-trigger inlist select-list">Nouveau <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Ouvert</span></div></div>
 														<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Nouveau</span></div></div>
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Fermé</span></div></div>
@@ -149,19 +148,18 @@
 											<td><div class="check"><div></div></div></td>
 											<td><span class="inlist searchLabel unselectable">Priorité</span></td>
 											<td>
-												<div class="inlist">
-													<div class="select-list">Différent <span class="arrow-up-and-down"></span>
-												</div>
-												<div class="listWrapper listWrapperSkin dropdown-list selectable">
-													<div class="menuitem data-test"><div class="menuitem-content"><span>Égal</span></div></div>
-													<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Différent</span></div></div>
-												</div>
+												<div class="has-dropdown inlist">
+													<div class="dropdown-trigger list-trigger inlist select-list">Différent <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
+														<div class="menuitem data-test"><div class="menuitem-content"><span>Égal</span></div></div>
+														<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Différent</span></div></div>
+													</div>
 												</div>
 											</td>
 											<td>
-												<div class="inlist">
-													<div class="inlist select-list">Non prioritaire <span class="arrow-up-and-down"></span></div>
-													<div class="listWrapper listWrapperSkin dropdown-list selectable">
+												<div class="has-dropdown inlist">
+													<div class="dropdown-trigger list-trigger inlist select-list">Non prioritaire <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Haute</span></div></div>
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Moyenne</span></div></div>
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Basse</span></div></div>
@@ -174,19 +172,18 @@
 											<td><div class="check"><div></div></div></td>
 											<td><span class="inlist searchLabel unselectable">Tracker</span></td>
 											<td>
-												<div class="inlist">
-													<div class="select-list">Égal <span class="arrow-up-and-down"></span>
-												</div>
-												<div class="listWrapper listWrapperSkin dropdown-list selectable">
-													<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Égal</span></div></div>
-													<div class="menuitem data-test"><div class="menuitem-content"><span>Différent</span></div></div>
-												</div>
+												<div class="has-dropdown inlist">
+													<div class="dropdown-trigger list-trigger inlist select-list">Égal <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
+														<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Égal</span></div></div>
+														<div class="menuitem data-test"><div class="menuitem-content"><span>Différent</span></div></div>
+													</div>
 												</div>
 											</td>
 											<td>
-												<div class="inlist">
-													<div class="inlist select-list">Changement <span class="arrow-up-and-down"></span></div>
-													<div class="listWrapper listWrapperSkin dropdown-list selectable">
+												<div class="has-dropdown inlist">
+													<div class="dropdown-trigger list-trigger inlist select-list">Changement <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Incident</span></div></div>
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Problème</span></div></div>
 														<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Changement</span></div></div>
@@ -199,23 +196,22 @@
 											<td><div class="check"><div></div></div></td>
 											<td><span class="inlist searchLabel unselectable">Auteur</span></td>
 											<td>
-												<div class="inlist">
-													<div class="select-list">Égal <span class="arrow-up-and-down"></span>
-												</div>
-												<div class="listWrapper listWrapperSkin dropdown-list selectable">
-													<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Égal</span></div></div>
-													<div class="menuitem data-test"><div class="menuitem-content"><span>Différent</span></div></div>
-												</div>
+												<div class="has-dropdown inlist">
+													<div class="dropdown-trigger list-trigger inlist select-list">Égal <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
+														<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Égal</span></div></div>
+														<div class="menuitem data-test"><div class="menuitem-content"><span>Différent</span></div></div>
+													</div>
 												</div>
 											</td>
 											<td>
-												<div class="inlist">
-													<div class="inlist select-list">Choisir un nom <span class="arrow-up-and-down"></span></div>
-													<div class="listWrapper listWrapperSkin dropdown-list multiselect selectable">
-													<div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div>
-													<div class="submenu-link separator-horizontal"></div>
+												<div class="has-dropdown inlist">
+													<div class="dropdown-trigger list-trigger inlist select-list">Choisir un nom <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list multiselect has-selectable-items">
+														<div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div>
+														<div class="submenu-link separator-horizontal"></div>
 														<div class="vFader">
-															<div class="vSlider selectable">
+															<div class="vSlider has-selectable-items">
 																<div class="menuitem data-test unclickable"><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
 																<div class="menuitem data-test unclickable"><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
 																<div class="menuitem data-test unclickable"><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
@@ -245,7 +241,7 @@
 								<div class="formarea">
 									<div class="rWrapper">
 										<div class="f1"><a href="" class="action-link">Sauvegarder</a></div>
-										<div class="f1 rightContent"><button class="search-button-inline icon" data-icon="?"></button></div>
+										<div class="f1 align-right"><button class="search-button-inline icon" data-icon="?"></button></div>
 									</div>
 								</div>
 							</div>
@@ -267,11 +263,11 @@
 		<div class="rWrapper">
 			<div class="f0 medFontSize">
 				<div class="action-perm has-dropdown">
-					<div class="action">
+					<div class="dropdown-trigger menu-trigger action">
 						<div class="check-all"><div></div></div> 
 						<span class="arrow-down"></span>
 					</div>
-					<div class="listWrapper listWrapperSkin dropdown-menu selectable">
+					<div class="listWrapper listWrapperSkin dropdown-menu has-selectable-items">
 						<div class="menuitem" id="select-all"><div class="menuitem-content"><span>Tout</span></div></div>
 						<div class="menuitem" id="select-none"><div class="menuitem-content"><span>Rien</span></div></div>
 						<div class="submenu-link separator-horizontal"></div>
@@ -303,7 +299,7 @@
 				--><div class="action-perm main-action">+ Nouvelle Demande</div><!--
 				--><div class="action action-perm">Raffraichir</div><!--
 				--><div class="action-perm has-dropdown">
-					<div class="action">Exporter 
+					<div class="dropdown-trigger menu-trigger action">Exporter 
 						<span class="arrow-down"></span>
 					</div>
 					<div class="listWrapper listWrapperSkin dropdown-menu">
@@ -314,7 +310,7 @@
 				</div><!--
 				--><div class="action action-perm">Graphs</div><!--
 				--><div class="action-select has-dropdown">
-					<div class="action">Générer 
+					<div class="dropdown-trigger menu-trigger action">Générer 
 						<span class="arrow-down"></span>
 					</div>
 					<div class="listWrapper listWrapperSkin dropdown-menu">
@@ -327,10 +323,10 @@
 					</div>
 				</div><!--
 				--><div class="action-select has-dropdown">
-					<div class="action">Modifier 
+					<div class="dropdown-trigger menu-trigger action">Modifier 
 						<span class="arrow-down"></span>
 					</div>
-					<div class="listWrapper listWrapperSkin dropdown-menu selectable">
+					<div class="listWrapper listWrapperSkin dropdown-menu has-selectable-items">
 						<div class="menuitem"><div class="menuitem-content"><span>Statut</span></div></div>
 						<div class="menuitem"><div class="menuitem-content"><span>Tracker</span></div></div>
 						<div class="menuitem"><div class="menuitem-content"><span>Priorité</span></div></div>
@@ -346,12 +342,12 @@
 				--><div class="action action-select">Supprimer</div>
 			</div>
 			
-			<div class="f1 rightContent medFontSize">
-				<div class="action-perm has-dropdown">
-					<div class="action">Filtres 
+			<div class="f1 align-right medFontSize">
+				<div class="action-perm has-dropdown rightContent">
+					<div class="dropdown-trigger menu-trigger action">Filtres 
 						<span class="arrow-down"></span>
 					</div>
-					<div class="listWrapper listWrapperSkin dropdown-menu selectable">
+					<div class="listWrapper listWrapperSkin dropdown-menu has-selectable-items">
 						<div class="menuitem"><div class="menuitem-content"><span>Filtre existant 1</span></div></div>
 						<div class="menuitem"><div class="menuitem-content"><span>Filtre existant 2</span></div></div>
 						<div class="menuitem"><div class="menuitem-content"><span>Filtre existant 3</span></div></div>
@@ -363,11 +359,11 @@
 						<div class="menuitem"><div class="menuitem-content"><span>Gérer les filtres existants</span></div></div>
 					</div>
 				</div><!--
-				--><div class="action-perm has-dropdown">
-					<div class="action">Affichage 
+				--><div class="action-perm has-dropdown rightContent">
+					<div class="dropdown-trigger menu-trigger action">Affichage 
 						<span class="arrow-down"></span>
 					</div>
-					<div class="listWrapper listWrapperSkin dropdown-menu selectable">
+					<div class="listWrapper listWrapperSkin dropdown-menu has-selectable-items">
 						<div class="menuitem unclickable" id="view-compact" data-group="view-density"><div class="menuitem-content"><span>Vue compacte</span></div></div>
 						<div class="menuitem unclickable selected-item" id="view-normal" data-group="view-density"><div class="menuitem-content"><span>Vue normale</span></div></div>
 						<div class="menuitem unclickable" id="view-comfortable" data-group="view-density"><div class="menuitem-content"><span>Vue confortable</span></div></div>
@@ -487,7 +483,7 @@
 			else {
 			$("#display-unselected").hide(); /* ne pas afficher les éléments qui nécessitent des éléments cachés */
 		};
-	 }
+	}
 	
 	$( document ).ready(function() {
 		actionMenu();
@@ -577,59 +573,52 @@
 	
 	/* dropdown menu */
 	
-	$('.has-dropdown').on('click', openSubMenu);
-	
+	$('.dropdown-trigger.list-trigger').on('click', openOptionList);
+	$('.dropdown-trigger.menu-trigger').on('click', openSubMenu);
+		
 	function openSubMenu(event) {
-		console.log("openSubmenu");
-		if ($(this).hasClass("open") == true) {
-			$(this).removeClass('open');	
-			console.log("openSubmenu - close");	
-			return false;
-		}
+	
+		var $parent = $(this).parent();
+	
+		if ($parent.hasClass("open") == true) { closeAllSubMenus(); return false; }
 		else {
 			closeAllSubMenus();
-			$(this).addClass('open');
+			$parent.addClass('open');
+			console.log("ouverture du menu");
 			$(this).children('div.menuitem').click(function(e) { e.stopPropagation(); })
 			$(".unclickable, .formarea").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas les menus sur click sur les items qui sont unclickable ou les formarea*/
-			$(document).one('click', {button: $(this)}, function() { closeAllSubMenus(); });
-			console.log("openSubmenu - open");
+			$(document).one('click', {button: $(this)}, function() { closeAllSubMenus(); }); /* fermeture sur n'importe quel autre click */
 			return false;
 		}
 	}
     
 	function closeAllSubMenus(event) {
-		console.log("closeAllSubMenus");
-		closeAllOptionLists();
-		$(".has-dropdown").removeClass('open');
+		$(".menu-trigger").parents(".has-dropdown").removeClass('open');
+		console.log("fermeture des menus");
+		closeAllOptionsMenus(event)
 	}
 	
+	function closeAllOptionsMenus(event) {
+		$(".list-trigger").closest(".has-dropdown").removeClass('open');
+		console.log("fermeture des listes");
+	}
 	
 	/* dropdown options */
 	
-	$('.select-list').on('click', openOptionList);
-	
 	function openOptionList(event) {
-		console.log("openOptionList");
-		if ($(this).parent().hasClass("open") == true) {
-			$(this).parent().removeClass('open');	
-			console.log("openOptionList - close");	
-			return false;
-		}
+
+		var $parent = $(this).parent();
+	
+		if ($parent.hasClass("open") == true) { closeAllOptionsMenus(); return false; }
 		else {
-			closeAllOptionLists();
-			$(this).parent().addClass('open');
-			$(this).children('div').click(function(e) { e.stopPropagation(); })
-			$(".unclickable, .formarea").click(function(e) { e.stopPropagation(); })  /*je ne ferme pas les menus sur click sur les items qui sont unclickable ou les formarea*/
-			console.log("openOptionList - open");
+			closeAllOptionsMenus();
+			$parent.addClass('open');
+			console.log("ouverture de la liste");
 			return false;
 		}
 	}
-    
-	function closeAllOptionLists(event) {
-		
-			console.log("closeAllOptionLists");
-			$(".select-list").parent().removeClass('open');
-	}
+	
+	$('.data-test, .formarea').on('click', closeAllOptionsMenus);
 	
 	$('.data-test.menuitem').on('click', function() {
 		$(this).closest(".listWrapper").find(".data-test").removeClass("selected-item");
@@ -637,14 +626,13 @@
 		
 		var cible = $(this).parent();
 		
-		if (cible.attr("class") == "vSlider selectable") { cible = cible.parent().parent(); }
+		if (cible.attr("class") == "vSlider has-selectable-items") { cible = cible.parent().parent(); }
 		
 		cible.siblings('div.select-list')[0].firstChild.data = $(this).children('.menuitem-content').children('span').text() + " ";
 	} );
 	
-	$('.data-test, .formarea').on('click', closeAllOptionLists);
-	
-	/* selection d'un filtre du paneau de recherche */
+		
+	/* selection d'un filtre du panneau de recherche */
 	$(".invisible-table div.check").click(function(){
 	  $(this).closest("tr").toggleClass("selected");
 	});
