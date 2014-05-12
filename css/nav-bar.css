@@ -206,8 +206,6 @@ ul { list-style: none;}
 	color: #999;
 }*/
 
-
-.perm-link-menu { margin-left: 2em;}
  
 /*.item-link,*/
 .perm-link {
@@ -301,7 +299,7 @@ ul { list-style: none;}
 
 
 
-.sTopTitle { height: 3.5em; margin-bottom: -0.6em; }
+.sTopTitle { height: 3.5em; margin-bottom: -0.6em; z-index: 2; }
 
 .f0 { -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
 .f1 { -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto;}
@@ -571,7 +569,7 @@ a.issue-tab:hover .issue-subject:after {
 	box-shadow:         0px 8px 9px -9px rgba(100, 100, 100, 0.7);
 }
 
-.action-perm, .inlist  { display: inline-block; margin:0}
+.action-perm, .perm-link-menu  { display: inline-block; margin:0}
 .action-select { display : none; }
 
 .action {
@@ -708,13 +706,7 @@ a.issue-tab:hover .issue-subject:after {
 
 .dropdown-list.multiselect { top: -1.5em }
 
-.has-dropdown.open, .has-dropdown.open .dropdown-menu, .has-dropdown.open .dropdown-list { z-index: 1; }
-
-/*.has-dropdown.open,
-.has-dropdown.open .dropdown-trigger,
-.has-dropdown.open .listWrapper			{ z-index: 1; }
-
-.has-dropdown.open .dropdown-list 		{ z-index: 2; }*/
+.open .filter-fieldset .dropdown-list {z-index: 3 }
 
 /* ::after et :: before pour masquer le chevauchement des bords du sous menu avec celui de l'élément de menu */
 
@@ -791,7 +783,7 @@ fieldset .has-dropdown.open::after, fieldset .has-dropdown.open::before { backgr
 .align-right  { text-align: right }
 
 .rightContent > .listWrapperSkin > .menuitem { padding:0 1.5em 0 4em; white-space: nowrap; text-align: right; }
-.rightContent > .listWrapperSkin, .inlist .dropdown-menu { right: 0; left: auto; }
+.rightContent > .listWrapperSkin { right: 0; left: auto; }
 /*.rightContent .dropdown-list { right: 3px; left: auto; }*/
 
 .inlist { position: relative; }
