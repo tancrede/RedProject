@@ -171,26 +171,6 @@ ul { list-style: none;}
   HEADER
 --------------------------------------------- */
 
-/*#header-wrap-out {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
-	z-index: 15;
-	border: none;
-}*/
-
-/*#main-context {
-	position: absolute;
-	left:0;
-	margin:0;
-	padding:0 0 0 4em;
-	height: 100%;
-	color: #000;
-}*/
-
 .action.hTitle {
 	padding: 0.5em 0.7em;
 }
@@ -296,7 +276,7 @@ ul { list-style: none;}
 	margin: 0;
 	padding: 0 1.5em;
 	vertical-align: baseline;
-	z-index: 15;
+	z-index: 1;
 	/* border: none; */
 	border-bottom: 1px solid whitesmoke;
 	-webkit-box-sizing: border-box;
@@ -706,7 +686,6 @@ a.issue-tab:hover .issue-subject:after {
 	position: absolute;
 	top: 100%;
 	left: 0;
-	z-index: 1000;
 	float: left;
 	/*width: 17em;*/
 	min-width: 100%;
@@ -722,7 +701,6 @@ a.issue-tab:hover .issue-subject:after {
 	position: absolute;
 	top: 100%;
 	left: calc(0.2em + 1px);
-	z-index: 1000;
 	min-width: 100%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -736,6 +714,10 @@ a.issue-tab:hover .issue-subject:after {
 
 .dropdown-list.multiselect { top: -1.5em }
 
+
+
+.dropdown.open, .dropdown.open .dropdown-menu, .dropdown.open .dropdown-list { z-index: 1; }
+
 /* ::after et :: before pour masquer le chevauchement des bords du sous menu avec celui de l'élément de menu */
 
 .dropdown.open::after {
@@ -746,7 +728,7 @@ a.issue-tab:hover .issue-subject:after {
 	background: #FFF;
 	bottom: -2px;
 	left: 1px;
-	z-index:1000000;
+	z-index:10;
 }
 
 .dropdown.open::before {
@@ -757,7 +739,7 @@ a.issue-tab:hover .issue-subject:after {
 	background: #FFF;
 	bottom: -2px;
 	right: 1px;
-	z-index:1000000;
+	z-index:10;
 }
 
 fieldset .dropdown.open::after, fieldset .dropdown.open::before { background: transparent }
@@ -886,252 +868,6 @@ top: 0.5em;
 }
 
 /*
-  SIDEBAR
---------------------------------------------- */
-
-.sideWrapper {
-	height: 100%;
-	right: 0;
-	top: 4em;
-	position: absolute;
-	width: 20%;
-	min-width: 150px;
-	max-width: 300px;
-}
-
-.mainWrapper {
-	margin-top: 3em;
-	margin-left: 0px;
-	width: 75%;
-	min-width: 600px;
-	max-width: 900px;
-}
-
-#sidebar {
-	display: block;
-	/*margin-left: -200px;
-	left:200px;*/
-	width:12.5em;
-	height: 100%;
-	color: #AAA;
-	position: fixed;
-	top:0;
-	z-index:10000;
-	background: rgb(250,250,250); /* #F7F7F7; */
-	border-right: none;
-	overflow: hidden;
-	border-right: 1px solid #DFDFDF;
-	padding: 1.5em 1.5em 4em 2em;
-	
-	-webkit-transition: all 0.1s;
-	transition: all 0.1s;
-	/*transition-delay: 0.1s;
-	-webkit-transition-delay: 0.1s;*/
-	
-	/* version "courte" */
-	margin-top: 5em;
-	z-index:10;
-}
-
-.st-effect-1#sidebar {
-	visibility: visible;
-	border-right: 1px solid #EFEFEF;
-	-webkit-transform: translate3d(-80%, 0, 0);
-	transform: translate3d(-80%, 0, 0);
-	/*-webkit-box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.1 );
-	-moz-box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.1 );
-	box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.1 );*/
-}
-
-/*.st-effect-1#sidebar:hover, */ .st-effect-1#sidebar.hovered {
-	visibility: visible;
-	border-right: 1px solid #EFEFEF;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-
-.side-panel { position: absolute; top:0; left: 0; width: 100%;}
-
-.text-wrapper {
-	margin:1em 1.5em 1em;
-	/*opacity: 0; 
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0); 
-	-webkit-transition: all 0.3s ease;
-	transition: all 0.3s ease;*/
-}
-
-.st-effect-1#sidebar:hover .text-wrapper {
-	opacity: 1; /*
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);*/
-}
-
-#back { 
-position: absolute;
-top: 0;
-}
-#menu {
-position: absolute; left:0; margin:5.6em 0.6em; height: 100%; z-index: 10000;
-}
-
-#menu-list {
-	position: absolute;
-	width: 32px;
-	height: 32px;
-	top: 0;
-	left: 0;
-	/*background: #000;*/
-	border-radius: 50%;
-	/*color: #000;*/
-	line-height: 30px;
-	text-align: center;
-	font-weight: bold;
-	cursor: pointer;
-	text-indent: -9000px;
-}
-
-#menu-list::after {
-	position: absolute;
-	content: '';
-	width: 50%;
-	height: 2px;
-	background: #555;
-	top: 50%;
-	margin-top: -1px;
-	left: 25%;
-	box-shadow: 0 -4px #555, 0 4px #555;
-}
-
-.side-nav {
-	display: block;
-	float: left;
-	width: 32px;
-	height: 32px;
-	margin: 0.9em 1em 0 1em;
-	top: 0;
-	left: 0;
-	background: transparent;
-	/*border: 1px solid rgb(100,100,100);*/
-	border-radius: 50%;
-	color: rgb(100,100,100);
-	line-height: 32px;
-	text-align: center;
-	cursor: pointer;
-	
-	font-family: 'R-redmine' !important;
-	content: attr(data-icon);
-}
-
-.side-detail, .side-main-nav , .side-detail-wraper {
-	opacity: 0;
-	visibility: hidden; /*display: none;*/
-	-webkit-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-}
-
-.side-main-nav {
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
-}
-
-.side-detail {
-	-webkit-transform: translate3d(100%, 0, 0);
-	transform: translate3d(100%, 0, 0);
-}
-
-.st-effect-1#sidebar.hovered .side-detail-wraper.active-detail-panel,
-.st-effect-1#sidebar.hovered .side-detail.active-side-panel,
-.st-effect-1#sidebar.hovered .side-main-nav.active-side-panel{
-	opacity: 1;
-	visibility: visible;
-	position:absolute;
-	top:0;
-	left:0;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0)
-}
-
-.side-detail-wraper.active-detail-panel,
-.side-detail.active-side-panel,
-.side-main-nav.active-side-panel{
-	position:absolute;
-	top:0;
-	left:0;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0)
-}
-
-.side-nav:hover { border-color: rgb(51,51,51); color: rgb(51,51,51);}
-
-.side-title {
-	font-weight:400;
-	font-size: 1.125em;
-	color:rgb(0,0,0);
-	margin-left: 1.5em; /* pour laisser la place au bouton #back */
-
-}
-
-.side-description {
-	font-weight:400;
-	font-size:0.6875em;
-	color: #777777;
-	margin: 1.5625em 0 2.272em 0;
-	line-height:1.45em;
-}
-
-.side-list {
-	margin: 0;
-	padding: 0;
-	list-style: none;	
-}
-
-.side-list li, .side-action {
-	cursor: pointer;
-	position: relative;
-	font-size: 0.8125em !important;
-	height: 2.46em;
-	line-height: 2.46em;
-	padding: 0 3.923em;
-	margin-left: -3.923em;
-	margin-right: -3.923em;
-	font-weight: 300;
-	color: #444;
-}
-
-.side-list a {
-	text-decoration: none;
-	color: #444;
-}
-
-li.active {
-	-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
-	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-	background-color: rgba(255, 255, 255, 0.65) !important;
-	font-weight: 600;
-	color: #000;
-}
-
-li.active a {
-	color: black;
-}
-
-.side-separator {
-	border-top: 1px solid #DFDFDF;
-	margin: 0.6875em 0;
-}
-
-.min-action-crapper { position: absolute; top:0; right: 3.4em; opacity:0; }
-.set { display: inline-block; color: rgb(200,200,200); }
-.side-list li:hover .min-action-crapper { opacity:1; }
-.set:hover { color: rgb(100,100,100) !important;  }
-
-.side-action-wrapper { position: absolute; top:0; right: 3.4em; }
-.side-action-wrapper .set {color: rgb(200,200,200);}
-li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
-
-/*
   STATE
 --------------------------------------------- */
 .isHigh { color: #CC3A21; text-shadow: -1px 2px 1px #BBB;/* #F6C5BE; */ }
@@ -1189,7 +925,7 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 
 .search-fieldset:hover { border-color: #999; }
 
-.sfield-1 {position: absolute; left:0; right: 1.5em; height: 100%; padding: 0 0 0 0.4em; background-color: inherit; z-index: 10;}
+.sfield-1 {position: absolute; left:0; right: 1.5em; height: 100%; padding: 0 0 0 0.4em; background-color: inherit; z-index: 1;}
 .sfield-2 {position: absolute; right:0; left:0; text-align: right; height: 100%; padding: 0;  background-color: inherit;}
 
 .search-input { width:100%; padding: 0; margin: 0; border: none; font-size: 1em;  background-color: inherit; }
@@ -1268,15 +1004,6 @@ li:hover .side-action-wrapper .set {color:rgba(155,155,155,1);}
 }
 
 .vFader {position: relative}
-/*.vFader::before {
-	position: absolute;
-	content:"";
-	left:0;
-	right:10px;
-	height: 28px;
-	background-image: -webkit-linear-gradient(white, rgba(255, 255, 255, 0.1));
-	z-index: 100;
-}*/
 
 /* Scrollbar ----------------------------- */
 
@@ -1298,5 +1025,3 @@ height:10px;
 	width:50px;
 	background-color:#999;
 }
-
-.title {z-index: 10} /* bug d'affichage : si on déplie l'explorateur de projet, le survol d'une action en dessous sur-affiche les bords de l'action */
