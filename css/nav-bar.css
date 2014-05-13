@@ -576,7 +576,6 @@ a.issue-tab:hover .issue-subject:after {
 
 .action {
 	padding: 0.3em 0.7em;
-	cursor: default;
 	border: 1px solid transparent;
 }
 
@@ -661,6 +660,10 @@ a.issue-tab:hover .issue-subject:after {
 .has-dropdown {
   position: relative;
 }
+
+.list-trigger  { cursor: default; }
+.menu-trigger { cursor: default; }
+.menu-trigger.arrow-wrapper  { cursor: pointer; }
 
 .listWrapper 		{ display: none; /*position: relative;*/ }
 .open > .listWrapper { display: block; }
@@ -809,7 +812,6 @@ fieldset .has-dropdown.open::after, fieldset .has-dropdown.open::before { backgr
 	line-height: 1.5em;
 	margin: 0 0.2em;
 	padding: 0.3em 0.7em;
-	cursor: default;
 	font-weight: 500;
 }
 
