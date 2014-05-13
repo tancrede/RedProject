@@ -413,7 +413,8 @@ table {
 	border: 1px solid #b2b2b2;
 }
 
-.selected td .check div,
+.selected .check div,
+/*.selected td .check div,*/
 .selected.check-all div {
 	height: 15px;
 	outline: 0;
@@ -996,6 +997,20 @@ top: 0.5em;
 }
 
 .vFader {position: relative}
+
+.check-in {
+position: absolute;
+left: 0;
+display: inline-block;
+height: 100%;
+}
+
+.check-in .check{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 /* Scrollbar ----------------------------- */
 
