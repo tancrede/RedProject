@@ -287,6 +287,12 @@ ul { list-style: none;}
 	margin-top: 6em;
 }
 
+.titleLevel {
+	height: 3.5em;
+	margin-bottom: -0.6em;
+	z-index: 2;
+}
+
 .rWrapper {
 	padding: 0;
 	position: relative;
@@ -296,10 +302,6 @@ ul { list-style: none;}
 	-webkit-align-items: center;
 	align-items: center;
 }
-
-
-
-.sTopTitle { height: 3.5em; margin-bottom: -0.6em; z-index: 2; }
 
 .f0 { -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
 .f1 { -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto;}
@@ -706,6 +708,7 @@ a.issue-tab:hover .issue-subject:after {
 
 .dropdown-list.multiselect { top: -1.5em }
 
+.has-dropdown.open:not(.sfield-2) { z-index: 2}
 .open .filter-fieldset .dropdown-list {z-index: 3 }
 
 /* ::after et :: before pour masquer le chevauchement des bords du sous menu avec celui de l'élément de menu */
