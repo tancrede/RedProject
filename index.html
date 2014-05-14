@@ -181,13 +181,27 @@
 											</td>
 											<td>
 												<div class="has-dropdown isInBloVisible">
-													<div class="list-trigger isInBloVisible select-list">Changement <span class="arrow-up-and-down"></span></div>
-													<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
+													<div class="list-trigger isInBloVisible select-list" data-selection-label="Choisir un Tracker">Choisir un Tracker <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list has-multiselectable-items">
+														<div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div>
+														<div class="submenu-link separator-horizontal"></div>
+														<div class="vFader">
+															<div class="vSlider">
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Incident</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Problème</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Changement</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Information</span></div></div>
+															</div>
+														</div>
+														<div class="submenu-link separator-horizontal"></div>
+														<div class="menuitem"><div class="menuitem-content set-values"><span>Appliquer</span></div></div>
+													</div>
+													<!--<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Incident</span></div></div>
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Problème</span></div></div>
 														<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Changement</span></div></div>
 														<div class="menuitem data-test"><div class="menuitem-content"><span>Information</span></div></div>
-													</div>
+													</div>-->
 												</div>
 											</td>
 										</tr>
@@ -205,12 +219,12 @@
 											</td>
 											<td>
 												<div class="has-dropdown isInBloVisible">
-													<div class="list-trigger isInBloVisible select-list">Choisir un nom <span class="arrow-up-and-down"></span></div>
-													<div class="listWrapper listWrapperSkin dropdown-list multiselect has-selectable-items">
+													<div class="list-trigger isInBloVisible select-list" data-selection-label="Choisir un Auteur">Choisir un Auteur <span class="arrow-up-and-down"></span></div>
+													<div class="listWrapper listWrapperSkin dropdown-list has-multiselectable-items">
 														<div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div>
 														<div class="submenu-link separator-horizontal"></div>
 														<div class="vFader">
-															<div class="vSlider has-selectable-items">
+															<div class="vSlider">
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
@@ -604,6 +618,8 @@
 	
 	/* dropdown options */
 	
+	$('.formarea').on('click', closeAllOptionsMenus);
+	
 	function openOptionList(event) {
 
 		var $parent = $(this).parent();
@@ -612,25 +628,63 @@
 		else {
 			closeAllOptionsMenus();
 			$parent.addClass('open');
-			$(".check-in").click(function(e) { e.stopPropagation(); })
+			$(".check-in").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas sur un check-in : c'est forcément une sélection multiple*/
 			console.log("ouverture de la liste");
 			return false;
 		}
 	}
 	
-	$('.data-test, .formarea').on('click', closeAllOptionsMenus);
-	
-	$('.data-test.menuitem').on('click', function() {
+	/* selection d'une valeur dans une liste mono-valuée */
+	$('.has-selectable-items .data-test.menuitem').on('click', function() {
 		$(this).closest(".listWrapper").find(".data-test").removeClass("selected-item");
 		console.log("selection");
 		$(this).addClass("selected-item");
-		
-		var cible = $(this).parent();
-		
-		if (cible.attr("class") == "vSlider has-selectable-items") { cible = cible.parent().parent(); }
-		
-		cible.siblings('div.select-list')[0].firstChild.data = $(this).children('.menuitem-content').children('span').text() + " ";
+		$(this).parent().siblings('div.select-list')[0].firstChild.data = $(this).children('.menuitem-content').children('span').text() + " ";
 	} );
+	
+	/* selection d'une valeur dans une liste multi-valuée : depuis un label */
+	$('.has-multiselectable-items .data-test.menuitem').on('click', function() {
+		$(this).closest(".listWrapper").find(".data-test").removeClass("selected-item");
+		console.log("selection multiple depuis label");
+		
+		$(this).toggleClass("selected");
+		closeAllOptionsMenus();
+		var selector = $(this).closest(".listWrapper");
+		setSelectLabel(selector);
+	} );
+	
+	/* selection d'une valeur dans une liste multi-valuée : depuis une checkbox */
+	$(".check-in").click(function(){
+	  $(this).parent().toggleClass("selected");
+	  console.log("selection multiple depuis check-box");
+	});
+	
+	/* action : application sélection multiple */
+	$(".set-values").on('click', function() {	
+		var selector = $(this).parent().parent();	
+		setSelectLabel(selector);		
+	});
+	
+	/* cacul du label du trigger après validation de la sélection */
+	function setSelectLabel(selector) {
+		if (selector.find(".selected").length == 0) {	
+			selector.siblings('div.select-list')[0].firstChild.data = selector.prev('.list-trigger').attr('data-selection-label');
+			console.log("aucune selection");
+		}
+		else if (selector.find(".selected").length == 1) {	
+			selector.siblings('div.select-list')[0].firstChild.data = selector.find(".selected .menuitem-content > span").html() + " ";
+			selector.closest("tr").addClass("selected");
+			console.log("une selection");
+		}
+		else {
+			selector.siblings('div.select-list')[0].firstChild.data = selector.find(".selected").length + " auteurs ";
+			selector.closest("tr").addClass("selected");
+			console.log("selection multiple");
+		}
+	}
+	
+	/* mise en valeur des checkbox */
+		$(".has-multiselectable-items .menuitem.data-test").hover(function() { $(".check-in .check").addClass("check-hover"); }, function() {$(".check-in .check").removeClass("check-hover");});
 	
 	/* selection d'un filtre du panneau de recherche */
 	$(".invisible-table td > div.check").click(function(){
@@ -643,33 +697,7 @@
 		console.log("toggle d'un filtre");
 	}
 	
-	/* selection d'une valeur dans une liste multi-valuée */
-	$(".check-in").click(function(){
-	  $(this).parent().toggleClass("selected");
-	  console.log("selection d'un auteur");
-	});
-	
-	/* mise en valeur des checkbox */
-	
-	$(".check-in").hover(function() { $(".check-in .check").addClass("check-hover"); }, function() {$(".check-in .check").removeClass("check-hover");});
-	
-	
-	/* sélection de plusieurs valuers : mise à jour du selecteur */
-	$(".set-values").on('click', function() {
-		
-		var cible = $(this).parent().parent();
-		
-		if (cible.find(".selected").length == 1) {	
-			cible.siblings('div.select-list')[0].firstChild.data = cible.find(".selected .menuitem-content > span").html() + " ";
-		}
-		else if (cible.find(".selected").length == 0) {	
-			cible.siblings('div.select-list')[0].firstChild.data = "Choisir un nom";
-		}
-		
-		else {
-			cible.siblings('div.select-list')[0].firstChild.data = cible.find(".selected").length + " auteurs ";
-		};
-	});
+	/* tableau : controles fins */
 	
 	/* toggle bouton favori */
 	$("span.fav").click(function(){
