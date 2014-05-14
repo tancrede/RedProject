@@ -406,15 +406,35 @@ table {
 
 .check-all { border-color: rgb(220,220,220); margin-bottom:2em; margin-left: 0em; display: inline-block;}
 
+.check-in {
+position: absolute;
+left: 0;
+display: inline-block;
+height: 100%;
+}
+
+.check-in .check {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-color: transparent;
+}
+
 .check:hover,
 .check-all:hover {
 	-web-kit-box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
 	box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
-	border: 1px solid #b2b2b2;
+	border: 1px solid #b2b2b2 !important;
 }
 
-.selected .check div,
-/*.selected td .check div,*/
+.check-hover {
+	border-color: rgb(230, 230, 230) !important;
+}
+
+.selected > .check-in > .check div,
+.table-issues .selected  > td > .check div,
+.invisible-table .selected  > td > .check div,
 .selected.check-all div {
 	height: 15px;
 	outline: 0;
@@ -997,20 +1017,6 @@ top: 0.5em;
 }
 
 .vFader {position: relative}
-
-.check-in {
-position: absolute;
-left: 0;
-display: inline-block;
-height: 100%;
-}
-
-.check-in .check{
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
 
 /* Scrollbar ----------------------------- */
 

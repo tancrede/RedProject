@@ -211,25 +211,25 @@
 														<div class="submenu-link separator-horizontal"></div>
 														<div class="vFader">
 															<div class="vSlider has-selectable-items">
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
-																<div class="menuitem data-test unclickable"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
 															</div>
 														</div>
 														<div class="submenu-link separator-horizontal"></div>
-														<div class="menuitem"><div class="menuitem-content"><span>Appliquer</span></div></div>
+														<div class="menuitem"><div class="menuitem-content set-values"><span>Appliquer</span></div></div>
 													</div>
 												</div>
 											</td>
@@ -612,6 +612,7 @@
 		else {
 			closeAllOptionsMenus();
 			$parent.addClass('open');
+			$(".check-in").click(function(e) { e.stopPropagation(); })
 			console.log("ouverture de la liste");
 			return false;
 		}
@@ -620,8 +621,8 @@
 	$('.data-test, .formarea').on('click', closeAllOptionsMenus);
 	
 	$('.data-test.menuitem').on('click', function() {
-		$(this).closest(".listWrapper").find(".data-test").removeClass("selected-item");
-		$(this).addClass("selected-item");
+		$(this).closest(".listWrapper").find(".data-test").removeClass("selected-item, selected");
+		$(this).addClass("selected");
 		
 		var cible = $(this).parent();
 		
@@ -631,17 +632,43 @@
 	} );
 	
 	/* selection d'un filtre du panneau de recherche */
-	$(".invisible-table div.check").click(function(){
-	  $(this).closest("tr").toggleClass("selected");
+	$(".invisible-table td > div.check").click(function(){
+		var selector = $(this);
+		ToggleSearchFilter(selector);
 	});
 	
-	$(".check-in > div.check").click(function(){
-	  $(this).closest("menuitem").toggleClass("selected");
+	function ToggleSearchFilter(selector) {
+		selector.closest("tr").toggleClass("selected");
+		console.log("toggle d'un filtre");
+	}
+	
+	/* selection d'une valeur dans une liste multi-valuée */
+	$(".check-in").click(function(){
+	  $(this).parent().toggleClass("selected");
+	  console.log("selection d'un auteur");
 	});
 	
-	//$(".sfield-2").click(function() {
-	//	$(".search-fieldset").toggleClass("open");
-	//});
+	/* mise en valeur des checkbox */
+	
+	$(".check-in").hover(function() { $(".check-in .check").addClass("check-hover"); }, function() {$(".check-in .check").removeClass("check-hover");});
+	
+	
+	/* sélection de plusieurs valuers : mise à jour du selecteur */
+	$(".set-values").on('click', function() {
+		
+		var cible = $(this).parent().parent();
+		
+		if (cible.find(".selected").length == 1) {	
+			cible.siblings('div.select-list')[0].firstChild.data = cible.find(".selected .menuitem-content > span").html() + " ";
+		}
+		else if (cible.find(".selected").length == 0) {	
+			cible.siblings('div.select-list')[0].firstChild.data = "Choisir un nom";
+		}
+		
+		else {
+			cible.siblings('div.select-list')[0].firstChild.data = cible.find(".selected").length + " auteurs ";
+		};
+	});
 	
 	/* toggle bouton favori */
 	$("span.fav").click(function(){
