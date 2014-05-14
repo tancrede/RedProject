@@ -194,14 +194,9 @@
 															</div>
 														</div>
 														<div class="submenu-link separator-horizontal"></div>
-														<div class="menuitem"><div class="menuitem-content set-values"><span>Appliquer</span></div></div>
+														<!-- <div class="menuitem comment-label unclickable"><div class="menuitem-content"><span>Sélectionner</span></div></div> -->
+														<div class="menuitem set-values"><div class="menuitem-content"><span>Appliquer</span></div></div>
 													</div>
-													<!--<div class="listWrapper listWrapperSkin dropdown-list has-selectable-items">
-														<div class="menuitem data-test"><div class="menuitem-content"><span>Incident</span></div></div>
-														<div class="menuitem data-test"><div class="menuitem-content"><span>Problème</span></div></div>
-														<div class="menuitem data-test selected-item"><div class="menuitem-content"><span>Changement</span></div></div>
-														<div class="menuitem data-test"><div class="menuitem-content"><span>Information</span></div></div>
-													</div>-->
 												</div>
 											</td>
 										</tr>
@@ -243,7 +238,8 @@
 															</div>
 														</div>
 														<div class="submenu-link separator-horizontal"></div>
-														<div class="menuitem"><div class="menuitem-content set-values"><span>Appliquer</span></div></div>
+														<!-- <div class="menuitem comment-label unclickable"><div class="menuitem-content"><span>Sélectionner</span></div></div> -->
+														<div class="menuitem set-values"><div class="menuitem-content"><span>Appliquer</span></div></div>
 													</div>
 												</div>
 											</td>
@@ -655,8 +651,10 @@
 	
 	/* selection d'une valeur dans une liste multi-valuée : depuis une checkbox */
 	$(".check-in").click(function(){
-	  $(this).parent().toggleClass("selected");
-	  console.log("selection multiple depuis check-box");
+		var selector = $(this).closest(".listWrapper")
+		$(this).parent().toggleClass("selected");
+		setSelectLabel(selector);
+		console.log("selection multiple depuis check-box");
 	});
 	
 	/* action : application sélection multiple */
@@ -669,21 +667,28 @@
 	function setSelectLabel(selector) {
 		if (selector.find(".selected").length == 0) {	
 			selector.siblings('div.select-list')[0].firstChild.data = selector.prev('.list-trigger').attr('data-selection-label');
+			/*selector.find(".set-values").addClass("hide-it");
+			selector.find(".comment-label").removeClass("hide-it");*/
 			console.log("aucune selection");
 		}
 		else if (selector.find(".selected").length == 1) {	
 			selector.siblings('div.select-list')[0].firstChild.data = selector.find(".selected .menuitem-content > span").html() + " ";
 			selector.closest("tr").addClass("selected");
+			/*selector.find(".set-values").removeClass("hide-it");
+			selector.find(".comment-label").addClass("hide-it");*/
 			console.log("une selection");
 		}
 		else {
 			selector.siblings('div.select-list')[0].firstChild.data = selector.find(".selected").length + " auteurs ";
 			selector.closest("tr").addClass("selected");
+			/*selector.find(".set-values").removeClass("hide-it");
+			selector.find(".comment-label").addClass("hide-it");*/
 			console.log("selection multiple");
 		}
 	}
 	
 	/* mise en valeur des checkbox */
+		/*$(".has-multiselectable-items .menuitem.data-test .check-in").hover(function() { $(".check-in .check").addClass("check-hover"); }, function() {$(".check-in .check").removeClass("check-hover");});*/
 		$(".has-multiselectable-items .menuitem.data-test").hover(function() { $(".check-in .check").addClass("check-hover"); }, function() {$(".check-in .check").removeClass("check-hover");});
 	
 	/* selection d'un filtre du panneau de recherche */
