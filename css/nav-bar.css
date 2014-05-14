@@ -428,7 +428,7 @@ height: 100%;
 	border: 1px solid #b2b2b2 !important;
 }
 
-.check-hover {
+.check-hover, .vSlider:hover .menuitem .check-in .check {
 	border-color: rgb(230, 230, 230) !important;
 }
 
@@ -730,7 +730,7 @@ a.issue-tab:hover .issue-subject:after {
 	transform: translateY(-3.3em);
 }
 
-.dropdown-list.has-multiselectable-items { top: -1.5em }
+.dropdown-list.has-multiselectable-items.input-item { top: -1.5em }
 
 .has-dropdown.open:not(.sfield-2) { z-index: 2}
 .open .filter-fieldset .dropdown-list {z-index: 3 }

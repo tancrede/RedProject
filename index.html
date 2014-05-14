@@ -183,8 +183,6 @@
 												<div class="has-dropdown isInBloVisible">
 													<div class="list-trigger isInBloVisible select-list" data-selection-label="Choisir un Tracker">Choisir un Tracker <span class="arrow-up-and-down"></span></div>
 													<div class="listWrapper listWrapperSkin dropdown-list has-multiselectable-items">
-														<div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div>
-														<div class="submenu-link separator-horizontal"></div>
 														<div class="vFader">
 															<div class="vSlider">
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><span>Incident</span></div></div>
@@ -215,7 +213,7 @@
 											<td>
 												<div class="has-dropdown isInBloVisible">
 													<div class="list-trigger isInBloVisible select-list" data-selection-label="Choisir un Auteur">Choisir un Auteur <span class="arrow-up-and-down"></span></div>
-													<div class="listWrapper listWrapperSkin dropdown-list has-multiselectable-items">
+													<div class="listWrapper listWrapperSkin dropdown-list has-multiselectable-items input-item">
 														<div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div>
 														<div class="submenu-link separator-horizontal"></div>
 														<div class="vFader">
@@ -653,13 +651,13 @@
 	$(".check-in").click(function(){
 		var selector = $(this).closest(".listWrapper")
 		$(this).parent().toggleClass("selected");
-		setSelectLabel(selector);
 		console.log("selection multiple depuis check-box");
 	});
 	
 	/* action : application sélection multiple */
 	$(".set-values").on('click', function() {	
-		var selector = $(this).parent().parent();	
+		var selector = $(this).parent();
+		console.log("setSelectLabel");	
 		setSelectLabel(selector);		
 	});
 	
@@ -667,6 +665,7 @@
 	function setSelectLabel(selector) {
 		if (selector.find(".selected").length == 0) {	
 			selector.siblings('div.select-list')[0].firstChild.data = selector.prev('.list-trigger').attr('data-selection-label');
+			selector.closest("tr").removeClass("selected");
 			/*selector.find(".set-values").addClass("hide-it");
 			selector.find(".comment-label").removeClass("hide-it");*/
 			console.log("aucune selection");
@@ -689,7 +688,7 @@
 	
 	/* mise en valeur des checkbox */
 		/*$(".has-multiselectable-items .menuitem.data-test .check-in").hover(function() { $(".check-in .check").addClass("check-hover"); }, function() {$(".check-in .check").removeClass("check-hover");});*/
-		$(".has-multiselectable-items .menuitem.data-test").hover(function() { $(".check-in .check").addClass("check-hover"); }, function() {$(".check-in .check").removeClass("check-hover");});
+		/*$(".has-multiselectable-items .menuitem.data-test").hover(function() { $(".check-in .check").addClass("check-hover"); }, function() {$(".check-in .check").removeClass("check-hover");});*/
 	
 	/* selection d'un filtre du panneau de recherche */
 	$(".invisible-table td > div.check").click(function(){
