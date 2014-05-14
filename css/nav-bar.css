@@ -428,7 +428,7 @@ height: 100%;
 	border: 1px solid #b2b2b2 !important;
 }
 
-.check-hover, .vSlider:hover .menuitem .check-in .check {
+.check-hover, .vSlider:hover > .menuitem > .check-in > .check {
 	border-color: rgb(230, 230, 230) !important;
 }
 
@@ -444,6 +444,17 @@ height: 100%;
 	top: -4px;
 	font-size:1px;
 	background: url('../img/checkmark.png') no-repeat -5px -3px;
+}
+
+.invisible-input {
+	width: 100%;
+	height: 100%;
+	border: 0px solid;
+	outline: none;
+	background-color: transparent;
+	font-size:1em;
+	font-family: 'Open Sans';
+	font-weight: 300;
 }
 
 .partial.check-all  {
