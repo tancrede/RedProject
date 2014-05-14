@@ -621,8 +621,9 @@
 	$('.data-test, .formarea').on('click', closeAllOptionsMenus);
 	
 	$('.data-test.menuitem').on('click', function() {
-		$(this).closest(".listWrapper").find(".data-test").removeClass("selected-item, selected");
-		$(this).addClass("selected");
+		$(this).closest(".listWrapper").find(".data-test").removeClass("selected-item");
+		console.log("selection");
+		$(this).addClass("selected-item");
 		
 		var cible = $(this).parent();
 		
