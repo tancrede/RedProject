@@ -605,11 +605,7 @@
 		closeAllOptionsMenus(event)
 	}
 	
-	function closeAllOptionsMenus(event) {
-		$(".list-trigger").closest(".has-dropdown").removeClass('open');
-		console.log("fermeture des listes");
-	}
-	
+
 	/* dropdown options */
 	
 	$('.formarea').on('click', closeAllOptionsMenus);
@@ -622,12 +618,18 @@
 		else {
 			closeAllOptionsMenus();
 			$parent.addClass('open');
-			$(".check-in, .invisible-input").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas sur un check-in : c'est forcément une sélection multiple*/
+			$(".has-multiselectable-items, .has-selectable-items, .check-in").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas sur un check-in : c'est forcément une sélection multiple*/
 			console.log("ouverture de la liste");
 			$parent.find("input.invisible-input").focus()
 			return false;
 		}
 	}
+	
+	function closeAllOptionsMenus(event) {
+		$(".list-trigger").closest(".has-dropdown").removeClass('open');
+		console.log("fermeture des listes");
+	}
+	
 	
 	/* selection d'une valeur dans une liste mono-valuée */
 	$('.has-selectable-items .data-test.menuitem').on('click', function() {
@@ -635,6 +637,7 @@
 		console.log("selection");
 		$(this).addClass("selected-item");
 		$(this).parent().siblings('div.select-list')[0].firstChild.data = $(this).children('.menuitem-content').children('span').text() + " ";
+		closeAllOptionsMenus();
 	} );
 	
 	/* selection d'une valeur dans une liste multi-valuée : depuis un label */
@@ -659,7 +662,8 @@
 	$(".set-values").on('click', function() {	
 		var selector = $(this).parent();
 		console.log("setSelectLabel");	
-		setSelectLabel(selector);		
+		setSelectLabel(selector);
+		closeAllOptionsMenus();	
 	});
 	
 	/* cacul du label du trigger après validation de la sélection */

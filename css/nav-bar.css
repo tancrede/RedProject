@@ -428,7 +428,7 @@ height: 100%;
 	border: 1px solid #b2b2b2 !important;
 }
 
-.check-hover, .vSlider:hover > .menuitem > .check-in > .check {
+.check-hover, .vFader:hover .menuitem > .check-in > .check {
 	border-color: rgb(230, 230, 230) !important;
 }
 
