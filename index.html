@@ -530,13 +530,15 @@
 	/* menu de présélection */
 	
 	$("#select-all").click(function(){
-		$("div.check-all .check").removeClass("is-partial").addClass("selected");
+		$("div.check-all .check").removeClass("is-partial");
+		$("div.check-all").addClass("selected");
 		$(".table-issues div.check").closest("tr").addClass("selected");
 		actionMenu();
 	});
 	
 	$("#select-none").click(function(){
-		$("div.check-all .check").removeClass("selected").removeClass("is-partial");
+		$("div.check-all").removeClass("selected");
+		$("div.check-all .check").removeClass("is-partial");
 		$(".table-issues div.check").closest("tr").removeClass("selected");
 		actionMenu();
 	});
