@@ -567,20 +567,21 @@ a.issue-tab:hover .issue-subject:after {
 	margin-bottom: -2px;
 }
 
-.check-in {
+.check-in, .check-in-all {
 	position: absolute;
 	left: 0;
 	display: inline-block;
 	height: 100%;
 }
 
-.check-in .check {
+.check-in .check, .check-in-all .check {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
+.check-in-all .check,
 .check-in .check,
 .action-item .check {
   border-color: transparent;

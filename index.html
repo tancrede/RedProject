@@ -28,7 +28,7 @@
 					<div class="menuitem"><div class="menuitem-content"><span>Vue générale</span></div></div>
 					<div class="submenu-link separator-horizontal"></div>
 					<!-- <div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div> -->
-					<div class="menuitem action-item"><input type="text" class="invisible-input" placeholder="Filtrer" /></div>
+					<div class="menuitem action-item"><input type="text" class="invisible-input" placeholder="Filtrer" id="filter-projects" /></div>
 					<div class="submenu-link separator-horizontal"></div>
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 1</span></div></div>
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 2</span></div></div>
@@ -215,7 +215,7 @@
 												<div class="has-dropdown isInBloVisible">
 													<div class="list-trigger isInBloVisible select-list" data-selection-label="Choisir un Auteur">Choisir un Auteur <span class="arrow-up-and-down"></span></div>
 													<div class="listWrapper listWrapperSkin dropdown-list has-multiselectable-items input-item">
-														<div class="menuitem action-item"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><input type="text" class="invisible-input" placeholder="Filtrer" /></div></div>
+														<div class="menuitem action-item"><div class="check-in-all"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><input type="text" class="invisible-input" placeholder="Filtrer" id="filter-authors" /></div></div>
 														<div class="submenu-link separator-horizontal"></div>
 														<div class="vFader">
 															<div class="vSlider">
@@ -224,16 +224,16 @@
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Jean-Baptiste Barth</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Nicolas Chuche</span></div></div>
-																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Laurent Gautrot</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Philippe Jastrzebsi</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Marie-Line Caron</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Hervé Pirrat</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Patrick Bessonie</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Batman</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Nicolas Sarkozy</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>François Hollande</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Didier Bourdon</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Dieudonné</span></div></div>
+																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><span>Aziz Boutalbi</span></div></div>
 															</div>
 														</div>
 														<div class="submenu-link separator-horizontal"></div>
@@ -593,7 +593,7 @@
 		actionMenu();
 	});	
 	
-	/* dropdown menu */
+	/* dropdown */
 	
 	$('.list-trigger').on('click', openOptionList);
 	$('.menu-trigger').on('click', openSubMenu);
@@ -614,10 +614,6 @@
 			return false;
 		}
 	}
-
-	/* dropdown options */
-	
-	$('.formarea').on('click', closeAllOptionsMenus);
 	
 	function openOptionList(event) {
 
@@ -627,7 +623,8 @@
 		else {
 			closeAllOptionsMenus();
 			$parent.addClass('open');
-			$(".has-multiselectable-items, .has-selectable-items, .check-in").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas sur un check-in : c'est forcément une sélection multiple*/
+			setCheckAllState($(this));
+			$(".dropdown-list.has-multiselectable-items, .dropdown-list.has-selectable-items, .check-in").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas sur un check-in : c'est forcément une sélection multiple*/
 			console.log("ouverture de la liste");
 			$parent.find("input.invisible-input").focus();
 			return false;
@@ -635,12 +632,14 @@
 	}
 	
 	function closeAllSubMenus(event) {
+		$(".menu-trigger").parents(".has-dropdown").find("input").val("");
 		$(".menu-trigger").parents(".has-dropdown").removeClass('open');
 		console.log("fermeture des menus");
 		closeAllOptionsMenus(event)
 	}
 	
 	function closeAllOptionsMenus(event) {
+		$(".list-trigger").closest(".has-dropdown").find("input").val("");
 		$(".list-trigger").closest(".has-dropdown").removeClass('open');
 		console.log("fermeture des listes");
 	}
@@ -666,7 +665,46 @@
 	$(".check-in").click(function(){
 		$(this).children(".check").toggleClass("is-checked");
 		console.log("selection multiple depuis check-box");
+		var selector = $(this).closest(".listWrapper");
+		setCheckAllState(selector);
 	});
+	
+	/* sélection globale */
+	$(".check-in-all").click(function(e){
+		if ($(this).children(".check").hasClass("is-checked") || $(this).children(".check").hasClass("is-partial") ) {
+			$(this).closest(".listWrapper").find(".vSlider .check").removeClass("is-checked");
+			$(this).children(".check").removeClass("is-checked is-partial");
+			console.log("déselection générale");
+		}
+		else 
+		{
+			$(this).closest(".listWrapper").find(".vSlider .check").addClass("is-checked");
+			$(this).children(".check").addClass("is-checked");
+			console.log("selection générale");
+		}
+	});
+	
+	/* controle l'état du bouton de sélection globale */
+	
+	function setCheckAllState(selector) {
+		
+		selector = selector.closest(".listWrapper");
+		
+		var totalvalues = selector.find(".check-in > .check").length;
+		var selectedvalues = selector.find(".check-in > .is-checked").length;
+		
+		console.log(selectedvalues);
+		console.log(totalvalues);
+		
+		if ( selectedvalues < 1 )
+			{ selector.closest(".listWrapper").find(".check-in-all > .check").removeClass("is-checked").removeClass("is-partial");
+				console.log("aucune valeur");			}
+		else if ( selectedvalues == totalvalues )
+			{ selector.closest(".listWrapper").find(".check-in-all > .check").removeClass("is-partial").addClass("is-checked"); console.log("toutes sélectionnées");	}
+		else
+			{ selector.closest(".listWrapper").find(".check-in-all > .check").removeClass("is-checked").addClass("is-partial"); console.log("sélection partielle");	}
+	
+	}
 	
 	/* action : application sélection multiple */
 	$(".set-values").on('click', function() {	
@@ -693,18 +731,31 @@
 	}
 	
 	/* mise en valeur des checkbox */
-		$(".has-multiselectable-items .action-item").hover(function() { $(this).parent().find(".check").addClass("check-hover"); }, function() {$(this).parent().find(".check").removeClass("check-hover");});
-		/*$(".has-multiselectable-items .menuitem.data-test").hover(function() { $(".check-in .check").addClass("check-hover"); }, function() {$(".check-in .check").removeClass("check-hover");});*/
+	$(".has-multiselectable-items .action-item").hover(function() { $(this).parent().find(".check").addClass("check-hover"); }, function() {$(this).parent().find(".check").removeClass("check-hover");});
 	
 	/* selection d'un filtre du panneau de recherche */
 	$(".invisible-table td > div.check").click(function(){
 		ToggleSearchFilter($(this));
 	});
 	
+	$('.formarea').on('click', closeAllOptionsMenus);
+	
 	function ToggleSearchFilter(selector) {
 		selector.toggleClass("is-checked");
 		console.log("toggle d'un filtre");
 	}
+	
+	
+	/* live filter */
+	
+	$('#filter-authors, #filter-projects').keyup(function(){
+	   var valThis = $(this).val().toLowerCase();
+		$(this).closest(".listWrapper").find('.vSlider > .menuitem:not(:has(.is-checked))').each(function(){ /* je garde les sélectionnés visibles */
+		 var text = $(this).text().toLowerCase();
+			(text.indexOf(valThis) == 0) ? $(this).show() : $(this).hide();            
+	   });
+	});
+	
 	
 	/* tableau : controles fins */
 	
