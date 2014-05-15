@@ -863,7 +863,7 @@ fieldset .has-dropdown.open::after, fieldset .has-dropdown.open::before { backgr
 }
 
 .menuitem.comment-label { font-style: italic; color: #777; /*padding-left: 1.5em;*/ cursor: default; }
-.menuitem.comment-label:hover { background-color: inherit; }
+.menuitem.action-item:hover { background-color: inherit; }
 
 /*
 
