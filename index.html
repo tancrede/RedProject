@@ -28,7 +28,7 @@
 					<div class="menuitem"><div class="menuitem-content"><span>Vue générale</span></div></div>
 					<div class="submenu-link separator-horizontal"></div>
 					<!-- <div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div> -->
-					<div class="menuitem action-item"><input type="text" class="invisible-input" /></div>
+					<div class="menuitem action-item"><input type="text" class="invisible-input" placeholder="Filtrer" /></div>
 					<div class="submenu-link separator-horizontal"></div>
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 1</span></div></div>
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 2</span></div></div>
@@ -194,7 +194,7 @@
 														</div>
 														<div class="submenu-link separator-horizontal"></div>
 														<!-- <div class="menuitem comment-label unclickable"><div class="menuitem-content"><span>Sélectionner</span></div></div> -->
-														<div class="menuitem action-item set-values"><div class="menuitem-content"><span>Appliquer</span></div></div>
+														<div class="menuitem set-values"><div class="menuitem-content"><span>Appliquer</span></div></div>
 													</div>
 												</div>
 											</td>
@@ -215,7 +215,7 @@
 												<div class="has-dropdown isInBloVisible">
 													<div class="list-trigger isInBloVisible select-list" data-selection-label="Choisir un Auteur">Choisir un Auteur <span class="arrow-up-and-down"></span></div>
 													<div class="listWrapper listWrapperSkin dropdown-list has-multiselectable-items input-item">
-														<div class="menuitem action-item"><input type="text" class="invisible-input" /></div>
+														<div class="menuitem action-item"><div class="check-in"><div class="check"><div></div></div></div><div class="menuitem-content"><input type="text" class="invisible-input" placeholder="Filtrer" /></div></div>
 														<div class="submenu-link separator-horizontal"></div>
 														<div class="vFader">
 															<div class="vSlider">
@@ -238,7 +238,7 @@
 														</div>
 														<div class="submenu-link separator-horizontal"></div>
 														<!-- <div class="menuitem comment-label unclickable"><div class="menuitem-content"><span>Sélectionner</span></div></div> -->
-														<div class="menuitem action-item set-values"><div class="menuitem-content"><span>Appliquer</span></div></div>
+														<div class="menuitem set-values"><div class="menuitem-content"><span>Appliquer</span></div></div>
 													</div>
 												</div>
 											</td>
@@ -272,7 +272,7 @@
 			<div class="f0 medFontSize">
 				<div class="action-perm has-dropdown">
 					<div class="menu-trigger action">
-						<div class="check-all"><div></div></div> 
+						<div class="check-all"><div class="check"><div></div></div></div>
 						<span class="arrow-down"></span>
 					</div>
 					<div class="listWrapper listWrapperSkin dropdown-menu has-selectable-items">
@@ -476,13 +476,17 @@
 			// si pas tous sélectionnés
 			if ($(".table-issues tr.selected").length < $(".table-issues tbody tr").length) /* le .selected compte aussi le check-all*/
 				{
-					$("div.check-all").addClass("partial").removeClass("selected");
+					$("div.check-all .check").addClass("is-partial");
+					$("div.check-all").removeClass("selected");
 				}
-			else { $("div.check-all").addClass("selected").removeClass("partial"); }
+			else { 
+					$("div.check-all").addClass("selected");
+					$("div.check-all .check").removeClass("is-partial");
+				}
 		}
 		else { 
 			$("div.action-select").removeClass("isInBloVisible");
-			$("div.check-all").removeClass("partial");
+			$("div.check-all .check").removeClass("is-partial");
 		};
 		
 		if ($(".table-issues tr.hide-it").length > 0) {
@@ -510,12 +514,12 @@
 		$(".table-issues div.check").closest("tr").removeClass("selected");		/* je décoche toutes les lignes */
 		closeAllSubMenus();											/* et je ferme tous les menus éventuellement dépliés */
 	  } 
-	  else if ($("div.check-all").hasClass("partial")) {			/* idem */
-		$("div.check-all").removeClass("partial");
+	  else if ($("div.check-all .check").hasClass("is-partial")) {			/* idem */
+		$("div.check-all .check").removeClass("is-partial");
 		$(".table-issues div.check").closest("tr").removeClass("selected");
 		closeAllSubMenus();
 	  }
-	  else 															/* s'il n'est ni .selected ni .partial, c'est qu'il n'est pas coché */
+	  else 															/* s'il n'est ni .selected ni .is-partial, c'est qu'il n'est pas coché */
 	  {
 		$("div.check-all").addClass("selected");					/* je le passe donc en selected */
 		$(".table-issues div.check").closest("tr").addClass("selected");			/* et je selectionne toutes les lignes */
@@ -526,13 +530,13 @@
 	/* menu de présélection */
 	
 	$("#select-all").click(function(){
-		$("div.check-all").removeClass("partial").addClass("selected");
+		$("div.check-all .check").removeClass("is-partial").addClass("selected");
 		$(".table-issues div.check").closest("tr").addClass("selected");
 		actionMenu();
 	});
 	
 	$("#select-none").click(function(){
-		$("div.check-all").removeClass("selected").removeClass("partial");
+		$("div.check-all .check").removeClass("selected").removeClass("is-partial");
 		$(".table-issues div.check").closest("tr").removeClass("selected");
 		actionMenu();
 	});
@@ -600,13 +604,6 @@
 			return false;
 		}
 	}
-    
-	function closeAllSubMenus(event) {
-		$(".menu-trigger").parents(".has-dropdown").removeClass('open');
-		console.log("fermeture des menus");
-		closeAllOptionsMenus(event)
-	}
-	
 
 	/* dropdown options */
 	
@@ -625,6 +622,13 @@
 			$parent.find("input.invisible-input").focus();
 			return false;
 		}
+	}
+	
+	
+	function closeAllSubMenus(event) {
+		$(".menu-trigger").parents(".has-dropdown").removeClass('open');
+		console.log("fermeture des menus");
+		closeAllOptionsMenus(event)
 	}
 	
 	function closeAllOptionsMenus(event) {
@@ -668,16 +672,16 @@
 		closeAllOptionsMenus();	
 	});
 	
-	/* cacul du label du trigger après validation de la sélection */
+	/* calcul du label du trigger après validation de la sélection */
 	function setSelectLabel(selector) {
-		if (selector.find(".selected").length == 0) {	
+		if (selector.find(".vSlider .selected").length == 0) {	
 			selector.siblings('div.select-list')[0].firstChild.data = selector.prev('.list-trigger').attr('data-selection-label');
 			selector.closest("tr").removeClass("selected");
 			/*selector.find(".set-values").addClass("hide-it");
 			selector.find(".comment-label").removeClass("hide-it");*/
 			console.log("aucune selection");
 		}
-		else if (selector.find(".selected").length == 1) {	
+		else if (selector.find(".vSlider .selected").length == 1) {	
 			selector.siblings('div.select-list')[0].firstChild.data = selector.find(".selected .menuitem-content > span").html() + " ";
 			selector.closest("tr").addClass("selected");
 			/*selector.find(".set-values").removeClass("hide-it");
@@ -685,7 +689,7 @@
 			console.log("une selection");
 		}
 		else {
-			selector.siblings('div.select-list')[0].firstChild.data = selector.find(".selected").length + " selections ";
+			selector.siblings('div.select-list')[0].firstChild.data = selector.find(".vSlider .selected").length + " selections ";
 			selector.closest("tr").addClass("selected");
 			/*selector.find(".set-values").removeClass("hide-it");
 			selector.find(".comment-label").addClass("hide-it");*/
