@@ -533,9 +533,7 @@ a.issue-tab:hover .issue-subject:after {
 	width: 9em;
 }
 
-.selected > .check-in > .check div,
-.selected  > td > .check div,
-.selected.check-all > .check div {
+.mark {
 	height: 15px;
 	outline: 0;
 	width: 15px;
@@ -543,8 +541,13 @@ a.issue-tab:hover .issue-subject:after {
 	position: relative;
 	top: -4px;
 	font-size:1px;
+}
+
+.is-checked > .mark {
 	background: url('../img/checkmark.png') no-repeat -5px -3px;
 }
+
+.is-partial { background-color: rgb(240,240,240); } /* partiellement selectionné */
 
 .check:hover
 /*.check-all:hover*/ {
@@ -553,9 +556,10 @@ a.issue-tab:hover .issue-subject:after {
 	border: 1px solid #b2b2b2 !important;
 }
 
-.vFader:hover .menuitem > .check-in > .check {
+/*.vFader:hover .menuitem > .check-in > .check,
+.action-item:hover .check-in > .check {
 	border-color: rgb(230, 230, 230) !important;
-}
+}*/
 
 .check-all {
 	margin-left: calc(-0.7em - 1px);
@@ -575,11 +579,19 @@ a.issue-tab:hover .issue-subject:after {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.check-in .check,
+.action-item .check {
   border-color: transparent;
 }
 
-.is-partial { background-color: rgb(240,240,240); } /* partiellement selectionné */
-
+.check.check-hover,
+.vFader:hover .check,
+.action-item:hover .check {
+	border: 1px solid #c6c6c6;
+	border: 1px solid rgb(230, 230, 230);
+}
 
 /*
   ACTIONS
