@@ -26,6 +26,7 @@
 				</div>
 				<div class="listWrapper listWrapperSkin dropdown-menu">
 					<div class="menuitem"><div class="menuitem-content"><span>Vue générale</span></div></div>
+					<div class="menuitem"><div class="menuitem-content"><span>Les parents</span></div></div>
 					<div class="submenu-link separator-horizontal"></div>
 					<!-- <div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div> -->
 					<div class="menuitem action-item"><input type="text" class="invisible-input" placeholder="Filtrer" id="filter-projects" /></div>
@@ -33,8 +34,6 @@
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 1</span></div></div>
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 2</span></div></div>
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 3</span></div></div>
-					<div class="submenu-link separator-horizontal"></div>
-					<div class="menuitem"><div class="menuitem-content"><span>Les parents</span></div></div>
 					<div class="submenu-link separator-horizontal"></div>
 					<div class="vFader">
 						<div class="vSlider">
@@ -623,7 +622,7 @@
 		else {
 			closeAllOptionsMenus();
 			$parent.addClass('open');
-			setCheckAllState($(this));
+			setCheckAllState($(this).parent().find(".listWrapper"));
 			$(".dropdown-list.has-multiselectable-items, .dropdown-list.has-selectable-items, .check-in").click(function(e) { e.stopPropagation(); }) /* je ne ferme pas sur un check-in : c'est forcément une sélection multiple*/
 			console.log("ouverture de la liste");
 			$parent.find("input.invisible-input").focus();
@@ -688,21 +687,21 @@
 	
 	function setCheckAllState(selector) {
 		
-		selector = selector.closest(".listWrapper");
+		selector.hasClass(".listWrapper") ? selector = selector : selector = selector.closest(".listWrapper");
 		
 		var totalvalues = selector.find(".check-in > .check").length;
 		var selectedvalues = selector.find(".check-in > .is-checked").length;
 		
-		console.log(selectedvalues);
-		console.log(totalvalues);
+		console.log("selectedvalues=" + selectedvalues);
+		console.log("totalvalues=" + totalvalues);
 		
 		if ( selectedvalues < 1 )
-			{ selector.closest(".listWrapper").find(".check-in-all > .check").removeClass("is-checked").removeClass("is-partial");
+			{ selector.find(".check-in-all > .check").removeClass("is-checked").removeClass("is-partial");
 				console.log("aucune valeur");			}
 		else if ( selectedvalues == totalvalues )
-			{ selector.closest(".listWrapper").find(".check-in-all > .check").removeClass("is-partial").addClass("is-checked"); console.log("toutes sélectionnées");	}
+			{ selector.find(".check-in-all > .check").removeClass("is-partial").addClass("is-checked"); console.log("toutes sélectionnées");	}
 		else
-			{ selector.closest(".listWrapper").find(".check-in-all > .check").removeClass("is-checked").addClass("is-partial"); console.log("sélection partielle");	}
+			{ selector.find(".check-in-all > .check").removeClass("is-checked").addClass("is-partial"); console.log("sélection partielle");	}
 	
 	}
 	
