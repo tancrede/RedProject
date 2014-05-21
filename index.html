@@ -731,10 +731,17 @@
 	}
 	
 	function closeAllOptionsMenus(event) {
-		$(".list-trigger").closest(".has-dropdown").find("input").val("");
+		/* change l'état global du drop-down */
 		$(".list-trigger").closest(".has-dropdown").removeClass('open');
+		
+		/* efface les traces d'une recherche éventuelle */
+		$(".list-trigger").closest(".has-dropdown").find("input").val("");
+		$(".list-trigger").closest(".has-dropdown").find(".menuitem.data-test").show();
+		
+		/* reinitialise le bouton d'application des changements */
 		$(".list-trigger").closest(".has-dropdown").find(".set-values").hide();
 		$(".list-trigger").closest(".has-dropdown").find(".comment-label").show();
+
 		console.log("fermeture des listes");
 	}
 	
