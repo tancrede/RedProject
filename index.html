@@ -776,13 +776,13 @@
 	$(".check-in-all").click(function(e){
 		if ($(this).children(".check").hasClass("is-checked") || $(this).children(".check").hasClass("is-partial") ) {
 			$(this).closest(".listWrapper").find(".vSlider .check").removeClass("is-checked");
-			$(this).children(".check").removeClass("is-checked is-partial");
+			$(this).children(".check").filter(':visible').removeClass("is-checked is-partial");
 			console.log("déselection générale");
 		}
 		else 
 		{
 			$(this).closest(".listWrapper").find(".vSlider .check").addClass("is-checked");
-			$(this).children(".check").addClass("is-checked");
+			$(this).children(".check").filter(':visible').addClass("is-checked");
 			console.log("selection générale");
 		}
 		
