@@ -696,6 +696,24 @@ a.issue-tab:hover .issue-subject:after {
 	left: 0px;
 }
 
+.arrow-close {
+	background-image: url('../img/arrow-close.png');
+	cursor: pointer;
+	height: 21px;
+	opacity: .4;
+	padding: 2px;
+	position: absolute;
+	right: 0;
+	top: 4px;
+	width: 21px;
+	z-index: 10;
+}
+
+.arrow-close:hover {
+	opacity: .9;
+}
+
+
 .has-dropdown {
   position: relative;
 }

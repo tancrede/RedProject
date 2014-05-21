@@ -83,6 +83,7 @@
 						<div class="sfield-2 has-dropdown">
 							<div class="menu-trigger arrow-wrapper"><span class="arrow-down"></span></div>
 							<div class="listWrapper listWrapperSkin filter-fieldset">
+								<div class="arrow-close"></div>
 								<div class="formarea">
 									<div class="rWrapper">
 											<div class="has-dropdown isInBloVisible">
@@ -950,6 +951,11 @@
 	
 	$("#search").keydown(function(e){
 		if (e.keyCode == 40) { 
+			$(this).closest(".search-fieldset").find(".menu-trigger").trigger("click");
+			return false;
+		}
+		
+		if (e.keyCode == 38) { 
 			$(this).closest(".search-fieldset").find(".menu-trigger").trigger("click");
 			return false;
 		}
