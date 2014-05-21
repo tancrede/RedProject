@@ -36,7 +36,7 @@
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 3</span></div></div>
 					<div class="submenu-link separator-horizontal"></div>
 					<div class="vFader">
-						<div class="vSlider">
+						<div class="vSlider" id="projects-list">
 							<div class="menuitem"><div class="menuitem-content"><span>ADS2007 Infocentre</span></div></div>
 							<div class="menuitem"><div class="menuitem-content"><span>Amédée</span></div></div>
 							<div class="menuitem"><div class="menuitem-content"><span>Andi</span></div></div>
@@ -852,6 +852,7 @@
 	
 	$(function() {
         $('#filter-authors').fastLiveFilter('#authors-list');
+		$('#filter-projects').fastLiveFilter('#projects-list');
     });
 	
 	/**
