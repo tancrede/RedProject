@@ -469,11 +469,26 @@
 	
 	<script type="text/javascript">
 
+
+	/* INDEX 													*/
+	
+	/* 1 - controle l'affichage des actions de la barre de menu */
+	/* 2 - tableau issues : selection  							*/
+	/* 3 - tableau issues : présélections particulières 		*/
+	/* 4 - tableau issues : controles fins par ligne 			*/
+	/* 5 - dropdown 											*/
+	/* 6 - layout 												*/
+	/* 7 - live filter 											*/
+	
+	
 	$( document ).ready(function() {
 		actionMenu();
 	});
 	
+	/********************************************************/
 	/* controle l'affichage des actions de la barre de menu */
+	/********************************************************/
+	
 	function actionMenu() {
 		// si au moins une sélection
 	   if ($(".table-issues tr.selected").length > 0) {
@@ -494,6 +509,11 @@
 			$(".action-perm .check-all .check").removeClass("is-partial");
 		};
 	}
+
+	
+	/******************************/
+	/* tableau issues : selection */
+	/******************************/
 	
 	function selectAllTableLine() {
 		$(".action-perm .check-all .check").removeClass("is-partial").addClass("is-checked");
@@ -540,7 +560,11 @@
 		actionMenu();
 	});
 	
-	/* menu de présélection particuliers */
+	
+	/************************************************/
+	/* tableau issues : présélections particulières */
+	/************************************************/
+	
 	$("#select-isHigh").click(function(){
 		selectNoTableLine();
 		$(".table-issues tr:has(.isHigh)").addClass("selected");
@@ -594,7 +618,30 @@
 		actionMenu();
 	});	
 	
+	/*********************************************/
+	/* tableau issues : controles fins par ligne */
+	/*********************************************/
+	
+	/* toggle bouton favori */
+	$("span.fav").click(function(){
+	  $(this).attr("data-icon", $(this).attr("data-icon") == "s" ? "S" : "s");
+	});
+
+	/* toggle triple priorité */
+	$("span.prior").click(function () {
+	  if ($(this).hasClass('isLow')) {
+		$(this).removeClass("isLow").addClass('isMedium');   /* click 1: works*/
+	  } else if ( $(this).hasClass('isMedium')) {
+		$(this).removeClass('isMedium').addClass('isHigh'); /* click 2: doesn't*/
+	  } else {
+		$(this).removeClass('isHigh').addClass('isLow'); /* click 2: doesn't*/
+	  }
+	});
+	
+	
+	/************/
 	/* dropdown */
+	/************/
 	
 	$('.list-trigger').on('click', openOptionList);
 	$('.menu-trigger').on('click', openSubMenu);
@@ -701,10 +748,9 @@
 			{ selector.find(".check-in-all > .check").removeClass("is-checked").removeClass("is-partial");
 				console.log("aucune valeur");			}
 		else if ( selectedvalues == totalvalues )
-			{ selector.find(".check-in-all > .check").removeClass("is-partial").addClass("is-checked"); console.log("toutes sélectionnées");	}
+			{ selector.find(".check-in-all > .check").removeClass("is-partial").addClass("is-checked"); console.log("toutes sélectionnées"); }
 		else
 			{ selector.find(".check-in-all > .check").removeClass("is-checked").addClass("is-partial"); console.log("sélection partielle");	}
-	
 	}
 	
 	/* action : application sélection multiple */
@@ -731,7 +777,7 @@
 		}
 	}
 	
-	/* mise en valeur des checkbox */
+	/* mise en valeur des checkbox par lot */
 	$(".has-multiselectable-items .action-item").hover(function() { $(this).parent().find(".check").addClass("check-hover"); }, function() {$(this).parent().find(".check").removeClass("check-hover");});
 	
 	/* selection d'un filtre du panneau de recherche */
@@ -745,41 +791,12 @@
 		selector.toggleClass("is-checked");
 		console.log("toggle d'un filtre");
 	}
-	
-	
-	/* live filter */
-	
-	/*$('#filter-authors, #filter-projects').keyup(function(){
-	   var valThis = $(this).val().toLowerCase();
-		$(this).closest(".listWrapper").find('.vSlider > .menuitem:not(:has(.is-checked))').each(function(){
-		 var text = $(this).text().toLowerCase();
-			(text.indexOf(valThis) == 0) ? $(this).show() : $(this).hide();            
-	   });
-	});*/
-	
-	$(function() {
-        $('#filter-authors').fastLiveFilter('#authors-list');
-    });
-	
-	
-	/* tableau : controles fins */
-	
-	/* toggle bouton favori */
-	$("span.fav").click(function(){
-	  $(this).attr("data-icon", $(this).attr("data-icon") == "s" ? "S" : "s");
-	});
 
-	/* toggle triple priorité */
-	$("span.prior").click(function () {
-	  if ($(this).hasClass('isLow')) {
-		$(this).removeClass("isLow").addClass('isMedium');   /* click 1: works*/
-	  } else if ( $(this).hasClass('isMedium')) {
-		$(this).removeClass('isMedium'  ).addClass('isHigh'); /* click 2: doesn't*/
-	  } else {
-		$(this).removeClass('isHigh'  ).addClass('isLow'); /* click 2: doesn't*/
-	  }
-	});
 
+	/**********/
+	/* layout */
+	/**********/
+	
 	/* ombrage sous le bandeau d'action lors d'un scroll down */
 	$(window).scroll(function() {    
 		var scroll = $(window).scrollTop();
@@ -825,71 +842,85 @@
 	});
 	
 	
+	/***************/
+	/* live filter */
+	/***************/
+	
+	/*$('#filter-authors, #filter-projects').keyup(function(){
+	   var valThis = $(this).val().toLowerCase();
+		$(this).closest(".listWrapper").find('.vSlider > .menuitem:not(:has(.is-checked))').each(function(){
+		 var text = $(this).text().toLowerCase();
+			(text.indexOf(valThis) == 0) ? $(this).show() : $(this).hide();            
+	   });
+	});*/
+	
+	$(function() {
+        $('#filter-authors').fastLiveFilter('#authors-list');
+    });
 	
 	/**
- * fastLiveFilter jQuery plugin 1.0.3
- * 
- * Copyright (c) 2011, Anthony Bush
- * License: <http://www.opensource.org/licenses/bsd-license.php>
- * Project Website: http://anthonybush.com/projects/jquery_fast_live_filter/
- **/
+	 * fastLiveFilter jQuery plugin 1.0.3
+	 * 
+	 * Copyright (c) 2011, Anthony Bush
+	 * License: <http://www.opensource.org/licenses/bsd-license.php>
+	 * Project Website: http://anthonybush.com/projects/jquery_fast_live_filter/
+	 **/
 
-jQuery.fn.fastLiveFilter = function(list, options) {
-	// Options: input, list, timeout, callback
-	options = options || {};
-	list = jQuery(list);
-	var input = this;
-	var lastFilter = '';
-	var timeout = options.timeout || 0;
-	var callback = options.callback || function() {};
+	jQuery.fn.fastLiveFilter = function(list, options) {
+		// Options: input, list, timeout, callback
+		options = options || {};
+		list = jQuery(list);
+		var input = this;
+		var lastFilter = '';
+		var timeout = options.timeout || 0;
+		var callback = options.callback || function() {};
 
-	var keyTimeout;
+		var keyTimeout;
 
-	// NOTE: because we cache lis & len here, users would need to re-init the plugin
-	// if they modify the list in the DOM later.  This doesn't give us that much speed
-	// boost, so perhaps it's not worth putting it here.
-	var lis = list.children();
-	var len = lis.length;
-	var oldDisplay = len > 0 ? lis[0].style.display : "block";
-	callback(len); // do a one-time callback on initialization to make sure everything's in sync
+		// NOTE: because we cache lis & len here, users would need to re-init the plugin
+		// if they modify the list in the DOM later.  This doesn't give us that much speed
+		// boost, so perhaps it's not worth putting it here.
+		var lis = list.children();
+		var len = lis.length;
+		var oldDisplay = len > 0 ? lis[0].style.display : "block";
+		callback(len); // do a one-time callback on initialization to make sure everything's in sync
 
-	input.change(function() {
-		// var startTime = new Date().getTime();
-		var filter = input.val().toLowerCase();
-		var li, innerText;
-		var numShown = 0;
-		for (var i = 0; i < len; i++) {
-			li = lis[i];
-			innerText = !options.selector ? 
-				(li.textContent || li.innerText || "") : 
-				$(li).find(options.selector).text();
+		input.change(function() {
+			// var startTime = new Date().getTime();
+			var filter = input.val().toLowerCase();
+			var li, innerText;
+			var numShown = 0;
+			for (var i = 0; i < len; i++) {
+				li = lis[i];
+				innerText = !options.selector ? 
+					(li.textContent || li.innerText || "") : 
+					$(li).find(options.selector).text();
 
-			if (innerText.toLowerCase().indexOf(filter) >= 0) {
-				if (li.style.display == "none") {
-					li.style.display = oldDisplay;
-				}
-				numShown++;
-			} else {
-				if (li.style.display != "none") {
-					li.style.display = "none";
+				if (innerText.toLowerCase().indexOf(filter) >= 0) {
+					if (li.style.display == "none") {
+						li.style.display = oldDisplay;
+					}
+					numShown++;
+				} else {
+					if (li.style.display != "none") {
+						li.style.display = "none";
+					}
 				}
 			}
-		}
-		callback(numShown);
-		// var endTime = new Date().getTime();
-		// console.log('Search for ' + filter + ' took: ' + (endTime - startTime) + ' (' + numShown + ' results)');
-		return false;
-	}).keydown(function() {
-		clearTimeout(keyTimeout);
-		keyTimeout = setTimeout(function() {
-			if( input.val() === lastFilter ) return;
-			lastFilter = input.val();
-			input.change();
-		}, timeout);
-	});
-	return this; // maintain jQuery chainability
-}
-	
+			callback(numShown);
+			// var endTime = new Date().getTime();
+			// console.log('Search for ' + filter + ' took: ' + (endTime - startTime) + ' (' + numShown + ' results)');
+			return false;
+		}).keydown(function() {
+			clearTimeout(keyTimeout);
+			keyTimeout = setTimeout(function() {
+				if( input.val() === lastFilter ) return;
+				lastFilter = input.val();
+				input.change();
+			}, timeout);
+		});
+		return this; // maintain jQuery chainability
+	}
 	
   </script>
 	
