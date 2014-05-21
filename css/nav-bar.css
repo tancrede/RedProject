@@ -755,7 +755,9 @@ a.issue-tab:hover .issue-subject:after {
 
 /* ::after et :: before pour masquer le chevauchement des bords du sous menu avec celui de l'élément de menu */
 
-.has-dropdown.open::after {
+.titleLevel > .has-dropdown.open::after,
+.action-perm.has-dropdown.open::after,
+.action-select.has-dropdown.open::after {
 	position: absolute;
 	content: '';
 	width: 50%;
@@ -766,7 +768,9 @@ a.issue-tab:hover .issue-subject:after {
 	z-index:10;
 }
 
-.has-dropdown.open::before {
+.titleLevel > .has-dropdown.open::before,
+.action-perm.has-dropdown.open::before,
+.action-select.has-dropdown.open::before {
 	position: absolute;
 	content: '';
 	width: 50%;
