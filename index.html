@@ -737,6 +737,7 @@
 		/* efface les traces d'une recherche éventuelle */
 		$(".list-trigger").closest(".has-dropdown").find("input").val("");
 		$(".list-trigger").closest(".has-dropdown").find(".menuitem.data-test").show();
+		$(".list-trigger").closest(".has-dropdown").find(".check-in-all").show();
 		
 		/* reinitialise le bouton d'application des changements */
 		$(".list-trigger").closest(".has-dropdown").find(".set-values").hide();
@@ -898,6 +899,7 @@
 		callback(len); // do a one-time callback on initialization to make sure everything's in sync
 
 		input.change(function() {
+
 			// var startTime = new Date().getTime();
 			var filter = input.val().toLowerCase();
 			var li, innerText;
@@ -929,6 +931,10 @@
 				if( input.val() === lastFilter ) return;
 				lastFilter = input.val();
 				input.change();
+				
+				// ajout personnel pour faire disparaitre la case de sélection générale dés qu'il y a une valeur de filtre
+				if ( input.val() == "" ) { input.closest(".menuitem").find(".check-in-all").show(); } else { input.closest(".menuitem").find(".check-in-all").hide(); }
+				
 			}, timeout);
 		});
 		return this; // maintain jQuery chainability
