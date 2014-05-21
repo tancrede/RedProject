@@ -118,7 +118,7 @@
 											<col class="form-value">
 										</colgroup>
 										<tr class="selected">
-											<td><div class="check"><div class="mark"></div></div></td>
+											<td><div class="check is-checked"><div class="mark"></div></div></td>
 											<td><span class="isInBloVisible searchLabel unselectable">Status</span></td>
 											<td>
 												<div class="has-dropdown isInBloVisible">
@@ -144,7 +144,7 @@
 											</td>
 										</tr>
 										<tr class="selected">
-											<td><div class="check"><div class="mark"></div></div></td>
+											<td><div class="check is-checked"><div class="mark"></div></div></td>
 											<td><span class="isInBloVisible searchLabel unselectable">Priorité</span></td>
 											<td>
 												<div class="has-dropdown isInBloVisible">
@@ -168,7 +168,7 @@
 											</td>
 										</tr>
 										<tr class="selected">
-											<td><div class="check"><div class="mark"></div></div></td>
+											<td><div class="check is-checked"><div class="mark"></div></div></td>
 											<td><span class="isInBloVisible searchLabel unselectable">Tracker</span></td>
 											<td>
 												<div class="has-dropdown isInBloVisible">
@@ -199,7 +199,7 @@
 											</td>
 										</tr>
 										<tr class="selected">
-											<td><div class="check"><div class="mark"></div></div></td>
+											<td><div class="check is-checked"><div class="mark"></div></div></td>
 											<td><span class="isInBloVisible searchLabel unselectable">Auteur</span></td>
 											<td>
 												<div class="has-dropdown isInBloVisible">
@@ -833,6 +833,7 @@
 	
 	function ToggleSearchFilter(selector) {
 		selector.toggleClass("is-checked");
+		selector.closest("tr").toggleClass("selected");
 		console.log("toggle d'un filtre");
 	}
 	
