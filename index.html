@@ -79,7 +79,7 @@
 			<div class="f2 search-wrapper medFontSize">
 				<form class="search-form">
 					<fieldset class="f11 search-fieldset">
-						<div class="sfield-1"><input type="text" class="search-input" placeholder="Rechercher, Filtrer…"></div>
+						<div class="sfield-1"><input type="text" class="search-input" placeholder="Rechercher, Filtrer…" id="search"></div>
 						<div class="sfield-2 has-dropdown">
 							<div class="menu-trigger arrow-wrapper"><span class="arrow-down"></span></div>
 							<div class="listWrapper listWrapperSkin filter-fieldset">
@@ -690,7 +690,7 @@
 	$('.list-trigger').on('click', openOptionList);
 	$('.menu-trigger').on('click', openSubMenu);
 		
-	function openSubMenu(event) {
+	function openSubMenu() {
 	
 		var $parent = $(this).parent();
 	
@@ -723,14 +723,14 @@
 		}
 	}
 	
-	function closeAllSubMenus(event) {
+	function closeAllSubMenus() {
 		$(".menu-trigger").parents(".has-dropdown").find("input").val("");
 		$(".menu-trigger").parents(".has-dropdown").removeClass('open');
 		console.log("fermeture des menus");
-		closeAllOptionsMenus(event)
+		closeAllOptionsMenus()
 	}
 	
-	function closeAllOptionsMenus(event) {
+	function closeAllOptionsMenus() {
 		/* change l'état global du drop-down */
 		$(".list-trigger").closest(".has-dropdown").removeClass('open');
 		
@@ -939,6 +939,28 @@
 		});
 		return this; // maintain jQuery chainability
 	}
+	
+	/* keyboard controls
+		27 - escape
+		37 - left
+		38 - up
+		39 - right
+		40 - down
+	*/
+	
+	$("#search").keydown(function(e){
+		if (e.keyCode == 40) { 
+			$(this).closest(".search-fieldset").find(".menu-trigger").trigger("click");
+			return false;
+		}
+	});
+	
+	$(document).keydown(function(e){
+		if (e.keyCode == 27) { 
+			$(".open").length > 1 ? closeAllOptionsMenus() : closeAllSubMenus();
+			return false;
+		}
+	});
 	
   </script>
 	
