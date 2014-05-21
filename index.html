@@ -472,23 +472,23 @@
 
 	/* INDEX 													*/
 	
-	/* 1 - controle l'affichage des actions de la barre de menu */
+	/* 1 - layout												*/
 	/* 2 - tableau issues : selection  							*/
 	/* 3 - tableau issues : présélections particulières 		*/
 	/* 4 - tableau issues : controles fins par ligne 			*/
 	/* 5 - dropdown 											*/
-	/* 6 - layout 												*/
-	/* 7 - live filter 											*/
+	/* 6 - live filter 											*/
 	
 	
 	$( document ).ready(function() {
 		actionMenu();
 	});
 	
-	/********************************************************/
-	/* controle l'affichage des actions de la barre de menu */
-	/********************************************************/
+	/**********/
+	/* Layout */
+	/**********/
 	
+	/* controle l'affichage des actions de la barre de menu */	
 	function actionMenu() {
 		// si au moins une sélection
 	   if ($(".table-issues tr.selected").length > 0) {
@@ -509,6 +509,50 @@
 			$(".action-perm .check-all .check").removeClass("is-partial");
 		};
 	}
+	
+	/* ombrage sous le bandeau d'action lors d'un scroll down */
+	$(window).scroll(function() {    
+		var scroll = $(window).scrollTop();
+		if (scroll > 0) {
+			$(".actions-menu").addClass("sticky");
+			}
+		else { $(".actions-menu").removeClass("sticky"); }
+	});
+	
+	/* changement de compacité pour la vue : gestion du menu */
+	
+	$("#view-normal").click(function() {
+		$(".table-issues").addClass("normal-table").removeClass("compact-table comfortable-table");
+		if (!$(this).hasClass("selected-item")) {
+			$("div[data-group='view-density']").removeClass("selected-item");
+			$(this).addClass("selected-item");
+		}
+	});
+	
+	$("#view-compact").click(function() {
+		$(".table-issues").addClass("compact-table").removeClass("normal-table comfortable-table");
+		if (!$(this).hasClass("selected-item")) {
+			$("div[data-group='view-density']").removeClass("selected-item");
+			$(this).addClass("selected-item");
+		}
+	});
+	
+	$("#view-comfortable").click(function() {
+		$(".table-issues").addClass("comfortable-table").removeClass("normal-table compact-table");
+		if (!$(this).hasClass("selected-item")) {
+			$("div[data-group='view-density']").removeClass("selected-item");
+			$(this).addClass("selected-item");
+		}
+	});
+	
+	/* outline sur le champs de recherche */
+	$('input.search-input').on('focus', function () {
+		$(this).parent().parent().addClass('isFocused');
+	});
+	
+	$('input').on('focusout', function () {
+		$(this).parent().parent().removeClass('isFocused');
+	});
 
 	
 	/******************************/
@@ -791,55 +835,6 @@
 		selector.toggleClass("is-checked");
 		console.log("toggle d'un filtre");
 	}
-
-
-	/**********/
-	/* layout */
-	/**********/
-	
-	/* ombrage sous le bandeau d'action lors d'un scroll down */
-	$(window).scroll(function() {    
-		var scroll = $(window).scrollTop();
-		if (scroll > 0) {
-			$(".actions-menu").addClass("sticky");
-			}
-		else { $(".actions-menu").removeClass("sticky"); }
-	});
-	
-	/* changement de compacité pour la vue : gestion du menu */
-	
-	$("#view-normal").click(function() {
-		$(".table-issues").addClass("normal-table").removeClass("compact-table comfortable-table");
-		if (!$(this).hasClass("selected-item")) {
-			$("div[data-group='view-density']").removeClass("selected-item");
-			$(this).addClass("selected-item");
-		}
-	});
-	
-	$("#view-compact").click(function() {
-		$(".table-issues").addClass("compact-table").removeClass("normal-table comfortable-table");
-		if (!$(this).hasClass("selected-item")) {
-			$("div[data-group='view-density']").removeClass("selected-item");
-			$(this).addClass("selected-item");
-		}
-	});
-	
-	$("#view-comfortable").click(function() {
-		$(".table-issues").addClass("comfortable-table").removeClass("normal-table compact-table");
-		if (!$(this).hasClass("selected-item")) {
-			$("div[data-group='view-density']").removeClass("selected-item");
-			$(this).addClass("selected-item");
-		}
-	});
-	
-	/* outline sur le champs de recherche */
-	$('input.search-input').on('focus', function () {
-		$(this).parent().parent().addClass('isFocused');
-	});
-	
-	$('input').on('focusout', function () {
-		$(this).parent().parent().removeClass('isFocused');
-	});
 	
 	
 	/***************/
