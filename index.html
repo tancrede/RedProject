@@ -690,7 +690,8 @@
 	
 	$('.list-trigger').on('click', openOptionList);
 	$('.menu-trigger').on('click', openSubMenu);
-		
+	$(".menuitem").hover(function(){ $(".menuitem").removeClass("is-hover"); $(this).addClass("is-hover");  });
+	
 	function openSubMenu() {
 	
 		var $parent = $(this).parent();
@@ -966,7 +967,25 @@
 			$(".open").length > 1 ? closeAllOptionsMenus() : closeAllSubMenus();
 			return false;
 		}
+
+		if (e.keyCode == 40) { 
+			if ($(".open").length > 0)
+				{
+					if ($(".open .menuitem.is-hover").length == 0 )
+						{ $(".open .menuitem").first().toggleClass("is-hover"); }
+					else {
+						var currentItem = $(".open .menuitem.is-hover");
+						//currentItem.next(".menuitem:not(.selected-item)").toggleClass("is-hover");
+						currentItem.next(".menuitem").toggleClass("is-hover");
+						currentItem.toggleClass("is-hover");
+						}
+				}
+			else { alert("pas de menu ouvert");}
+			
+			return false;
+		}
 	});
+
 	
   </script>
 	
