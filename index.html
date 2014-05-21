@@ -192,8 +192,8 @@
 															</div>
 														</div>
 														<div class="submenu-link separator-horizontal"></div>
-														<!-- <div class="menuitem comment-label unclickable"><div class="menuitem-content"><span>Sélectionner</span></div></div> -->
-														<div class="menuitem set-values"><div class="menuitem-content"><span>Appliquer</span></div></div>
+														<div class="menuitem comment-label unclickable"><div class="menuitem-content"><span>Sélectionner</span></div></div>
+														<div class="menuitem set-values" style="display:none;"><div class="menuitem-content"><span>Appliquer</span></div></div>
 													</div>
 												</div>
 											</td>
@@ -238,8 +238,8 @@
 															</div>
 														</div>
 														<div class="submenu-link separator-horizontal"></div>
-														<!-- <div class="menuitem comment-label unclickable"><div class="menuitem-content"><span>Sélectionner</span></div></div> -->
-														<div class="menuitem set-values"><div class="menuitem-content"><span>Appliquer</span></div></div>
+														<div class="menuitem comment-label unclickable"><div class="menuitem-content"><span>Sélectionner</span></div></div>
+														<div class="menuitem set-values" style="display:none;"><div class="menuitem-content"><span>Appliquer</span></div></div>
 													</div>
 												</div>
 											</td>
@@ -733,6 +733,8 @@
 	function closeAllOptionsMenus(event) {
 		$(".list-trigger").closest(".has-dropdown").find("input").val("");
 		$(".list-trigger").closest(".has-dropdown").removeClass('open');
+		$(".list-trigger").closest(".has-dropdown").find(".set-values").hide();
+		$(".list-trigger").closest(".has-dropdown").find(".comment-label").show();
 		console.log("fermeture des listes");
 	}
 	
@@ -758,6 +760,8 @@
 		$(this).children(".check").toggleClass("is-checked");
 		console.log("selection multiple depuis check-box");
 		var selector = $(this).closest(".listWrapper");
+		selector.find(".set-values").show();
+		selector.find(".comment-label").hide();
 		setCheckAllState(selector);
 	});
 	
