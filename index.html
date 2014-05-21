@@ -785,6 +785,10 @@
 			$(this).children(".check").addClass("is-checked");
 			console.log("selection générale");
 		}
+		
+		$(this).closest(".listWrapper").find(".set-values").show();
+		$(this).closest(".listWrapper").find(".comment-label").hide();
+		
 	});
 	
 	/* controle l'état du bouton de sélection globale */
