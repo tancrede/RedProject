@@ -239,6 +239,8 @@ function openSubMenu() {
 
 function openOptionList(event) {
 
+  initSelectedOptions($(this));
+
   var $parent = $(this).parent();
 
   if ($parent.hasClass("open") == true) { closeAllOptionsMenus(); return false; }
@@ -251,6 +253,17 @@ function openOptionList(event) {
     $parent.find("input.invisible-input").focus();
     return false;
   }
+}
+
+function initSelectedOptions(selection){
+  $.each(selection.closest('.has-dropdown').find('.menuitem-content > span'), function(){
+    if($.inArray($(this).html(), filter_authors) > -1){
+      $(this).closest('.menuitem').find('.check').addClass('is-checked');
+    }else{
+      $(this).closest('.menuitem').find('.check').removeClass('is-checked');
+    }
+  });
+
 }
 
 function closeAllSubMenus() {
@@ -293,6 +306,7 @@ $('.has-multiselectable-items .data-test.menuitem').on('click', function() {
   closeAllOptionsMenus();
   var selector = $(this).closest(".listWrapper");
   setSelectLabel(selector);
+  setCurrentFilters(selector);
 } );
 
 /* selection d'une valeur dans une liste multi-valuée : depuis une checkbox */
@@ -349,6 +363,7 @@ function setCheckAllState(selector) {
 $(".set-values").on('click', function() {
   var selector = $(this).parent();
   setSelectLabel(selector);
+  setCurrentFilters(selector);
   closeAllOptionsMenus();
   console.log("setSelectLabel");
 });
@@ -366,6 +381,18 @@ function setSelectLabel(selector) {
   else {
     selector.siblings('div.select-list')[0].firstChild.data = selector.find(".vSlider .is-checked").length + " selections ";
     console.log("selection multiple");
+  }
+}
+
+/* enregistrement des filtres sélectionnés */
+var filter_authors = [];
+function setCurrentFilters(selector) {
+  if (selector.children().attr('id') === 'filter-select-list-authors'){
+    // enregistrement du filtre "Auteurs"
+    filter_authors = [];
+    $.each(selector.find(".vSlider .is-checked"), function( ){
+      filter_authors.push($(this).closest('.menuitem').find('.menuitem-content > span').html());
+    });
   }
 }
 
