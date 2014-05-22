@@ -690,7 +690,7 @@
 	
 	$('.list-trigger').on('click', openOptionList);
 	$('.menu-trigger').on('click', openSubMenu);
-	$(".menuitem").hover(function(){ $(".menuitem").removeClass("is-hover"); $(this).addClass("is-hover");  });
+	$(".menuitem").hover(function(){ $(".menuitem").removeClass("is-hover"); $(this).addClass("is-hover");  }, function(){ $(".menuitem").removeClass("is-hover");});
 	
 	function openSubMenu() {
 	
@@ -728,6 +728,7 @@
 	function closeAllSubMenus() {
 		$(".menu-trigger").parents(".has-dropdown").find("input").val("");
 		$(".menu-trigger").parents(".has-dropdown").removeClass('open');
+		$(".menu-trigger").parents(".has-dropdown").find(".menuitem").removeClass("is-hover");
 		console.log("fermeture des menus");
 		closeAllOptionsMenus()
 	}
@@ -735,6 +736,7 @@
 	function closeAllOptionsMenus() {
 		/* change l'état global du drop-down */
 		$(".list-trigger").closest(".has-dropdown").removeClass('open');
+		$(".list-trigger").closest(".has-dropdown").find(".menuitem").removeClass("is-hover");
 		
 		/* efface les traces d'une recherche éventuelle */
 		$(".list-trigger").closest(".has-dropdown").find("input").val("");
