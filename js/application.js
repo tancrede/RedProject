@@ -316,6 +316,19 @@ $(".check-in").click(function(){
   var selector = $(this).closest(".listWrapper");
   selector.find(".set-values").show();
   selector.find(".comment-label").hide();
+
+  /* Si la valeur sélectionnée est un auteur, on vérifie que les valeurs actuelles ont été modifiées, sinon on masque le bouton valider */
+  if ($(this).closest('.vSlider').attr("id")==='authors-list'){
+    currently_selected_authors = [];
+    $.each($(this).closest('.vSlider').find(".check.is-checked"), function( ){
+      currently_selected_authors.push($(this).closest('.menuitem').find('.menuitem-content > span').html());
+    });
+    if ($(filter_authors).not(currently_selected_authors).length == 0 && $(currently_selected_authors).not(filter_authors).length == 0){
+      selector.find(".set-values").hide();
+      selector.find(".comment-label").show();
+    }
+  }
+
   setCheckAllState(selector);
 });
 
