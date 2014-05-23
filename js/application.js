@@ -388,7 +388,7 @@ function setSelectLabel(selector) {
     console.log("aucune selection");
   }
   else if (selector.find(".vSlider .is-checked").length == 1) {
-    selector.siblings('div.select-list')('div.select-list')[0].firstChild.data = selector.find(".menuitem:has(.is-checked) .menuitem-content > span").html() + " ";
+    selector.siblings('div.select-list')[0].firstChild.data = selector.find(".menuitem:has(.is-checked) .menuitem-content > span").html() + " ";
     console.log("une selection");
   }
   else {
