@@ -410,7 +410,7 @@ function setSelectLabel(selector) {
 /* enregistrement des filtres sélectionnés */
 var filter_authors = [];
 function setCurrentFilters(selector) {
-  if (selector.children().attr('id') === 'filter-select-list-authors'){
+  if (selector.attr('id') === 'filter-select-list-authors'){
     // enregistrement du filtre "Auteurs"
     filter_authors = [];
     $.each(selector.find(".vSlider .is-checked"), function( ){
