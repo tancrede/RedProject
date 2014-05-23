@@ -314,23 +314,33 @@ $(".check-in").click(function(){
   $(this).children(".check").toggleClass("is-checked");
   console.log("selection multiple depuis check-box");
   var selector = $(this).closest(".listWrapper");
-  selector.find(".set-values").show();
-  selector.find(".comment-label").hide();
 
-  /* Si la valeur sélectionnée est un auteur, on vérifie que les valeurs actuelles ont été modifiées, sinon on masque le bouton valider */
-  if ($(this).closest('.vSlider').attr("id")==='authors-list'){
-    currently_selected_authors = [];
-    $.each($(this).closest('.vSlider').find(".check.is-checked"), function( ){
-      currently_selected_authors.push($(this).closest('.menuitem').find('.menuitem-content > span').html());
-    });
-    if ($(filter_authors).not(currently_selected_authors).length == 0 && $(currently_selected_authors).not(filter_authors).length == 0){
-      selector.find(".set-values").hide();
-      selector.find(".comment-label").show();
-    }
-  }
+  /* on vérifie que les valeurs actuelles ont été modifiées, sinon on masque le bouton valider */
+  setDropdownSubmitButton($(this), selector);
 
   setCheckAllState(selector);
 });
+
+function setDropdownSubmitButton(selection, listWrapper) {
+  listWrapper.find(".set-values").show();
+  listWrapper.find(".comment-label").hide();
+
+  var saved_values = null;
+  if (selection.closest('.vSlider').attr("id")==='authors-list') {
+    saved_values = filter_authors;
+  }
+
+  if (saved_values != null){
+    currently_selected_values = [];
+    $.each(selection.closest('.vSlider').find(".check.is-checked"), function( ){
+      currently_selected_values.push($(this).closest('.menuitem').find('.menuitem-content > span').html());
+    });
+    if ($(saved_values).not(currently_selected_values).length == 0 && $(currently_selected_values).not(saved_values).length == 0){
+      listWrapper.find(".set-values").hide();
+      listWrapper.find(".comment-label").show();
+    }
+  }
+}
 
 /* sélection globale */
 $(".check-in-all").click(function(e){
