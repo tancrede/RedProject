@@ -257,7 +257,7 @@ function openOptionList(event) {
 
 function initSelectedOptions(selection){
   $.each(selection.closest('.has-dropdown').find('.menuitem-content > span'), function(){
-    if($.inArray($(this).html(), filter_authors) > -1){
+    if($.inArray($(this).html(), filters_values[selection.closest('.has-dropdown').find('.dropdown-list').attr('id')]) > -1){
       $(this).closest('.menuitem').find('.check').addClass('is-checked');
     }else{
       $(this).closest('.menuitem').find('.check').removeClass('is-checked');
@@ -325,10 +325,7 @@ function setDropdownSubmitButton(selection, listWrapper) {
   listWrapper.find(".set-values").show();
   listWrapper.find(".comment-label").hide();
 
-  var saved_values = null;
-  if (selection.closest('.vSlider').attr("id")==='authors-list') {
-    saved_values = filter_authors;
-  }
+  var saved_values = filters_values[selection.closest('.dropdown-list').attr("id")];
 
   if (saved_values != null){
     currently_selected_values = [];
@@ -408,15 +405,12 @@ function setSelectLabel(selector) {
 }
 
 /* enregistrement des filtres sélectionnés */
-var filter_authors = [];
+var filters_values = new Object();
 function setCurrentFilters(selector) {
-  if (selector.attr('id') === 'select-list-authors'){
-    // enregistrement du filtre "Auteurs"
-    filter_authors = [];
-    $.each(selector.find(".vSlider .is-checked"), function( ){
-      filter_authors.push($(this).closest('.menuitem').find('.menuitem-content > span').html());
-    });
-  }
+  filters_values[selector.attr('id')] = [];
+  $.each(selector.find(".vSlider .is-checked"), function( ){
+    filters_values[selector.attr('id')].push($(this).closest('.menuitem').find('.menuitem-content > span').html());
+  });
 }
 
 /* mise en valeur des checkbox par lot */
