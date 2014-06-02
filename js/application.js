@@ -316,24 +316,25 @@ $(".check-in").click(function(){
   var selector = $(this).closest(".listWrapper");
 
   /* on vérifie que les valeurs actuelles ont été modifiées, sinon on masque le bouton valider */
-  setDropdownSubmitButton($(this), selector);
+  setDropdownSubmitButton(selector);
 
   setCheckAllState(selector);
 });
 
-function setDropdownSubmitButton(selection, listWrapper) {
-  listWrapper.find(".set-values").show();
-  listWrapper.find(".comment-label").hide();
-
-  var saved_values = filters_values[selection.closest('.dropdown-list').attr("id")] || [];
-
+function setDropdownSubmitButton(listWrapper) {
+  var saved_values = filters_values[listWrapper.attr("id")] || [];
   currently_selected_values = [];
-  $.each(selection.closest('.vSlider').find(".check.is-checked"), function( ){
+  $.each(listWrapper.find(".vSlider .check.is-checked"), function( ){
     currently_selected_values.push($(this).closest('.menuitem').find('.menuitem-content > span').html());
   });
   if ($(saved_values).not(currently_selected_values).length == 0 && $(currently_selected_values).not(saved_values).length == 0){
+    // Aucun changement, on masque le bouton valider
     listWrapper.find(".set-values").hide();
     listWrapper.find(".comment-label").show();
+  }else{
+    // On affiche le bouton valider
+    listWrapper.find(".set-values").show();
+    listWrapper.find(".comment-label").hide();
   }
 }
 
@@ -350,10 +351,7 @@ $(".check-in-all").click(function(e){
     $(this).children(".check").filter(':visible').addClass("is-checked");
     console.log("selection générale");
   }
-
-  $(this).closest(".listWrapper").find(".set-values").show();
-  $(this).closest(".listWrapper").find(".comment-label").hide();
-
+  setDropdownSubmitButton($(this).closest(".listWrapper"));
 });
 
 /* controle l'état du bouton de sélection globale */
