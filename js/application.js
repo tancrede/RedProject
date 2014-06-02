@@ -325,17 +325,15 @@ function setDropdownSubmitButton(selection, listWrapper) {
   listWrapper.find(".set-values").show();
   listWrapper.find(".comment-label").hide();
 
-  var saved_values = filters_values[selection.closest('.dropdown-list').attr("id")];
+  var saved_values = filters_values[selection.closest('.dropdown-list').attr("id")] || [];
 
-  if (saved_values != null){
-    currently_selected_values = [];
-    $.each(selection.closest('.vSlider').find(".check.is-checked"), function( ){
-      currently_selected_values.push($(this).closest('.menuitem').find('.menuitem-content > span').html());
-    });
-    if ($(saved_values).not(currently_selected_values).length == 0 && $(currently_selected_values).not(saved_values).length == 0){
-      listWrapper.find(".set-values").hide();
-      listWrapper.find(".comment-label").show();
-    }
+  currently_selected_values = [];
+  $.each(selection.closest('.vSlider').find(".check.is-checked"), function( ){
+    currently_selected_values.push($(this).closest('.menuitem').find('.menuitem-content > span').html());
+  });
+  if ($(saved_values).not(currently_selected_values).length == 0 && $(currently_selected_values).not(saved_values).length == 0){
+    listWrapper.find(".set-values").hide();
+    listWrapper.find(".comment-label").show();
   }
 }
 
