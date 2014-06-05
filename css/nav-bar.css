@@ -549,17 +549,15 @@ a.issue-tab:hover .issue-subject:after {
 
 .is-partial { background-color: rgb(240,240,240); } /* partiellement selectionné */
 
-.check:hover
-/*.check-all:hover*/ {
+.check:hover {
 	-web-kit-box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
 	box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
 	border: 1px solid #b2b2b2 !important;
 }
 
-/*.vFader:hover .menuitem > .check-in > .check,
-.action-item:hover .check-in > .check {
-	border-color: rgb(230, 230, 230) !important;
-}*/
+.check:active {
+	background-color: #ebebeb;
+}
 
 .check-all {
 	margin-left: calc(-0.7em - 1px);
