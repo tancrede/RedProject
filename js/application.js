@@ -321,6 +321,22 @@ $(".check-in").click(function(){
   setCheckAllState(selector);
 });
 
+/* selection d'une valeur dans une liste multi-valuée : depuis un bouton pick-one */
+
+$(".pick-one").hover(
+	function(){ $(this).closest(".listWrapper").find(".check").css("opacity", 0.2); $(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked"); $(this).closest(".listWrapper").find(".comment-label").hide(); $(this).closest(".listWrapper").find(".set-values").hide(); $(this).closest(".listWrapper").find(".temporary-label").show();},
+	function(){ $(this).closest(".listWrapper").find(".check").css("opacity", 1);   $(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked");  setDropdownSubmitButton($(this).closest(".listWrapper")); $(this).closest(".listWrapper").find(".temporary-label").hide();}
+);
+
+$(".pick-one").click(function() {
+	$(this).closest(".listWrapper").find(".vSlider .check").removeClass("is-checked");
+	$(this).find(".check").toggleClass("is-checked");
+    closeAllOptionsMenus();
+    var selector = $(this).closest(".listWrapper");
+    setSelectLabel(selector);
+    setCurrentFilters(selector);
+});
+
 function setDropdownSubmitButton(listWrapper) {
   var saved_values = filters_values[listWrapper.attr("id")] || [];
   currently_selected_values = [];
