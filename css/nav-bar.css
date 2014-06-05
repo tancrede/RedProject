@@ -611,7 +611,7 @@ a.issue-tab:hover .issue-subject:after {
 	right: 0;
 	display: inline-block;
 	height: 100%;
-	margin-right: 0.7em;
+	margin-right:1.1em;
 }
 
 .circle {
@@ -1070,7 +1070,7 @@ top: 0.5em;
 }
 
 .search-button-inline {
-	line-height: 2.3em /* inherit */;
+	line-height: /* 2em */ inherit;
 	border-radius: 2px;
 }
 
