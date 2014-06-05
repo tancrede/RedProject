@@ -343,7 +343,7 @@ $(".pick-one").hover(
 
 $(".pick-one").click(function() {
 	$(this).closest(".listWrapper").find(".vSlider .check").removeClass("is-checked");
-	$(this).find(".check").toggleClass("is-checked");
+	$(this).find(".check").addClass("is-checked");
     closeAllOptionsMenus();
     var selector = $(this).closest(".listWrapper");
     setSelectLabel(selector);
