@@ -324,8 +324,21 @@ $(".check-in").click(function(){
 /* selection d'une valeur dans une liste multi-valuée : depuis un bouton pick-one */
 
 $(".pick-one").hover(
-	function(){ $(this).closest(".listWrapper").find(".check").css("opacity", 0.2); $(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked"); $(this).closest(".listWrapper").find(".comment-label").hide(); $(this).closest(".listWrapper").find(".set-values").hide(); $(this).closest(".listWrapper").find(".temporary-label").show();},
-	function(){ $(this).closest(".listWrapper").find(".check").css("opacity", 1);   $(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked");  setDropdownSubmitButton($(this).closest(".listWrapper")); $(this).closest(".listWrapper").find(".temporary-label").hide();}
+	function(){
+		$(this).closest(".listWrapper").find(".check").css("opacity", 0.2);
+		$(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked");
+		$(this).closest(".listWrapper").find(".comment-label").hide();
+		$(this).closest(".listWrapper").find(".set-values").hide();
+		$(this).closest(".listWrapper").find(".temporary-label").show();
+		$(this).closest(".listWrapper").find(".check-in-all").hide();
+	},
+	function(){
+		$(this).closest(".listWrapper").find(".check").css("opacity", 1);
+		$(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked");
+		setDropdownSubmitButton($(this).closest(".listWrapper"));
+		$(this).closest(".listWrapper").find(".temporary-label").hide();
+		$(this).closest(".listWrapper").find(".check-in-all").show();
+	}
 );
 
 $(".pick-one").click(function() {
