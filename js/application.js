@@ -219,6 +219,23 @@ $("span.prior").click(function () {
 $('.list-trigger').on('click', openOptionList);
 $('.menu-trigger').on('click', openSubMenu);
 $(".menuitem").hover(function(){ $(".menuitem").removeClass("is-hover"); $(this).addClass("is-hover");  }, function(){ $(".menuitem").removeClass("is-hover");});
+$(".pick-one").hover(
+	function(){
+		$(this).closest(".listWrapper").find(".check").css("opacity", 0.2);
+		$(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked");
+		$(this).closest(".listWrapper").find(".comment-label").hide();
+		$(this).closest(".listWrapper").find(".set-values").hide();
+		$(this).closest(".listWrapper").find(".temporary-label").show();
+		$(this).closest(".listWrapper").find(".check-in-all").hide();
+	},
+	function(){
+		$(this).closest(".listWrapper").find(".check").css("opacity", 1);
+		$(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked");
+		setDropdownSubmitButton($(this).closest(".listWrapper"));
+		$(this).closest(".listWrapper").find(".temporary-label").hide();
+		$(this).closest(".listWrapper").find(".check-in-all").show();
+	}
+);
 
 function openSubMenu() {
 
@@ -256,12 +273,13 @@ function openOptionList(event) {
 }
 
 function initSelectedOptions(selection){
-  $.each(selection.closest('.has-dropdown').find('.menuitem-content > span'), function(){
-    if($.inArray($(this).html(), filters_values[selection.closest('.has-dropdown').find('.dropdown-list').attr('id')]) > -1){
-      $(this).closest('.menuitem').find('.check').addClass('is-checked');
-    }else{
-      $(this).closest('.menuitem').find('.check').removeClass('is-checked');
-    }
+	console.log("init sélection");
+	$.each(selection.closest('.has-dropdown').find('.menuitem-content > span'), function(){
+		if($.inArray($(this).html(), filters_values[selection.closest('.has-dropdown').find('.dropdown-list').attr('id')]) > -1){
+		$(this).closest('.menuitem').find('.check').addClass('is-checked');
+	}else{
+		$(this).closest('.menuitem').find('.check').removeClass('is-checked');
+	}
   });
 
 }
@@ -270,6 +288,7 @@ function closeAllSubMenus() {
   $(".menu-trigger").parents(".has-dropdown").find("input").val("");
   $(".menu-trigger").parents(".has-dropdown").removeClass('open');
   $(".menu-trigger").parents(".has-dropdown").find(".menuitem").removeClass("is-hover");
+
   console.log("fermeture des menus");
   closeAllOptionsMenus()
 }
@@ -294,16 +313,20 @@ function closeAllOptionsMenus() {
 /* selection d'une valeur dans une liste mono-valuée */
 $('.has-selectable-items .data-test.menuitem').on('click', function() {
   $(this).closest(".listWrapper").find(".data-test").removeClass("selected-item");
-  console.log("selection");
   $(this).addClass("selected-item");
   $(this).parent().siblings('div.select-list')[0].firstChild.data = $(this).children('.menuitem-content').children('span').text() + " ";
+
+  console.log("selection d'une valeur");
   closeAllOptionsMenus();
 } );
 
 /* selection d'une valeur dans une liste multi-valuée : depuis un label */
-$('.has-multiselectable-items .data-test.menuitem').on('click', function() {
+$('.has-multiselectable-items .data-test.menuitem').on('click', function(e) {
   $(this).find(".check").toggleClass("is-checked");
+  e.stopPropagation();
+  console.log("selection multiple depuis un label");
   closeAllOptionsMenus();
+
   var selector = $(this).closest(".listWrapper");
   setSelectLabel(selector);
   setCurrentFilters(selector);
@@ -313,38 +336,23 @@ $('.has-multiselectable-items .data-test.menuitem').on('click', function() {
 $(".check-in").click(function(){
   $(this).children(".check").toggleClass("is-checked");
   console.log("selection multiple depuis check-box");
-  var selector = $(this).closest(".listWrapper");
 
+  var selector = $(this).closest(".listWrapper");
   /* on vérifie que les valeurs actuelles ont été modifiées, sinon on masque le bouton valider */
   setDropdownSubmitButton(selector);
-
   setCheckAllState(selector);
 });
 
 /* selection d'une valeur dans une liste multi-valuée : depuis un bouton pick-one */
 
-$(".pick-one").hover(
-	function(){
-		$(this).closest(".listWrapper").find(".check").css("opacity", 0.2);
-		$(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked");
-		$(this).closest(".listWrapper").find(".comment-label").hide();
-		$(this).closest(".listWrapper").find(".set-values").hide();
-		$(this).closest(".listWrapper").find(".temporary-label").show();
-		$(this).closest(".listWrapper").find(".check-in-all").hide();
-	},
-	function(){
-		$(this).closest(".listWrapper").find(".check").css("opacity", 1);
-		$(this).closest(".menuitem").find(".check").css("opacity", 1).toggleClass("is-picked");
-		setDropdownSubmitButton($(this).closest(".listWrapper"));
-		$(this).closest(".listWrapper").find(".temporary-label").hide();
-		$(this).closest(".listWrapper").find(".check-in-all").show();
-	}
-);
-
-$(".pick-one").click(function() {
+$(".pick-one").click(function(e) {
 	$(this).closest(".listWrapper").find(".vSlider .check").removeClass("is-checked");
-	$(this).find(".check").addClass("is-checked");
+	$(this).closest(".menuitem").find(".check").addClass("is-checked");
+	
+	e.stopPropagation();
+	console.log("selection multiple - pick-one");
     closeAllOptionsMenus();
+
     var selector = $(this).closest(".listWrapper");
     setSelectLabel(selector);
     setCurrentFilters(selector);
