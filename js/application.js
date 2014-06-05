@@ -320,16 +320,28 @@ $('.has-selectable-items .data-test.menuitem').on('click', function() {
   closeAllOptionsMenus();
 } );
 
-/* selection d'une valeur dans une liste multi-valuée : depuis un label */
-$('.has-multiselectable-items .data-test.menuitem').on('click', function(e) {
+/* selection d'une valeur dans une liste multi-valuée : depuis un label -- version fermant la fenetre sur sélection */
+/*$('.has-multiselectable-items .data-test.menuitem').on('click', function(e) {
   $(this).find(".check").toggleClass("is-checked");
   e.stopPropagation();
-  console.log("selection multiple depuis un label");
+  console.log("selection multiple depuis un label -- version qui ferme");
   closeAllOptionsMenus();
 
   var selector = $(this).closest(".listWrapper");
   setSelectLabel(selector);
   setCurrentFilters(selector);
+} );*/
+
+/* selection d'une valeur dans une liste multi-valuée : depuis un label -- version ajoutant la valeur sans fermer la fenetre */
+$('.has-multiselectable-items .data-test.menuitem').on('click', function(e) {
+  $(this).find(".check").toggleClass("is-checked");
+  e.stopPropagation();
+  console.log("selection multiple depuis un label -- ajout");
+
+  var selector = $(this).closest(".listWrapper");
+  /* on vérifie que les valeurs actuelles ont été modifiées, sinon on masque le bouton valider */
+  setDropdownSubmitButton(selector);
+  setCheckAllState(selector);
 } );
 
 /* selection d'une valeur dans une liste multi-valuée : depuis une checkbox */
