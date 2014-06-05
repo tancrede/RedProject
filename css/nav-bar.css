@@ -547,6 +547,8 @@ a.issue-tab:hover .issue-subject:after {
 	background: url('../img/checkmark.png') no-repeat -5px -3px;
 }
 
+.is-picked { border-color: transparent !important; }
+
 .is-partial { /* partiellement selectionné */
 	background-color: rgb(240,240,240);
 	border: 1px solid rgb(240,240,240);
