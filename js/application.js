@@ -351,7 +351,6 @@ $(".pick-one").click(function(e) {
 	
 	e.stopPropagation();
 	console.log("selection multiple - pick-one");
-
     closeAllOptionsMenus();
 
     var selector = $(this).closest(".listWrapper");
