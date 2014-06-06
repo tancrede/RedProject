@@ -791,9 +791,9 @@ a.issue-tab:hover .issue-subject:after {
 	position: absolute;
 	content: '';
 	width: 50%;
-	height: 4px;
+	height: 7px;
 	background: #FFF;
-	bottom: -2px;
+	bottom: -4px;
 	left: 1px;
 	z-index:10;
 }
@@ -804,9 +804,9 @@ a.issue-tab:hover .issue-subject:after {
 	position: absolute;
 	content: '';
 	width: 50%;
-	height: 4px;
+	height: 7px;
 	background: #FFF;
-	bottom: -2px;
+	bottom: -4px;
 	right: 1px;
 	z-index:10;
 }
