@@ -628,7 +628,7 @@ a.issue-tab:hover .issue-subject:after {
 	
 }
 
-.is-hover .circle { opacity: .04; }
+.is-hover .circle { opacity: .1; }
 .circle:hover { opacity: .5; }
 
 /*
