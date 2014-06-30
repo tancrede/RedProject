@@ -29,7 +29,7 @@
 					<div class="menuitem"><div class="menuitem-content"><span>Les parents</span></div></div>
 					<div class="submenu-link separator-horizontal"></div>
 					<!-- <div class="menuitem"><div class="menuitem-content"><span class="blink">|</span></div></div> -->
-					<div class="menuitem action-item"><input type="text" class="invisible-input" placeholder="Filtrer" id="filter-projects" /></div>
+					<div class="menuitem action-item"><input type="text" class="invisible-input" placeholder="Filtrer" id="filter-projects" autocomplete="off"/></div>
 					<div class="submenu-link separator-horizontal"></div>
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 1</span></div></div>
 					<div class="menuitem"><div class="menuitem-content"><span>Le plus fréquenté 2</span></div></div>
@@ -79,7 +79,7 @@
 			<div class="f2 search-wrapper medFontSize">
 				<form class="search-form">
 					<fieldset class="f11 search-fieldset">
-						<div class="sfield-1"><input type="text" class="search-input" placeholder="Rechercher, Filtrer…" id="search"></div>
+						<div class="sfield-1"><input type="text" class="search-input" placeholder="Rechercher, Filtrer…" id="search" autocomplete="off"></div>
 						<div class="sfield-2 has-dropdown">
 							<div class="menu-trigger arrow-wrapper"><span class="arrow-down"></span></div>
 							<div class="listWrapper listWrapperSkin filter-fieldset">
@@ -216,9 +216,9 @@
 												<div class="has-dropdown isInBloVisible">
 													<div class="list-trigger isInBloVisible select-list" data-selection-label="Choisir un Auteur">Choisir un Auteur <span class="arrow-up-and-down"></span></div>
 													<div class="listWrapper listWrapperSkin dropdown-list has-multiselectable-items input-item" id='select-list-authors' >
-														<div class="menuitem action-item"><div class="check-in-all"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><input type="text" class="invisible-input" placeholder="Filtrer" id="filter-authors" /></div></div>
+														<div class="menuitem action-item"><div class="check-in-all"><div class="check"><div class="mark"></div></div></div><div class="menuitem-content"><input autocomplete="off" type="text" class="invisible-input" placeholder="Filtrer" id="filter-authors" /></div></div>
 														<div class="submenu-link separator-horizontal"></div>
-														<div class="vFader">
+														<div class="vFader results-list">
 															<div class="vSlider" id="authors-list">
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="pick-one"><div class="circle"></div></div><div class="menuitem-content"><span>Jean-Philippe Lang</span></div></div>
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="pick-one"><div class="circle"></div></div><div class="menuitem-content"><span>Maxime Goepp</span></div></div>
@@ -239,10 +239,11 @@
 																<div class="menuitem data-test"><div class="check-in"><div class="check"><div class="mark"></div></div></div><div class="pick-one"><div class="circle"></div></div><div class="menuitem-content"><span>Christian Paquet</span></div></div>
 															</div>
 														</div>
-														<div class="submenu-link separator-horizontal"></div>
+														<div class="submenu-link separator-horizontal results-list"></div>
 														<div class="menuitem comment-label unclickable"><div class="menuitem-content"><span>Sélectionner</span></div></div>
 														<div class="menuitem temporary-label unclickable hide-it"><div class="menuitem-content"><span>Sélection unique</span></div></div>
 														<div class="menuitem set-values" style="display:none;"><div class="menuitem-content"><span>Appliquer</span></div></div>
+                            <div class="menuitem no-results unclickable hide-it"><div class="menuitem-content"><span>Aucun résultat</span></div></div>
 													</div>
 												</div>
 											</td>
