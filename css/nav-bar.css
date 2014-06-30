@@ -151,7 +151,7 @@ ul { list-style: none;}
 .icon:before {
 	font-family: 'R-redmine' !important;
 	content: attr(data-icon);
-	margin: 0 5px;
+	margin: 0 auto;
 	font-size: 0.875em;
 	font-weight: normal;
 	font-style: normal;
@@ -653,6 +653,7 @@ a.issue-tab:hover .issue-subject:after {
 .action {
 	padding: 0.3em 0.7em;
 	border: 1px solid transparent;
+	border-style: solid solid none;
 }
 
 .action:hover { background-color: rgb(250,250,250); }
@@ -816,9 +817,9 @@ a.issue-tab:hover .issue-subject:after {
 	position: absolute;
 	content: '';
 	width: 50%;
-	height: 4px;
+	height: 7px;
 	background: #FFF;
-	bottom: -2px;
+	bottom: -4px;
 	left: 1px;
 	z-index:10;
 }
@@ -829,9 +830,9 @@ a.issue-tab:hover .issue-subject:after {
 	position: absolute;
 	content: '';
 	width: 50%;
-	height: 4px;
+	height: 7px;
 	background: #FFF;
-	bottom: -2px;
+	bottom: -4px;
 	right: 1px;
 	z-index:10;
 }
@@ -841,7 +842,8 @@ fieldset .has-dropdown.open::after, fieldset .has-dropdown.open::before { backgr
 .menuitem { padding:0 5em 0 1.5em; margin: 0; line-height: 2.5em; cursor: pointer; position: relative; min-width: 10em}
 /*.menuitem:hover ,*/ .menuitem.is-hover{ background: rgb(250,250,250); /* #EEE */}
 
-.menuitem.comment-label.is-hover, .menuitem.temporary-label.is-hover { background: inherit; /* #EEE */}
+.menuitem.comment-label.is-hover, .menuitem.temporary-label.is-hover, .menuitem.no-results.is-hover { background: inherit; /* #EEE */}
+
 .formarea { padding:0 1.5em 0; margin: 0; cursor: normal; position: relative; min-width: 10em}
 
 .has-selectable-items > .menuitem , .has-multiselectable-items .menuitem { padding-left: 2.8em } /* ajoute la gouttière pour mettre la checkbox */
@@ -882,6 +884,7 @@ fieldset .has-dropdown.open::after, fieldset .has-dropdown.open::before { backgr
 .open > .action {
 	background: white;
 	border: 1px solid #CCC;
+	border-style: solid solid none;
 	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,.2);
 	-moz-box-shadow: -1px 1px 1px rgba(0,0,0,.2);
 	box-shadow: 0 2px 4px rgba(0,0,0,.2);
@@ -944,7 +947,9 @@ fieldset .has-dropdown.open::after, fieldset .has-dropdown.open::before { backgr
 	outline: 1px solid #4d90fe; /* pas forcément nécessaire. juste en attendant de régler le problème d'alignement à droite */
 }
 
-.menuitem.comment-label, .menuitem.temporary-label { font-style: italic; color: #777; /*padding-left: 1.5em;*/ cursor: default; }
+
+.menuitem.no-results, .menuitem.comment-label, .menuitem.temporary-label { font-style: italic; color: #777; /*padding-left: 1.5em;*/ cursor: default; }
+
 .menuitem.action-item:hover { background-color: inherit; }
 
 /*
@@ -1038,8 +1043,10 @@ top: 0.5em;
 .search-button, .search-button-inline {
 	outline: none;
 	color: white;
-	padding: 0 1.1em;
+	padding: 0;
 	margin: 0;
+	text-align: center;
+	width: 6em;
 	border-radius: 2px;
 	border-bottom-left-radius : 0;
 	border-top-left-radius : 0;

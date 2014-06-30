@@ -302,10 +302,12 @@ function closeAllOptionsMenus() {
   $(".list-trigger").closest(".has-dropdown").find("input").val("");
   $(".list-trigger").closest(".has-dropdown").find(".menuitem.data-test").show();
   $(".list-trigger").closest(".has-dropdown").find(".check-in-all").show();
+  $(".list-trigger").closest(".has-dropdown").find(".results-list").show();
 
   /* reinitialise le bouton d'application des changements */
   $(".list-trigger").closest(".has-dropdown").find(".set-values").hide();
   $(".list-trigger").closest(".has-dropdown").find(".comment-label").show();
+  $(".list-trigger").closest(".has-dropdown").find(".no-results").hide();
 
   console.log("fermeture des listes");
 }
@@ -541,6 +543,16 @@ jQuery.fn.fastLiveFilter = function(list, options) {
           li.style.display = "none";
         }
       }
+    }
+    if (numShown>0) {
+      input.closest(".has-dropdown").find(".no-results").hide();
+      input.closest(".has-dropdown").find(".results-list").show();
+      setDropdownSubmitButton(input.closest(".listWrapper"));
+    }else{
+      input.closest(".has-dropdown").find(".no-results").show();
+      input.closest(".has-dropdown").find(".results-list").hide();
+      input.closest(".has-dropdown").find(".set-values").hide();
+      input.closest(".has-dropdown").find(".comment-label").hide();
     }
     callback(numShown);
     // var endTime = new Date().getTime();
