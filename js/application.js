@@ -91,13 +91,13 @@ $('input').on('focusout', function () {
 function selectAllTableLine() {
   $(".action-perm .check-all .check").removeClass("is-partial").addClass("is-checked");
   $(".table-issues .check").addClass("is-checked");
-  $(".table-issues tr").addClass("selected");
+  $(".table-issues tr, .table-issues .single-element").addClass("selected");
 }
 
 function selectNoTableLine() {
   $(".action-perm .check-all .check").removeClass("is-partial, is-checked");
   $(".table-issues .check").removeClass("is-checked");
-  $(".table-issues tr").removeClass("selected");
+  $(".table-issues tr, .table-issues .single-element").removeClass("selected");
 }
 
 /* selection d'une ligne d'un tableau */

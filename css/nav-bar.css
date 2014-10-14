@@ -383,7 +383,7 @@ table {
 /* .new-line td { background-color: rgb(250,250,250);}
 .new-line td:nth-child(3), .new-line a.issue-tab { font-weight: 600; } */
 
-.table-issues .selected td, .table-issues .selected div { 
+.table-issues .selected td, .table-issues .selected.single-element { 
   border-top: 1px solid rgb(220,220,220);
   border-bottom: 1px solid rgb(220,220,220);
   background-color: #FFFFCC;
@@ -523,7 +523,11 @@ a.issue-tab:hover .issue-subject:after {
 
 	position: relative;
 	top: 50%;
-	transform: translate(0, 50%);
+	-webkit-transform:translate(0, 50%);
+	   -moz-transform:translate(0, 50%);
+	    -ms-transform:translate(0, 50%);
+	     -o-transform:translate(0, 50%);
+	        transform:translate(0, 50%);
 
 	-webkit-border-radius: 0;
 	border-radius: 0;
@@ -588,7 +592,13 @@ a.issue-tab:hover .issue-subject:after {
 	/*margin-bottom: -2px;*/
 }
 
-.check-all .check { transform: translate(0, 10%) }
+.check-all .check { 
+	-webkit-transform:translate(0, 10%);
+	   -moz-transform:translate(0, 10%);
+	    -ms-transform:translate(0, 10%);
+	     -o-transform:translate(0, 10%);
+	        transform:translate(0, 10%);
+}
 
 .check-in, .check-in-all {
 	position: absolute;
@@ -1155,24 +1165,25 @@ top: 0.5em;
 
 .single-element {
 	padding-left: 10px;
+	padding-right: 10px;
 	margin-bottom: -1px;
 	height:2.4em;
 	line-height:2.4em;
 	overflow: hidden;
 	border-top: 1px dotted rgb(220,220,220);
+	border-bottom: 1px dotted transparent;
 	cursor: pointer;
 }
 
 .single-element:hover {
-background-color: rgb(250,250,250);
+	background-color: rgb(250,250,250);
 }
 
 .last {
 	float: right;
-	width: 8.5em;
+	max-width: 8.5em;
 	overflow: hidden;
 	text-align: right;
-	padding-right: 3px;
 	padding-left: 17px;
 }
 
