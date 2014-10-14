@@ -20,10 +20,10 @@ $( document ).ready(function() {
 /* controle l'affichage des actions de la barre de menu */
 function actionMenu() {
   // si au moins une sélection
-  if ($(".table-issues tr.selected").length > 0) {
+  if ($(".table-issues .single-element.selected").length > 0) {
     $("div.action-select").addClass("isInBloVisible");
     // si pas tous sélectionnés
-    if ($(".table-issues tr.selected").length < $(".table-issues tbody tr").length) /* le .selected compte aussi le check-all*/
+    if ($(".table-issues .single-element.selected").length < $(".table-issues .single-element").length) /* le .selected compte aussi le check-all*/
     {
       $(".action-perm .check-all .check").addClass("is-partial");
       $(".action-perm .check-all .check").removeClass("is-checked");
@@ -91,13 +91,13 @@ $('input').on('focusout', function () {
 function selectAllTableLine() {
   $(".action-perm .check-all .check").removeClass("is-partial").addClass("is-checked");
   $(".table-issues .check").addClass("is-checked");
-  $(".table-issues tr, .table-issues .single-element").addClass("selected");
+  $(".table-issues .single-element").addClass("selected");
 }
 
 function selectNoTableLine() {
   $(".action-perm .check-all .check").removeClass("is-partial, is-checked");
   $(".table-issues .check").removeClass("is-checked");
-  $(".table-issues tr, .table-issues .single-element").removeClass("selected");
+  $(".table-issues .single-element").removeClass("selected");
 }
 
 /* selection d'une ligne d'un tableau */
@@ -140,54 +140,50 @@ $("#select-none").click(function(){
 
 $("#select-isHigh").click(function(){
   selectNoTableLine();
-  $(".table-issues tr:has(.isHigh)").addClass("selected");
-  $(".table-issues tr:has(.isHigh) .check").addClass("is-checked");
+  $(".table-issues .single-element:has(.isHigh)").addClass("selected");
+  $(".table-issues .single-element:has(.isHigh) .check").addClass("is-checked");
   actionMenu();
 });
 
 $("#select-isMedium").click(function(){
   selectNoTableLine();
-  $(".table-issues tr:has(.isMedium)").addClass("selected");
-  $(".table-issues tr:has(.isMedium) .check").addClass("is-checked");
+  $(".table-issues .single-element:has(.isMedium)").addClass("selected");
+  $(".table-issues .single-element:has(.isMedium) .check").addClass("is-checked");
   actionMenu();
 });
 
 $("#select-isLow").click(function(){
   selectNoTableLine();
-  $(".table-issues tr:has(.isLow)").addClass("selected");
-  $(".table-issues tr:has(.isLow) .check").addClass("is-checked");
+  $(".table-issues .single-element:has(.isLow)").addClass("selected");
+  $(".table-issues .single-element:has(.isLow) .check").addClass("is-checked");
   actionMenu();
 });
 
 $("#select-isIncident").click(function(){
   selectNoTableLine();
-  $(".table-issues tr:has(td:nth-child(3):contains('Incident'))").addClass("selected");
-  $(".table-issues tr:has(td:nth-child(3):contains('Incident')) .check").addClass("is-checked");
+  $(".table-issues .single-element:has(.project-div:contains('Incident'))").addClass("selected");
+  $(".table-issues .single-element:has(.project-div:contains('Incident')) .check").addClass("is-checked");
   actionMenu();
 });
 
 $("#select-isNew").click(function(){
   selectNoTableLine();
-  $(".table-issues tr:has(.zero)").addClass("selected");
-  $(".table-issues tr:has(.zero) .check").addClass("is-checked");
+  $(".table-issues .single-element:has(.zero)").addClass("selected");
+  $(".table-issues .single-element:has(.zero) .check").addClass("is-checked");
   actionMenu();
 });
 
 $("#select-fav").click(function(){
   selectNoTableLine();
-  $(".table-issues tr:has(.fav[data-icon='S'])").addClass("selected");
-  $(".table-issues tr:has(.fav[data-icon='S']) .check").addClass("is-checked");
+  $(".table-issues .single-element:has(.fav[data-icon='S'])").addClass("selected");
+  $(".table-issues .single-element:has(.fav[data-icon='S']) .check").addClass("is-checked");
   actionMenu();
 });
 
 $("#select-myIssues").click(function(){
-  $(".table-issues div.check").closest("tr").removeClass("selected");
-  $(".table-issues tr td:last-child:contains('M. Goepp')").closest("tr").addClass("selected");
-  actionMenu();
-
   selectNoTableLine();
-  $(".table-issues tr:has(td:last-child:contains('M. Goepp'))").addClass("selected");
-  $(".table-issues tr:has(td:last-child:contains('M. Goepp')) .check").addClass("is-checked");
+  $(".table-issues .single-element:has(.last:contains('M. Goepp'))").addClass("selected");
+  $(".table-issues .single-element:has(.last:contains('M. Goepp')) .check").addClass("is-checked");
   actionMenu();
 });
 
