@@ -601,6 +601,7 @@ a.issue-tab:hover .issue-subject:after {
 	left: 0;
 	display: inline-block;
 	height: 100%;
+	padding-left: 10px;
 }
 
 .check-in .check, .check-in-all .check {
@@ -1164,19 +1165,19 @@ top: 0.5em;
 .comfortable-table, .comfortable-table .single-element  { line-height: 3.3em; height: 3.3em }
 
 .comfortable-table .check { 
-	-webkit-transform:translate(0, 10.5em);
-	   -moz-transform:translate(0, 10.5em);
-	    -ms-transform:translate(0, 10.5em);
-	     -o-transform:translate(0, 10.5em);
-	        transform:translate(0, 10.5em);
+	-webkit-transform:translate(0, 11.8em);
+	   -moz-transform:translate(0, 11.8em);
+	    -ms-transform:translate(0, 11.8em);
+	     -o-transform:translate(0, 11.8em);
+	        transform:translate(0, 11.8em);
 }
 
 .compact-table .check { 
-	-webkit-transform:translate(0, 1.6em);
-	   -moz-transform:translate(0, 1.6em);
-	    -ms-transform:translate(0, 1.6em);
-	     -o-transform:translate(0, 1.6em);
-	        transform:translate(0, 1.6em);
+	-webkit-transform:translate(0, 3em);
+	   -moz-transform:translate(0, 3em);
+	    -ms-transform:translate(0, 3em);
+	     -o-transform:translate(0, 3em);
+	        transform:translate(0, 3em);
 }
 
 .single-element {
@@ -1195,7 +1196,7 @@ top: 0.5em;
 	background-color: rgb(250,250,250);
 }
 
-.last {
+.assigned-div {
 	float: right;
 	max-width: 8.5em;
 	overflow: hidden;

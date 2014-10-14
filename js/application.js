@@ -182,8 +182,8 @@ $("#select-fav").click(function(){
 
 $("#select-myIssues").click(function(){
   selectNoTableLine();
-  $(".table-issues .single-element:has(.last:contains('M. Goepp'))").addClass("selected");
-  $(".table-issues .single-element:has(.last:contains('M. Goepp')) .check").addClass("is-checked");
+  $(".table-issues .single-element:has(.assigned-div:contains('M. Goepp'))").addClass("selected");
+  $(".table-issues .single-element:has(.assigned-div:contains('M. Goepp')) .check").addClass("is-checked");
   actionMenu();
 });
 
