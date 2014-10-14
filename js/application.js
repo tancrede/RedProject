@@ -102,7 +102,7 @@ function selectNoTableLine() {
 
 /* selection d'une ligne d'un tableau */
 $(".table-issues div.check").click(function(){
-  $(this).closest("tr").toggleClass("selected");
+  $(this).closest(".single-element").toggleClass("selected");
   $(this).toggleClass("is-checked");
   actionMenu();
 });
