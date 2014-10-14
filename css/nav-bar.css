@@ -352,10 +352,6 @@ table {
 	color: rgba(155,155,155,.57);
 }
 
-.compact-table { line-height: 1.9em; }
-.normal-table  { line-height: 2.4em; }
-.comfortable-table  { line-height: 3.3em; }
-
 .table-issues tr { 
   border-top: 1px dotted rgb(220,220,220);
   cursor: pointer;
@@ -1163,12 +1159,32 @@ top: 0.5em;
 
 /* Div à la place des tableaux ------------- */
 
+.compact-table, .compact-table .single-element 		{ line-height: 1.9em; height: 1.9em }
+.normal-table, .normal-table .single-element  		{ line-height: 2.4em; height: 2.4em }
+.comfortable-table, .comfortable-table .single-element  { line-height: 3.3em; height: 3.3em }
+
+.comfortable-table .check { 
+	-webkit-transform:translate(0, 10.5em);
+	   -moz-transform:translate(0, 10.5em);
+	    -ms-transform:translate(0, 10.5em);
+	     -o-transform:translate(0, 10.5em);
+	        transform:translate(0, 10.5em);
+}
+
+.compact-table .check { 
+	-webkit-transform:translate(0, 1.6em);
+	   -moz-transform:translate(0, 1.6em);
+	    -ms-transform:translate(0, 1.6em);
+	     -o-transform:translate(0, 1.6em);
+	        transform:translate(0, 1.6em);
+}
+
 .single-element {
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-bottom: -1px;
-	height:2.4em;
-	line-height:2.4em;
+	/*height:2.4em;
+	line-height:2.4em;*/
 	overflow: hidden;
 	border-top: 1px dotted rgb(220,220,220);
 	border-bottom: 1px dotted transparent;
