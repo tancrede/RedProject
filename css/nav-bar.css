@@ -1160,9 +1160,13 @@ top: 0.5em;
 
 /* Div à la place des tableaux ------------- */
 
-.compact-table, .compact-table .single-element 		{ line-height: 1.9em; height: 1.9em }
-.normal-table, .normal-table .single-element  		{ line-height: 2.4em; height: 2.4em }
-.comfortable-table, .comfortable-table .single-element  { line-height: 3.3em; height: 3.3em }
+.compact-table { line-height: 1.9em; }
+.normal-table  		{ line-height: 2.4em; }
+.comfortable-table  { line-height: 3.3em; }
+
+.compact-table .single-element 		{ height: 1.9em }
+.normal-table .single-element  		{ height: 2.4em }
+.comfortable-table .single-element  { height: 3.3em }
 
 .comfortable-table .check { 
 	-webkit-transform:translate(0, 11.8em);
@@ -1239,4 +1243,47 @@ top: 0.5em;
 
 .subject-div {
 
+}
+
+@-webkit-keyframes highlight {
+ 	0% {
+ 		background: #FFFFCC
+ 	}
+ 	100% {
+ 		background: none;
+ 	}
+}
+
+@-moz-keyframes highlight {
+ 	0% {
+ 		background: #FFFFCC
+ 	}
+ 	100% {
+ 		background: none;
+ 	}
+}
+
+@-o-keyframes highlight {
+ 	0% {
+ 		background: #FFFFCC
+ 	}
+ 	100% {
+ 		background: none;
+ 	}
+}
+
+@keyframes highlight {
+ 	0% {
+ 		background: #FFFFCC
+ 	}
+ 	100% {
+ 		background: none;
+ 	}
+}
+
+.notified_line {
+	-webkit-animation: highlight 1s;
+	-moz-animation: highlight 1s;
+	-o-animation: highlight 1s;
+	animation: highlight 1s;
 }
